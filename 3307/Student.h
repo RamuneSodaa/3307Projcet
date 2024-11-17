@@ -42,6 +42,8 @@ public:
     void dropCourse(int courseID); // Drop a course from registered courses
     void dropFromDraftSchedule(int courseID); // Drop a course from the draft schedule
     void listCourses() const; // List all registered courses
+    void clearDraftSchedule();
+    void finalizeEnrollment(Course* course);
 
     // Activity Logging
     void logActivity(const std::string& activityDescription);

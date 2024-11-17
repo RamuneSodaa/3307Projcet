@@ -164,3 +164,40 @@ void Scheduler::displayCourseOfferings() const {
                   << ", Capacity: " << course->getCapacity() << "\n";
     }
 }
+// Validate draft schedule for prerequisites and availability
+std::vector<std::string> Scheduler::validateDraftSchedule(Student* student) {
+    std::vector<std::string> errors;
+
+    auto draftSchedule = student->getDraftSchedule();
+    for (auto course : draftSchedule) {
+        if (!prerequisiteChecker.verifyPrerequisites(student, course)) {
+            errors.push_back("Prerequisites not met for " + course->getCourseName());
+        } else if (course->isFull()) {
+            errors.push_back("Course is full: " + course->getCourseName());
+        }
+    }
+
+    return errors;
+}
+
+// Finalize enrollment from draft schedule
+bool Scheduler::finalizeDraftSchedule(Student* student) {
+    auto errors = validateDraftSchedule(student);
+
+    if (!errors.empty()) {
+        std::cout << "Cannot finalize draft schedule. Errors:\n";
+        for (const auto& error : errors) {
+            std::cout << "- " << error << "\n";
+        }
+        return false;
+    }
+
+    for (auto course : student->getDraftSchedule()) {
+        course->enrollStudent(student);
+        student->finalizeEnrollment(course);
+    }
+
+    std::cout << "Draft schedule successfully finalized.\n";
+    return true;
+}
+

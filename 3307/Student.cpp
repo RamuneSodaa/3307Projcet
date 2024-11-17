@@ -44,6 +44,29 @@ std::vector<Course*>& Student::getDraftSchedule() {
 void Student::setStatus(const std::string& newStatus) {
     status = newStatus;
 }
+void Student::finalizeEnrollment(Course* course) {
+    if (!course) {
+        std::cerr << "Cannot finalize enrollment for a null course.\n";
+        return;
+    }
+
+    // Add course to registered courses
+    registeredCourses.push_back(course);
+
+    // Remove course from draft schedule
+    auto it = std::remove(draftSchedule.begin(), draftSchedule.end(), course);
+    if (it != draftSchedule.end()) {
+        draftSchedule.erase(it);
+    }
+
+    std::cout << "Successfully finalized enrollment for course: " << course->getCourseName() << "\n";
+    logActivity("Finalized enrollment for course: " + course->getCourseName());
+}
+
+void Student::clearDraftSchedule() {
+    draftSchedule.clear();
+    std::cout << "Draft schedule cleared for student " << username << ".\n";
+}
 
 // Add a course to the student's schedule
 void Student::addCourse(Course* course) {

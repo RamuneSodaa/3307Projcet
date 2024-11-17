@@ -19,4 +19,5 @@ add_executable(3307
         Student.cpp
         User.cpp
         Scheduler.cpp
+        SearchEngine.cpp
 )

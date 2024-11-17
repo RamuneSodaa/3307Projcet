@@ -94,7 +94,7 @@ void Authentication::unlockAccount(const std::string& username) {
     if (lockedAccounts.find(username) != lockedAccounts.end()) {
         lockedAccounts[username] = false;
         failedAttempts[username] = 0;
-        std::cout << "Account unlocked: " << username << std::endl;
+        std::cout << "Account unlocked: .." << username << std::endl;
     } else {
         std::cout << "No account found for user: " << username << std::endl;
     }

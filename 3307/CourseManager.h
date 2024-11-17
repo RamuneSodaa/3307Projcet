@@ -22,7 +22,7 @@ public:
     void browseCourses() const;
     void displayCourseDetails(int courseID) const;
 
-    // Advanced feature (optional for future development)
+    // Advanced feature
     std::vector<Course*> filterCoursesByDepartment(const std::string& department) const;
 };
 
