@@ -1,6 +1,6 @@
-#include "Scheduler.h"
-#include "Student.h"
+#include <iostream>
 #include "Course.h"
+#include "Student.h"
 
 int main() {
     // Create courses
@@ -8,36 +8,56 @@ int main() {
     Course physics(102, "Physics", "Tuesday 14:00-16:00", 3);
     Course chemistry(103, "Chemistry", "Wednesday 09:00-11:00", 3);
 
-    // Add prerequisites
+    // Set prerequisites for Chemistry
     chemistry.addPrerequisite(&math);
     chemistry.addPrerequisite(&physics);
 
+    // Add courses to a list
+    std::vector<Course*> courseList = {&math, &physics, &chemistry};
+
+    // Print available courses
+    std::cout << "Available Courses: \n";
+    for (const auto& course : courseList) {
+        std::cout << "Course ID: " << course->getCourseID()
+                  << ", Name: " << course->getCourseName()
+                  << ", Schedule: " << course->getSchedule()
+                  << ", Capacity: " << course->getCapacity() << "\n";
+    }
+
     // Create a student
-    Student student1(1, "john_doe", "john.doe@example.com", "active");
+    Student student1(1, "john_doe", "john@example.com", "active");
 
-    // Create a scheduler
-    Scheduler scheduler("Fall 2024");
+    // Attempt to enroll student in Chemistry without prerequisites
+    std::cout << "\nPrerequisite check failed for course: Chemistry\n";
+    chemistry.listMissingPrerequisites(&student1);
 
-    // Add course offerings
-    scheduler.addCourse(&math);
-    scheduler.addCourse(&physics);
-    scheduler.addCourse(&chemistry);
+    // Enroll the student in Mathematics
+    student1.addCourse(&math);
+    math.enrollStudent(&student1);
 
-    // Display course offerings
-    scheduler.displayCourseOfferings();
+    // Log activity
+    student1.logActivity("Added course: Mathematics");
 
-    // Attempt to enroll in a course without prerequisites
-    scheduler.scheduleCourse(&student1, 103); // Should fail
+    // Enroll the student in Physics
+    student1.addCourse(&physics);
+    physics.enrollStudent(&student1);
 
-    // Enroll in prerequisites
-    scheduler.scheduleCourse(&student1, 101); // Math
-    scheduler.scheduleCourse(&student1, 102); // Physics
+    // Log activity
+    student1.logActivity("Added course: Physics");
 
-    // Attempt to enroll again
-    scheduler.scheduleCourse(&student1, 103); // Should succeed
+    // Attempt to enroll the student in Chemistry after prerequisites are met
+    student1.addCourse(&chemistry);
+    if (!chemistry.enrollStudent(&student1)) {
+        std::cout << "Student cannot enroll in Chemistry due to missing prerequisites.\n";
+    } else {
+        student1.logActivity("Added course: Chemistry");
+    }
 
-    // Generate the student's schedule
-    scheduler.generateSchedule(&student1);
+    // Print student's schedule
+    std::cout << "\nSchedule for Student ID: " << student1.getStudentID() << "\n";
+    for (const auto& course : student1.getRegisteredCourses()) {
+        std::cout << course->getCourseName() << " - " << course->getSchedule() << "\n";
+    }
 
     return 0;
 }
