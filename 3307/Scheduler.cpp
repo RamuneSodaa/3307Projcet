@@ -1,14 +1,15 @@
 #include "Scheduler.h"
 #include <iostream>
-#include <stdexcept>
+#include <algorithm>
 
 // Constructor
 Scheduler::Scheduler(const std::string& semester) : semester(semester) {}
 
 // Destructor
 Scheduler::~Scheduler() {
-    // Do not delete objects that are not dynamically allocated
-    courseOfferings.clear(); // Clear the vector to ensure its own memory is released
+    for (auto course : courseOfferings) {
+        delete course; // Ensure proper cleanup
+    }
 }
 
 // Getters
@@ -16,72 +17,91 @@ std::vector<Course*> Scheduler::getCourseOfferings() const {
     return courseOfferings;
 }
 
-// Course Management
+// Add a course to the offerings
 void Scheduler::addCourse(Course* course) {
-    courseOfferings.push_back(course);
-    std::cout << "Course added: " << course->getCourseName() << std::endl;
-}
-
-void Scheduler::removeCourse(int courseID) {
-    for (auto it = courseOfferings.begin(); it != courseOfferings.end(); ++it) {
-        if ((*it)->getCourseID() == courseID) {
-            courseOfferings.erase(it);
-            std::cout << "Course removed: " << courseID << std::endl;
-            return;
-        }
+    if (!course) {
+        std::cerr << "Cannot add a null course.\n";
+        return;
     }
-    throw std::invalid_argument("Course not found!");
+    courseOfferings.push_back(course);
+    std::cout << "Course added: " << course->getCourseName() << "\n";
 }
 
+// Remove a course by ID
+void Scheduler::removeCourse(int courseID) {
+    auto it = std::remove_if(courseOfferings.begin(), courseOfferings.end(),
+                             [courseID](Course* course) { return course->getCourseID() == courseID; });
+    if (it != courseOfferings.end()) {
+        delete *it; // Free memory
+        courseOfferings.erase(it);
+        std::cout << "Course removed: " << courseID << "\n";
+    } else {
+        std::cerr << "Course not found with ID: " << courseID << "\n";
+    }
+}
+
+// Update course details
 void Scheduler::updateCourseDetails(int courseID, const std::string& schedule) {
-    for (auto& course : courseOfferings) {
+    for (auto course : courseOfferings) {
         if (course->getCourseID() == courseID) {
             course->setSchedule(schedule);
-            std::cout << "Course schedule updated for: " << courseID << std::endl;
+            std::cout << "Course ID " << courseID << " updated with new schedule: " << schedule << "\n";
             return;
         }
     }
-    throw std::invalid_argument("Course not found!");
+    std::cerr << "Course not found with ID: " << courseID << "\n";
 }
 
-// Scheduling and Enrollment
+// Schedule a course for a student
 bool Scheduler::scheduleCourse(Student* student, int courseID) {
-    for (auto& course : courseOfferings) {
+    if (!student) {
+        std::cerr << "Student object cannot be null.\n";
+        return false;
+    }
+
+    for (auto course : courseOfferings) {
         if (course->getCourseID() == courseID) {
-            // Prerequisite validation
+            // Check prerequisites
             if (!prerequisiteChecker.verifyPrerequisites(student, course)) {
-                std::cout << "Prerequisite check failed for course: " << course->getCourseName() << std::endl;
+                std::cout << "Prerequisite check failed for course: " << course->getCourseName() << "\n";
                 prerequisiteChecker.displayMissingPrerequisites(student, course);
                 return false;
             }
 
-            // Enrollment
+            // Enroll the student
             if (course->enrollStudent(student)) {
                 student->addCourse(course);
-                std::cout << "Student enrolled in course: " << course->getCourseName() << std::endl;
+                std::cout << "Student enrolled in course: " << course->getCourseName() << "\n";
                 return true;
             } else {
-                std::cout << "Course is full. Added to waitlist: " << courseID << std::endl;
+                std::cout << "Course is full.\n";
                 return false;
             }
         }
     }
-    throw std::invalid_argument("Course not found!");
+    std::cerr << "Course not found with ID: " << courseID << "\n";
+    return false;
 }
 
+// Generate the student's schedule
 void Scheduler::generateSchedule(Student* student) const {
-    std::cout << "Schedule for Student ID: " << student->getStudentID() << std::endl;
+    if (!student) {
+        std::cerr << "Student object cannot be null.\n";
+        return;
+    }
+
+    std::cout << "Schedule for Student ID: " << student->getStudentID() << "\n";
     for (const auto& course : student->getRegisteredCourses()) {
-        std::cout << course->getCourseName() << " - " << course->getSchedule() << std::endl;
+        std::cout << course->getCourseName() << " - " << course->getSchedule() << "\n";
     }
 }
 
-// Optimization
+// Optimize the student's schedule
 std::vector<Course*> Scheduler::optimizeSchedule(const std::vector<int>& desiredCourses) {
     std::vector<Course*> optimizedCourses;
-    for (int id : desiredCourses) {
-        for (auto& course : courseOfferings) {
-            if (course->getCourseID() == id) {
+    for (int courseID : desiredCourses) {
+        for (const auto& course : courseOfferings) {
+            if (course->getCourseID() == courseID) {
                 optimizedCourses.push_back(course);
                 break;
             }
@@ -90,13 +110,18 @@ std::vector<Course*> Scheduler::optimizeSchedule(const std::vector<int>& desired
     return optimizedCourses;
 }
 
-// Utility
+// Display all available courses
 void Scheduler::displayCourseOfferings() const {
-    std::cout << "Available Courses: " << std::endl;
+    if (courseOfferings.empty()) {
+        std::cout << "No courses available.\n";
+        return;
+    }
+
+    std::cout << "Available Courses:\n";
     for (const auto& course : courseOfferings) {
         std::cout << "Course ID: " << course->getCourseID()
                   << ", Name: " << course->getCourseName()
                   << ", Schedule: " << course->getSchedule()
-                  << ", Capacity: " << course->getCapacity() << std::endl;
+                  << ", Capacity: " << course->getCapacity() << "\n";
     }
 }
