@@ -1,0 +1,3 @@
+/Users/lishaotian/Desktop/3307/cmake-build-debug/CMakeFiles/3307.dir
+/Users/lishaotian/Desktop/3307/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/lishaotian/Desktop/3307/cmake-build-debug/CMakeFiles/rebuild_cache.dir
