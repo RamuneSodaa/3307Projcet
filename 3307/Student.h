@@ -11,7 +11,7 @@ private:
     int studentID;
     std::string username;
     std::string email;
-    std::string status; // E.g., "active", "inactive"
+    std::string status;
     std::vector<Course*> registeredCourses;
     std::vector<std::string> activityLog; // Keeps a log of student activities
 
