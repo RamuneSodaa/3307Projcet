@@ -49,6 +49,13 @@ cmake_ninja_workdir = /Users/lishaotian/Desktop/3307/cmake-build-debug/
 
 build cmake_object_order_depends_target_3307: phony || .
 
+build CMakeFiles/3307.dir/Main.cpp.o: CXX_COMPILER__3307_unscanned_Debug /Users/lishaotian/Desktop/3307/Main.cpp || cmake_object_order_depends_target_3307
+  DEP_FILE = CMakeFiles/3307.dir/Main.cpp.o.d
+  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  INCLUDES = -I/Users/lishaotian/Desktop/3307/.
+  OBJECT_DIR = CMakeFiles/3307.dir
+  OBJECT_FILE_DIR = CMakeFiles/3307.dir
+
 build CMakeFiles/3307.dir/Authentication.cpp.o: CXX_COMPILER__3307_unscanned_Debug /Users/lishaotian/Desktop/3307/Authentication.cpp || cmake_object_order_depends_target_3307
   DEP_FILE = CMakeFiles/3307.dir/Authentication.cpp.o.d
   FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
@@ -77,8 +84,8 @@ build CMakeFiles/3307.dir/EnrollmentStrategies.cpp.o: CXX_COMPILER__3307_unscann
   OBJECT_DIR = CMakeFiles/3307.dir
   OBJECT_FILE_DIR = CMakeFiles/3307.dir
 
-build CMakeFiles/3307.dir/Main.cpp.o: CXX_COMPILER__3307_unscanned_Debug /Users/lishaotian/Desktop/3307/Main.cpp || cmake_object_order_depends_target_3307
-  DEP_FILE = CMakeFiles/3307.dir/Main.cpp.o.d
+build CMakeFiles/3307.dir/PrerequisiteChecker.cpp.o: CXX_COMPILER__3307_unscanned_Debug /Users/lishaotian/Desktop/3307/PrerequisiteChecker.cpp || cmake_object_order_depends_target_3307
+  DEP_FILE = CMakeFiles/3307.dir/PrerequisiteChecker.cpp.o.d
   FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/lishaotian/Desktop/3307/.
   OBJECT_DIR = CMakeFiles/3307.dir
@@ -91,13 +98,6 @@ build CMakeFiles/3307.dir/Scheduler.cpp.o: CXX_COMPILER__3307_unscanned_Debug /U
   OBJECT_DIR = CMakeFiles/3307.dir
   OBJECT_FILE_DIR = CMakeFiles/3307.dir
 
-build CMakeFiles/3307.dir/User.cpp.o: CXX_COMPILER__3307_unscanned_Debug /Users/lishaotian/Desktop/3307/User.cpp || cmake_object_order_depends_target_3307
-  DEP_FILE = CMakeFiles/3307.dir/User.cpp.o.d
-  FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/lishaotian/Desktop/3307/.
-  OBJECT_DIR = CMakeFiles/3307.dir
-  OBJECT_FILE_DIR = CMakeFiles/3307.dir
-
 build CMakeFiles/3307.dir/Student.cpp.o: CXX_COMPILER__3307_unscanned_Debug /Users/lishaotian/Desktop/3307/Student.cpp || cmake_object_order_depends_target_3307
   DEP_FILE = CMakeFiles/3307.dir/Student.cpp.o.d
   FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
@@ -105,8 +105,8 @@ build CMakeFiles/3307.dir/Student.cpp.o: CXX_COMPILER__3307_unscanned_Debug /Use
   OBJECT_DIR = CMakeFiles/3307.dir
   OBJECT_FILE_DIR = CMakeFiles/3307.dir
 
-build CMakeFiles/3307.dir/PrerequisiteChecker.cpp.o: CXX_COMPILER__3307_unscanned_Debug /Users/lishaotian/Desktop/3307/PrerequisiteChecker.cpp || cmake_object_order_depends_target_3307
-  DEP_FILE = CMakeFiles/3307.dir/PrerequisiteChecker.cpp.o.d
+build CMakeFiles/3307.dir/User.cpp.o: CXX_COMPILER__3307_unscanned_Debug /Users/lishaotian/Desktop/3307/User.cpp || cmake_object_order_depends_target_3307
+  DEP_FILE = CMakeFiles/3307.dir/User.cpp.o.d
   FLAGS = -g -std=gnu++14 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   INCLUDES = -I/Users/lishaotian/Desktop/3307/.
   OBJECT_DIR = CMakeFiles/3307.dir
@@ -120,7 +120,7 @@ build CMakeFiles/3307.dir/PrerequisiteChecker.cpp.o: CXX_COMPILER__3307_unscanne
 #############################################
 # Link the executable 3307
 
-build 3307: CXX_EXECUTABLE_LINKER__3307_Debug CMakeFiles/3307.dir/Authentication.cpp.o CMakeFiles/3307.dir/Course.cpp.o CMakeFiles/3307.dir/CourseManager.cpp.o CMakeFiles/3307.dir/EnrollmentStrategies.cpp.o CMakeFiles/3307.dir/Main.cpp.o CMakeFiles/3307.dir/Scheduler.cpp.o CMakeFiles/3307.dir/User.cpp.o CMakeFiles/3307.dir/Student.cpp.o CMakeFiles/3307.dir/PrerequisiteChecker.cpp.o
+build 3307: CXX_EXECUTABLE_LINKER__3307_Debug CMakeFiles/3307.dir/Main.cpp.o CMakeFiles/3307.dir/Authentication.cpp.o CMakeFiles/3307.dir/Course.cpp.o CMakeFiles/3307.dir/CourseManager.cpp.o CMakeFiles/3307.dir/EnrollmentStrategies.cpp.o CMakeFiles/3307.dir/PrerequisiteChecker.cpp.o CMakeFiles/3307.dir/Scheduler.cpp.o CMakeFiles/3307.dir/Student.cpp.o CMakeFiles/3307.dir/User.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
   OBJECT_DIR = CMakeFiles/3307.dir
   POST_BUILD = :

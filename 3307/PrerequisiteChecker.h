@@ -15,6 +15,12 @@ public:
 
     // Display missing prerequisites for a course
     void displayMissingPrerequisites(const Student* student, const Course* course) const;
+
+    // NEW: Notify the student about missing prerequisites
+    void notifyStudentMissingPrerequisites(const Student* student, const Course* course) const;
+
+    // NEW: Suggest courses to fulfill missing prerequisites
+    void suggestFulfillmentCourses(const Student* student, const Course* course) const;
 };
 
 #endif // PREREQUISITECHECKER_H

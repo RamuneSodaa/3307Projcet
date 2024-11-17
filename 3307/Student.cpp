@@ -7,6 +7,8 @@
 // Constructor
 Student::Student(int id, const std::string& uname, const std::string& email, const std::string& status)
     : studentID(id), username(uname), email(email), status(status) {}
+Student::Student(const std::string& id, const std::string& email)
+    : studentID(std::stoi(id)), username("default"), email(email), status("active") {}
 
 // Destructor
 Student::~Student() {
@@ -34,6 +36,10 @@ const std::vector<Course*>& Student::getRegisteredCourses() const {
     return registeredCourses;
 }
 
+std::vector<Course*>& Student::getDraftSchedule() {
+    return draftSchedule;
+}
+
 // Setters
 void Student::setStatus(const std::string& newStatus) {
     status = newStatus;
@@ -50,6 +56,17 @@ void Student::addCourse(Course* course) {
     std::cout << "Course " << course->getCourseName() << " added for student " << username << ".\n";
 }
 
+// Add a course to the draft schedule
+void Student::addToDraftSchedule(Course* course) {
+    if (!course) {
+        std::cerr << "Cannot add a null course to the draft schedule.\n";
+        return;
+    }
+    draftSchedule.push_back(course);
+    logActivity("Added to draft schedule: " + course->getCourseName());
+    std::cout << "Course " << course->getCourseName() << " added to draft schedule for student " << username << ".\n";
+}
+
 // Drop a course from the student's schedule
 void Student::dropCourse(int courseID) {
     auto it = std::remove_if(registeredCourses.begin(), registeredCourses.end(),
@@ -60,6 +77,19 @@ void Student::dropCourse(int courseID) {
         std::cout << "Course dropped successfully.\n";
     } else {
         std::cout << "Course with ID " << courseID << " not found in the schedule.\n";
+    }
+}
+
+// Drop a course from the draft schedule
+void Student::dropFromDraftSchedule(int courseID) {
+    auto it = std::remove_if(draftSchedule.begin(), draftSchedule.end(),
+                             [courseID](Course* course) { return course->getCourseID() == courseID; });
+    if (it != draftSchedule.end()) {
+        draftSchedule.erase(it, draftSchedule.end());
+        logActivity("Dropped from draft schedule: " + std::to_string(courseID));
+        std::cout << "Course removed from draft schedule successfully.\n";
+    } else {
+        std::cout << "Course with ID " << courseID << " not found in the draft schedule.\n";
     }
 }
 

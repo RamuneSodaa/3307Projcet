@@ -1,16 +1,29 @@
-//
-// Created by 李绍天 on 2024-11-16.
-//
-
 #ifndef COURSEMANAGER_H
 #define COURSEMANAGER_H
 
-
+#include <vector>
+#include "Course.h"
 
 class CourseManager {
+private:
+    std::vector<Course*> courseList; // Stores all available courses
 
+public:
+    // Constructor and Destructor
+    CourseManager();
+    ~CourseManager();
+
+    // Course management methods
+    void addCourse(Course* course);
+    bool removeCourse(int courseID);
+    Course* searchCourse(int courseID) const;
+
+    // Utility methods
+    void browseCourses() const;
+    void displayCourseDetails(int courseID) const;
+
+    // Advanced feature (optional for future development)
+    std::vector<Course*> filterCoursesByDepartment(const std::string& department) const;
 };
 
-
-
-#endif //COURSEMANAGER_H
+#endif // COURSEMANAGER_H

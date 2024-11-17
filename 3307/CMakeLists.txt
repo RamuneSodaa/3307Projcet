@@ -1,24 +1,22 @@
 cmake_minimum_required(VERSION 3.29)
 project(3307)
 
+# Specify the C++ standard
 set(CMAKE_CXX_STANDARD 14)
 
+# Include directories
 include_directories(.)
 
+# Add executable
 add_executable(3307
-    Authentication.cpp
-    Authentication.h
-    Course.cpp
-    Course.h
-    CourseManager.cpp
-    CourseManager.h
-    EnrollmentStrategies.cpp
-    EnrollmentStrategies.h
-    Main.cpp
-    Scheduler.cpp
-    Scheduler.h
-    User.cpp
-    User.h
+        Main.cpp
+        Authentication.cpp
+        Course.cpp
+        CourseManager.cpp
+        EnrollmentStrategies.cpp
+        PrerequisiteChecker.cpp
+        Scheduler.cpp
         Student.cpp
-        PrerequisiteChecker.h
-        PrerequisiteChecker.cpp)
+        User.cpp
+        Scheduler.cpp
+)

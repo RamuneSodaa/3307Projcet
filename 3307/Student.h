@@ -1,27 +1,29 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
-#include "Course.h"
-#include <vector>
 #include <string>
+#include <vector>
 #include <ctime>
+#include "Course.h"
 
 class Student {
 private:
-    int studentID;
-    std::string username;
-    std::string email;
-    std::string status;
-    std::vector<Course*> registeredCourses;
-    std::vector<std::string> activityLog; // Keeps a log of student activities
+    int studentID; // Unique identifier for the student
+    std::string username; // Student's username
+    std::string email; // Student's email address
+    std::string status; // Student's status (e.g., active, inactive)
+    std::vector<Course*> registeredCourses; // List of registered courses
+    std::vector<Course*> draftSchedule; // List of courses in the draft schedule
+    std::vector<std::string> activityLog; // Log of student activities
 
-    // Helper function to get the current timestamp for logs
+    // Helper method to get the current timestamp
     std::string getCurrentTimestamp() const;
 
 public:
     // Constructor and Destructor
     Student(int id, const std::string& uname, const std::string& email, const std::string& status);
     ~Student();
+    Student(const std::string& id, const std::string& email);
 
     // Getters
     int getStudentID() const;
@@ -29,16 +31,19 @@ public:
     std::string getEmail() const;
     std::string getStatus() const;
     const std::vector<Course*>& getRegisteredCourses() const;
+    std::vector<Course*>& getDraftSchedule();;
 
     // Setters
     void setStatus(const std::string& newStatus);
 
-    // Methods for course management
-    void addCourse(Course* course);
-    void dropCourse(int courseID);
-    void listCourses() const;
+    // Course Management
+    void addCourse(Course* course); // Add a course to the registered courses
+    void addToDraftSchedule(Course* course); // Add a course to the draft schedule
+    void dropCourse(int courseID); // Drop a course from registered courses
+    void dropFromDraftSchedule(int courseID); // Drop a course from the draft schedule
+    void listCourses() const; // List all registered courses
 
-    // Logging
+    // Activity Logging
     void logActivity(const std::string& activityDescription);
     void showActivityLog() const;
 };

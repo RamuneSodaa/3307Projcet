@@ -1,63 +1,82 @@
 #include <iostream>
-#include "Course.h"
+#include "Authentication.h"
+#include "CourseManager.h"
+#include "Scheduler.h"
 #include "Student.h"
+#include "PrerequisiteChecker.h"
 
 int main() {
+    // Authentication setup
+    Authentication* auth = Authentication::getInstance();
+    auth->addUser("student1", "password123");
+    auth->addUser("student2", "securePass456");
+
+    std::string username, password;
+    std::cout << "Enter username: ";
+    std::cin >> username;
+    std::cout << "Enter password: ";
+    std::cin >> password;
+
+    if (!auth->login(username, password)) {
+        std::cerr << "Authentication failed. Exiting...\n";
+        return 1;
+    }
+
+    // Create Student
+    Student student1("S12345", "student1@example.com");
+
+    // CourseManager setup
+    CourseManager courseManager;
+
     // Create courses
-    Course math(101, "Mathematics", "Monday 10:00-12:00", 3);
-    Course physics(102, "Physics", "Tuesday 14:00-16:00", 3);
-    Course chemistry(103, "Chemistry", "Wednesday 09:00-11:00", 3);
+    Course* math101 = new Course(101, "Math 101", "Monday 10:00-12:00", 30);
+    Course* physics102 = new Course(102, "Physics 102", "Tuesday 14:00-16:00", 25);
+    Course* calculus201 = new Course(201, "Calculus 201", "Wednesday 10:00-12:00", 20);
 
-    // Set prerequisites for Chemistry
-    chemistry.addPrerequisite(&math);
-    chemistry.addPrerequisite(&physics);
+    // Set prerequisites
+    calculus201->addPrerequisite(math101);
 
-    // Add courses to a list
-    std::vector<Course*> courseList = {&math, &physics, &chemistry};
+    // Add courses to CourseManager
+    courseManager.addCourse(math101);
+    courseManager.addCourse(physics102);
+    courseManager.addCourse(calculus201);
 
-    // Print available courses
-    std::cout << "Available Courses: \n";
-    for (const auto& course : courseList) {
-        std::cout << "Course ID: " << course->getCourseID()
-                  << ", Name: " << course->getCourseName()
-                  << ", Schedule: " << course->getSchedule()
-                  << ", Capacity: " << course->getCapacity() << "\n";
+    // Display available courses
+    courseManager.browseCourses();
+
+    // Scheduler setup
+    Scheduler scheduler("Fall 2024");
+
+    scheduler.addCourse(math101);
+    scheduler.addCourse(physics102);
+    scheduler.addCourse(calculus201);
+
+    // Add to draft schedule
+    student1.addToDraftSchedule(math101);
+    student1.addToDraftSchedule(calculus201);
+
+    // Enroll in courses
+    std::cout << "Enrolling in courses from draft schedule...\n";
+    scheduler.enrollFromDraft(&student1);
+
+    // Display student schedule
+    std::cout << "\nFinalized Schedule:\n";
+    scheduler.generateSchedule(&student1);
+
+    // PrerequisiteChecker demo
+    PrerequisiteChecker prereqChecker;
+    if (!prereqChecker.verifyPrerequisites(&student1, calculus201)) {
+        prereqChecker.displayMissingPrerequisites(&student1, calculus201);
+        prereqChecker.suggestFulfillmentCourses(&student1, calculus201);
     }
 
-    // Create a student
-    Student student1(1, "john_doe", "john@example.com", "active");
+    // Logout
+    auth->logout(username);
 
-    // Attempt to enroll student in Chemistry without prerequisites
-    std::cout << "\nPrerequisite check failed for course: Chemistry\n";
-    chemistry.listMissingPrerequisites(&student1);
-
-    // Enroll the student in Mathematics
-    student1.addCourse(&math);
-    math.enrollStudent(&student1);
-
-    // Log activity
-    student1.logActivity("Added course: Mathematics");
-
-    // Enroll the student in Physics
-    student1.addCourse(&physics);
-    physics.enrollStudent(&student1);
-
-    // Log activity
-    student1.logActivity("Added course: Physics");
-
-    // Attempt to enroll the student in Chemistry after prerequisites are met
-    student1.addCourse(&chemistry);
-    if (!chemistry.enrollStudent(&student1)) {
-        std::cout << "Student cannot enroll in Chemistry due to missing prerequisites.\n";
-    } else {
-        student1.logActivity("Added course: Chemistry");
-    }
-
-    // Print student's schedule
-    std::cout << "\nSchedule for Student ID: " << student1.getStudentID() << "\n";
-    for (const auto& course : student1.getRegisteredCourses()) {
-        std::cout << course->getCourseName() << " - " << course->getSchedule() << "\n";
-    }
+    // Cleanup dynamically allocated memory
+    delete math101;
+    delete physics102;
+    delete calculus201;
 
     return 0;
 }

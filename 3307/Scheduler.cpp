@@ -74,7 +74,7 @@ bool Scheduler::scheduleCourse(Student* student, int courseID) {
                 std::cout << "Student enrolled in course: " << course->getCourseName() << "\n";
                 return true;
             } else {
-                std::cout << "Course is full.\n";
+                handleEnrollmentFailure(student, course); // NEW: Handle enrollment failure
                 return false;
             }
         }
@@ -93,6 +93,45 @@ void Scheduler::generateSchedule(Student* student) const {
     std::cout << "Schedule for Student ID: " << student->getStudentID() << "\n";
     for (const auto& course : student->getRegisteredCourses()) {
         std::cout << course->getCourseName() << " - " << course->getSchedule() << "\n";
+    }
+}
+
+// Enroll from draft schedule
+bool Scheduler::enrollFromDraft(Student* student) {
+    for (auto course : student->getDraftSchedule()) {
+        if (!scheduleCourse(student, course->getCourseID())) {
+            std::cout << "Enrollment failed for course: " << course->getCourseName() << "\n";
+            return false;
+        }
+    }
+    std::cout << "All courses from the draft schedule have been enrolled.\n";
+    return true;
+}
+
+// Drop a course from draft schedule
+void Scheduler::dropFromDraft(Student* student, int courseID) {
+    auto& draftSchedule = student->getDraftSchedule();
+    draftSchedule.erase(
+        std::remove_if(
+            draftSchedule.begin(),
+            draftSchedule.end(),
+            [courseID](Course* course) {
+                return course->getCourseID() == courseID;
+            }
+        ),
+        draftSchedule.end()
+    );
+    std::cout << "Course with ID " << courseID << " removed from draft schedule.\n";
+}
+
+
+// Handle enrollment failures
+void Scheduler::handleEnrollmentFailure(Student* student, Course* course) {
+    if (course->isFull()) {
+        course->addToWaitlist(student);
+        std::cout << "Course is full. Student added to waitlist for " << course->getCourseName() << "\n";
+    } else {
+        std::cout << "Student cannot enroll due to unmet prerequisites.\n";
     }
 }
 

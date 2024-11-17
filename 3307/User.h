@@ -4,7 +4,7 @@
 #include <string>
 
 class User {
-protected:
+protected://
     int userID;
     std::string username;
     std::string password;

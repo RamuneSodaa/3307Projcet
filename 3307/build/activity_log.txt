@@ -1,0 +1,6 @@
+Student ID: 1 | 2024-11-17 10:12:26 - Added course: Mathematics
+Student ID: 1 | 2024-11-17 10:12:26 - Added course: Physics
+Student ID: 1 | 2024-11-17 10:12:26 - Added course: Chemistry
+Student ID: 1 | 2024-11-17 10:13:22 - Added course: Mathematics
+Student ID: 1 | 2024-11-17 10:13:22 - Added course: Physics
+Student ID: 1 | 2024-11-17 10:13:22 - Added course: Chemistry

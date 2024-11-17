@@ -8,6 +8,8 @@ class Authentication {
 private:
     static Authentication* instance; // Singleton instance
     std::unordered_map<std::string, std::string> userCredentials; // Stores username-password pairs
+    std::unordered_map<std::string, int> failedAttempts; // Tracks failed login attempts for each user
+    std::unordered_map<std::string, bool> lockedAccounts; // Tracks locked status of each account
 
     // Private constructor
     Authentication();
@@ -25,8 +27,14 @@ public:
     bool login(const std::string& username, const std::string& password);
     void logout(const std::string& username);
 
-    // Utility functions
+    // Account management functions
     void addUser(const std::string& username, const std::string& password);
+    bool changePassword(const std::string& username, const std::string& oldPassword, const std::string& newPassword);
+
+    // Security functions
+    void incrementFailedAttempts(const std::string& username);
+    bool isAccountLocked(const std::string& username);
+    void unlockAccount(const std::string& username);
 };
 
 #endif // AUTHENTICATION_H
