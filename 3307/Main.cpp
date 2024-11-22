@@ -2,6 +2,7 @@
 #include "Student.h"
 #include "Course.h"
 
+
 int main() {
     // Create courses
     Course math(101, "Mathematics", "Monday 10:00-12:00", 3);
