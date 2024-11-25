@@ -3,6 +3,8 @@
 #include <fstream>
 #include <iomanip>
 #include <sstream>
+#include <algorithm>
+
 
 // Constructor
 Student::Student(int id, const std::string& uname, const std::string& email, const std::string& status)

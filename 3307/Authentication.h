@@ -4,6 +4,7 @@
 #include <string>
 #include <unordered_map>
 
+
 class Authentication {
 private:
     static Authentication* instance; // Singleton instance

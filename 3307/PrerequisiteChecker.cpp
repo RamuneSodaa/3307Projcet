@@ -1,6 +1,7 @@
 #include "PrerequisiteChecker.h"
 #include <iostream>
 
+
 // Verify if a student meets the prerequisites for a course
 bool PrerequisiteChecker::verifyPrerequisites(const Student* student, const Course* course) const {
     const auto& prerequisites = course->getPrerequisites();

@@ -1,6 +1,7 @@
 #include "Course.h"
 #include "Student.h"
 #include <iostream>
+#include <algorithm>
 
 // Constructor
 Course::Course(int id, const std::string& name, const std::string& schedule, int capacity)

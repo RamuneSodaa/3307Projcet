@@ -1,14 +1,14 @@
-cmake_minimum_required(VERSION 3.29)
-project(3307)
+cmake_minimum_required(VERSION 3.28)
 
-# Specify the C++ standard
-set(CMAKE_CXX_STANDARD 14)
+# Set the project name
+project(Project3307)
 
-# Include directories
-include_directories(.)
+# Set the C++ standard
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Add executable
-add_executable(3307
+# Add the executable
+add_executable(${PROJECT_NAME}
         Main.cpp
         Authentication.cpp
         Course.cpp
@@ -18,6 +18,4 @@ add_executable(3307
         Scheduler.cpp
         Student.cpp
         User.cpp
-        Scheduler.cpp
-        SearchEngine.cpp
 )

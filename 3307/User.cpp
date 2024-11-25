@@ -1,5 +1,6 @@
 #include "User.h"
 #include <iostream>
+#include <algorithm>
 
 // Constructor
 User::User(int id, const std::string& name, const std::string& pass)
