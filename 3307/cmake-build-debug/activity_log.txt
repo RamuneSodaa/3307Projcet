@@ -58,3 +58,7 @@ Student ID: 1 | 2024-11-17 13:15:41 - Added course: Physics
 Student ID: 1 | 2024-11-17 13:15:41 - Added course: Physics
 Student ID: 1 | 2024-11-17 13:15:41 - Added course: Chemistry
 Student ID: 1 | 2024-11-17 13:15:41 - Added course: Chemistry
+Student ID: 0 | 2024-11-25 00:39:20 - Added to draft schedule: Math 101
+Student ID: 0 | 2024-11-25 00:39:20 - Added to draft schedule: Calculus 201
+Student ID: 0 | 2024-11-25 00:39:20 - Added course: Math 101
+Student ID: 0 | 2024-11-25 00:39:20 - Added course: Calculus 201

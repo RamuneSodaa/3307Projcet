@@ -9,8 +9,17 @@
 // Constructor
 Student::Student(int id, const std::string& uname, const std::string& email, const std::string& status)
     : studentID(id), username(uname), email(email), status(status) {}
-Student::Student(const std::string& id, const std::string& email)
-    : studentID(std::stoi(id)), username("default"), email(email), status("active") {}
+Student::Student(const std::string& id, const std::string& email) {
+    try {
+        studentID = std::stoi(id);
+    } catch (const std::invalid_argument& e) {
+        std::cerr << "Invalid student ID: " << id << ". Defaulting to 0." << std::endl;
+        studentID = 0; // Default to 0 if the conversion fails
+    }
+    username = "default";
+    this->email = email;
+    status = "active";
+}
 
 // Destructor
 Student::~Student() {
