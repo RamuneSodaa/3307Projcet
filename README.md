@@ -1,6 +1,6 @@
 # Course coordinator 
 ## C++ project with GUI that enables users to schedule course enrollments and administrator to control course information. Imported Graphics.hpp and Window.hpp in SFML to achieve GUI
-### TODO List
+### TO-DO List
 1. Complete EnrollmentStrategies
 2. GUI improvements
 3. Fix issues in absolute path of fonts
