@@ -1,5 +1,6 @@
 #include "Authentication.h"
 #include <iostream>
+#include <algorithm>
 
 // Initialize static member
 Authentication* Authentication::instance = nullptr;

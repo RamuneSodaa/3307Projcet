@@ -52,54 +52,70 @@ build cmake_object_order_depends_target_Project3307: phony || CMakeFiles/Project
 build CMakeFiles/Project3307.dir/Main.cpp.obj: CXX_COMPILER__Project3307_unscanned_Debug C$:/Users/Alexf/Desktop/3307Projcet/alex/3307/Main.cpp || cmake_object_order_depends_target_Project3307
   DEP_FILE = CMakeFiles\Project3307.dir\Main.cpp.obj.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/include
   OBJECT_DIR = CMakeFiles\Project3307.dir
   OBJECT_FILE_DIR = CMakeFiles\Project3307.dir
 
 build CMakeFiles/Project3307.dir/Authentication.cpp.obj: CXX_COMPILER__Project3307_unscanned_Debug C$:/Users/Alexf/Desktop/3307Projcet/alex/3307/Authentication.cpp || cmake_object_order_depends_target_Project3307
   DEP_FILE = CMakeFiles\Project3307.dir\Authentication.cpp.obj.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/include
   OBJECT_DIR = CMakeFiles\Project3307.dir
   OBJECT_FILE_DIR = CMakeFiles\Project3307.dir
 
 build CMakeFiles/Project3307.dir/Course.cpp.obj: CXX_COMPILER__Project3307_unscanned_Debug C$:/Users/Alexf/Desktop/3307Projcet/alex/3307/Course.cpp || cmake_object_order_depends_target_Project3307
   DEP_FILE = CMakeFiles\Project3307.dir\Course.cpp.obj.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/include
   OBJECT_DIR = CMakeFiles\Project3307.dir
   OBJECT_FILE_DIR = CMakeFiles\Project3307.dir
 
 build CMakeFiles/Project3307.dir/CourseManager.cpp.obj: CXX_COMPILER__Project3307_unscanned_Debug C$:/Users/Alexf/Desktop/3307Projcet/alex/3307/CourseManager.cpp || cmake_object_order_depends_target_Project3307
   DEP_FILE = CMakeFiles\Project3307.dir\CourseManager.cpp.obj.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/include
   OBJECT_DIR = CMakeFiles\Project3307.dir
   OBJECT_FILE_DIR = CMakeFiles\Project3307.dir
 
 build CMakeFiles/Project3307.dir/EnrollmentStrategies.cpp.obj: CXX_COMPILER__Project3307_unscanned_Debug C$:/Users/Alexf/Desktop/3307Projcet/alex/3307/EnrollmentStrategies.cpp || cmake_object_order_depends_target_Project3307
   DEP_FILE = CMakeFiles\Project3307.dir\EnrollmentStrategies.cpp.obj.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/include
   OBJECT_DIR = CMakeFiles\Project3307.dir
   OBJECT_FILE_DIR = CMakeFiles\Project3307.dir
 
 build CMakeFiles/Project3307.dir/PrerequisiteChecker.cpp.obj: CXX_COMPILER__Project3307_unscanned_Debug C$:/Users/Alexf/Desktop/3307Projcet/alex/3307/PrerequisiteChecker.cpp || cmake_object_order_depends_target_Project3307
   DEP_FILE = CMakeFiles\Project3307.dir\PrerequisiteChecker.cpp.obj.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/include
   OBJECT_DIR = CMakeFiles\Project3307.dir
   OBJECT_FILE_DIR = CMakeFiles\Project3307.dir
 
 build CMakeFiles/Project3307.dir/Scheduler.cpp.obj: CXX_COMPILER__Project3307_unscanned_Debug C$:/Users/Alexf/Desktop/3307Projcet/alex/3307/Scheduler.cpp || cmake_object_order_depends_target_Project3307
   DEP_FILE = CMakeFiles\Project3307.dir\Scheduler.cpp.obj.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/include
   OBJECT_DIR = CMakeFiles\Project3307.dir
   OBJECT_FILE_DIR = CMakeFiles\Project3307.dir
 
 build CMakeFiles/Project3307.dir/Student.cpp.obj: CXX_COMPILER__Project3307_unscanned_Debug C$:/Users/Alexf/Desktop/3307Projcet/alex/3307/Student.cpp || cmake_object_order_depends_target_Project3307
   DEP_FILE = CMakeFiles\Project3307.dir\Student.cpp.obj.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/include
   OBJECT_DIR = CMakeFiles\Project3307.dir
   OBJECT_FILE_DIR = CMakeFiles\Project3307.dir
 
 build CMakeFiles/Project3307.dir/User.cpp.obj: CXX_COMPILER__Project3307_unscanned_Debug C$:/Users/Alexf/Desktop/3307Projcet/alex/3307/User.cpp || cmake_object_order_depends_target_Project3307
   DEP_FILE = CMakeFiles\Project3307.dir\User.cpp.obj.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/include
+  OBJECT_DIR = CMakeFiles\Project3307.dir
+  OBJECT_FILE_DIR = CMakeFiles\Project3307.dir
+
+build CMakeFiles/Project3307.dir/SearchEngine.cpp.obj: CXX_COMPILER__Project3307_unscanned_Debug C$:/Users/Alexf/Desktop/3307Projcet/alex/3307/SearchEngine.cpp || cmake_object_order_depends_target_Project3307
+  DEP_FILE = CMakeFiles\Project3307.dir\SearchEngine.cpp.obj.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/include
   OBJECT_DIR = CMakeFiles\Project3307.dir
   OBJECT_FILE_DIR = CMakeFiles\Project3307.dir
 
@@ -111,9 +127,10 @@ build CMakeFiles/Project3307.dir/User.cpp.obj: CXX_COMPILER__Project3307_unscann
 #############################################
 # Link the executable Project3307.exe
 
-build Project3307.exe: CXX_EXECUTABLE_LINKER__Project3307_Debug CMakeFiles/Project3307.dir/Main.cpp.obj CMakeFiles/Project3307.dir/Authentication.cpp.obj CMakeFiles/Project3307.dir/Course.cpp.obj CMakeFiles/Project3307.dir/CourseManager.cpp.obj CMakeFiles/Project3307.dir/EnrollmentStrategies.cpp.obj CMakeFiles/Project3307.dir/PrerequisiteChecker.cpp.obj CMakeFiles/Project3307.dir/Scheduler.cpp.obj CMakeFiles/Project3307.dir/Student.cpp.obj CMakeFiles/Project3307.dir/User.cpp.obj
+build Project3307.exe: CXX_EXECUTABLE_LINKER__Project3307_Debug CMakeFiles/Project3307.dir/Main.cpp.obj CMakeFiles/Project3307.dir/Authentication.cpp.obj CMakeFiles/Project3307.dir/Course.cpp.obj CMakeFiles/Project3307.dir/CourseManager.cpp.obj CMakeFiles/Project3307.dir/EnrollmentStrategies.cpp.obj CMakeFiles/Project3307.dir/PrerequisiteChecker.cpp.obj CMakeFiles/Project3307.dir/Scheduler.cpp.obj CMakeFiles/Project3307.dir/Student.cpp.obj CMakeFiles/Project3307.dir/User.cpp.obj CMakeFiles/Project3307.dir/SearchEngine.cpp.obj | C$:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/lib/libsfml-graphics-d.a C$:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/lib/libsfml-window-d.a C$:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/lib/libsfml-system-d.a C$:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/lib/libfreetype.a C$:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/lib/libopenal32.a
   FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = C:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/lib/libsfml-graphics-d.a  C:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/lib/libsfml-window-d.a  C:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/lib/libsfml-system-d.a  C:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/lib/libfreetype.a  C:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/lib/libopenal32.a  -lwinmm  -lgdi32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_PATH = -LC:/Users/Alexf/Desktop/3307Projcet/alex/3307/SFML-2.6.2/lib
   OBJECT_DIR = CMakeFiles\Project3307.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
