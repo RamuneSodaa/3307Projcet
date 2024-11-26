@@ -5,4 +5,4 @@
 2. GUI improvements
 3. Fix fonts using bugs
 
-### NOTICE: Inside Main.cpp, make sure change the path of fonts to your own relative path
+### NOTICE: Inside Main.cpp, make sure change the path of fonts to your own relative path, due to some reasons it can't be properly used if I just put it as assets/fonts...
