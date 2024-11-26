@@ -23,12 +23,15 @@ std::string trim(const std::string& str) {
     return std::string(start, end + 1);
 }
 
+// MAKE SURE to run CMakeLists.txt first, then run Main.cpp here
 int main() {
     // Create a window with SFML
     sf::RenderWindow window(sf::VideoMode(800, 600), "Course Enrollment System");
 
     // Load a font for SFML (use a relative path)
     sf::Font font;
+
+    // MAKE SURE to set your path
     if (!font.loadFromFile("C:\\Users\\Alexf\\Desktop\\3307Projcet\\alex\\3307\\assets\\fonts\\OpenSans-Regular.ttf")) {
         std::cerr << "Error loading font.\n";
         return -1;
