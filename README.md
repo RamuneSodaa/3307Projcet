@@ -3,7 +3,7 @@
 ### TODO List
 1. Complete EnrollmentStrategies
 2. GUI improvements
-3. Fix fonts using bugs
+3. Fix issues in absolute path of fonts
 
 ### NOTICE: 
 1. Inside Main.cpp, make sure change the path of fonts to your own relative path, due to some reasons it can't be properly used if I just put it as assets/fonts...
