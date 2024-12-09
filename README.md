@@ -11,7 +11,9 @@
   - Main page
    - Course Searching page
   - Instructor page
+- SQL implementation
 - Comments
+
 
 
 2. UML Diagrams
