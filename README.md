@@ -14,10 +14,11 @@
 • Use Case Diagrams: Provide a high-level overview of user interactions and system functionality.
 
 5. Documentation  
-• Design Documentation:
-  \to Explain your system’s overall architecture.
-  \to Discuss how OOD principles were applied and their role in achieving a scalable, maintainable, and efficient design.
-• Design Patterns:
+• Design Documentation:  
+   o Explain your system’s overall architecture.  
+   o Discuss how OOD principles were applied and their role in achieving a scalable, maintainable, and efficient design.
+   
+• Design Patterns:  
 o Justify your choice of design patterns and describe how they improved the
 system.
 • Testing Report:
