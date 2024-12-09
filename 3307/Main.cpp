@@ -25,11 +25,11 @@ int main() {
     sf::Font font;
 
     sf::Image icon;
-    if (icon.loadFromFile("C:\\Users\\Alexf\\Desktop\\3307Projcet\\3307\\assets\\icon.png")) {
+    if (icon.loadFromFile("../assets/icon.png")) {
         window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
     }
 
-    if (!font.loadFromFile("C:\\Users\\Alexf\\Desktop\\3307Projcet\\3307\\assets\\fonts\\OpenSans-Regular.ttf")) {
+    if (!font.loadFromFile("../assets/fonts/OpenSans-Regular.ttf")) {
         std::cerr << "Error loading font.\n";
         return -1;
     }
