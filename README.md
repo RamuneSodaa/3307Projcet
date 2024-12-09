@@ -6,7 +6,7 @@
       - PrerequisiteChecker.cpp
       - EnrollmentStrategies.cpp
    - Interface
-     - Login Interface
+     - ~~Login Interface~~
      - Main page
      - Course Searching page
      - Instructor page
