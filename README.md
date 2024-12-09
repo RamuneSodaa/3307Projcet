@@ -1,8 +1,14 @@
 # Course coordinator 
 ## C++ project with GUI that enables users to schedule course enrollments and administrator to control course information. Imported Graphics.hpp and Window.hpp in SFML to achieve GUI
 ### TO-DO List
-
-2. UML Diagrams
+1. Implementation
+   o Login Interface
+   o Main page
+   o Course Serching page
+   o Intructor page
+    
+---------------------------
+3. UML Diagrams
 • Class Diagrams: Include all classes, attributes, methods, and relationships such as inheritance, aggregation, and composition.
 
 • Sequence Diagrams: Show interactions between objects for key system processes.
