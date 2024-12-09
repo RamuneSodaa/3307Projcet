@@ -2,10 +2,10 @@
 ## C++ project with GUI that enables users to schedule course enrollments and administrator to control course information. Imported Graphics.hpp and Window.hpp in SFML to achieve GUI
 ### TO-DO List
 1. Implementation
-   o Login Interface
-   o Main page
-   o Course Serching page
-   o Intructor page
+   o Login Interface  
+   o Main page  
+   o Course Serching page  
+   o Intructor page  
     
 ---------------------------
 3. UML Diagrams
