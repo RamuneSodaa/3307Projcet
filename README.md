@@ -1,23 +1,7 @@
 # Course coordinator 
 ## C++ project with GUI that enables users to schedule course enrollments and administrator to control course information. Imported Graphics.hpp and Window.hpp in SFML to achieve GUI
 ### TO-DO List
-1. System Implementation (C++)
-• Complete Functionality:
-o Deliver a fully functional software system that fulfills the features and
-requirements outlined in your proposal.
-o Ensure proper error handling, input validation, and resource management.
-• Object-Oriented Principles:
-o Apply encapsulation, inheritance, polymorphism, and abstraction throughout the
-system.
-• Design Patterns:
-o Implement at least two creational design patterns (e.g., Singleton, Factory
-Method) and one structural/behavioral pattern (e.g., Adapter, Observer,
-Strategy).
-o Ensure design patterns improve the system’s scalability, flexibility, and
-maintainability.
-• Code Quality:
-o Write clean, modular, and well-commented code.
-o Follow C++ best practices and conventions.
+
 2. UML Diagrams
 Submit finalized UML diagrams that accurately reflect your complete system design:
 (Feel free to submit the same diagrams from Deliverable 2 if no changes were made. Diagrams
