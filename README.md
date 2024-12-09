@@ -3,22 +3,16 @@
 ### TO-DO List
 
 2. UML Diagrams
-Submit finalized UML diagrams that accurately reflect your complete system design:
-(Feel free to submit the same diagrams from Deliverable 2 if no changes were made. Diagrams
-are meant to help reviewers understand your thought process, flow, and design considerations.
-Keep in mind that these diagrams may evolve as your software design transitions and matures.)
-• Class Diagrams: Include all classes, attributes, methods, and relationships such as
-inheritance, aggregation, and composition.
+• Class Diagrams: Include all classes, attributes, methods, and relationships such as inheritance, aggregation, and composition.
+
 • Sequence Diagrams: Show interactions between objects for key system processes.
-• Use Case Diagrams: Provide a high-level overview of user interactions and system
-functionality.
-3. Documentation
-Provide a comprehensive and well-structured documentation package to be submitted on
-BrightSpace:
+
+• Use Case Diagrams: Provide a high-level overview of user interactions and system functionality.
+
+4. Documentation
 • Design Documentation:
-o Explain your system’s overall architecture.
-o Discuss how OOD principles were applied and their role in achieving a scalable,
-maintainable, and efficient design.
+  \to Explain your system’s overall architecture.
+  \to Discuss how OOD principles were applied and their role in achieving a scalable, maintainable, and efficient design.
 • Design Patterns:
 o Justify your choice of design patterns and describe how they improved the
 system.
