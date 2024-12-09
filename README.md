@@ -22,9 +22,8 @@
 
 
 3. Documentation  
-- Design Documentation:   
-   - Explain your system’s overall architecture, and discuss how OOD principles were applied and their role in achieving a scalable, maintainable, and efficient design.   
-- Design Patterns: Justify your choice of design patterns and describe how they improved the system.  
+- ~~Design Documentation: Explain your system’s overall architecture, and discuss how OOD principles were applied and their role in achieving a scalable, maintainable, and efficient design.~~   
+- ~~Design Patterns: Justify your choice of design patterns and describe how they improved the system.~~  
 - Testing Report: Focus on unit testing using Google Test (GTest) and mocking with Google Mock (gMock).  
    - Minimum Testing Requirement
       - Test at least two key classes using mocks to simulate dependencies and verify interactions.
