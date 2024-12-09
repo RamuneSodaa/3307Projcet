@@ -35,4 +35,5 @@
       - The test results and how they validate the system.
       - Provide a summary of the testing outcomes and discuss how edge cases and potential issues were handled.
 - Reflection on Challenges:
-   - Summarize the challenges faced during the project and explain how they were addressed
+     - Summarize the challenges faced during the project and explain how they were addressed
+      1. Difficulties on choosing and importing GUI tools
