@@ -1,10 +1,59 @@
 # Course coordinator 
 ## C++ project with GUI that enables users to schedule course enrollments and administrator to control course information. Imported Graphics.hpp and Window.hpp in SFML to achieve GUI
 ### TO-DO List
-1. Complete EnrollmentStrategies
-2. GUI improvements
-3. Fix issues in absolute path of fonts
-4. Add comments on code, **Review the code to better comprehend and optimize first**
+1. System Implementation (C++)
+• Complete Functionality:
+o Deliver a fully functional software system that fulfills the features and
+requirements outlined in your proposal.
+o Ensure proper error handling, input validation, and resource management.
+• Object-Oriented Principles:
+o Apply encapsulation, inheritance, polymorphism, and abstraction throughout the
+system.
+• Design Patterns:
+o Implement at least two creational design patterns (e.g., Singleton, Factory
+Method) and one structural/behavioral pattern (e.g., Adapter, Observer,
+Strategy).
+o Ensure design patterns improve the system’s scalability, flexibility, and
+maintainability.
+• Code Quality:
+o Write clean, modular, and well-commented code.
+o Follow C++ best practices and conventions.
+2. UML Diagrams
+Submit finalized UML diagrams that accurately reflect your complete system design:
+(Feel free to submit the same diagrams from Deliverable 2 if no changes were made. Diagrams
+are meant to help reviewers understand your thought process, flow, and design considerations.
+Keep in mind that these diagrams may evolve as your software design transitions and matures.)
+• Class Diagrams: Include all classes, attributes, methods, and relationships such as
+inheritance, aggregation, and composition.
+• Sequence Diagrams: Show interactions between objects for key system processes.
+• Use Case Diagrams: Provide a high-level overview of user interactions and system
+functionality.
+3. Documentation
+Provide a comprehensive and well-structured documentation package to be submitted on
+BrightSpace:
+• Design Documentation:
+o Explain your system’s overall architecture.
+o Discuss how OOD principles were applied and their role in achieving a scalable,
+maintainable, and efficient design.
+• Design Patterns:
+o Justify your choice of design patterns and describe how they improved the
+system.
+• Testing Report:
+o Focus on unit testing using Google Test (GTest) and mocking with Google
+Mock (gMock).
+o Minimum Testing Requirement:
+▪ Test at least two key classes using mocks to simulate dependencies and
+verify interactions.
+▪ Include examples of EXPECT_CALL statements and test cases for critical
+functionality and edge cases.
+o Include explanations of:
+▪ How mocks were created and used.
+▪ The test results and how they validate the system.
+o Provide a summary of the testing outcomes and discuss how edge cases and
+potential issues were handled.
+• Reflection on Challenges:
+o Summarize the challenges faced during the project and explain how they were
+addressed
 
 ### NOTICE: 
 1. Inside Main.cpp, make sure change the path of fonts to your own relative path, due to some reasons it can't be properly used if I just put it as assets/fonts...
