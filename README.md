@@ -9,10 +9,10 @@
      - Instructor page
   
 ---------------------------------------------------------------------------------
-3. UML Diagrams  
-• Class Diagrams: Include all classes, attributes, methods, and relationships such as inheritance, aggregation, and composition.  
-• Sequence Diagrams: Show interactions between objects for key system processes.  
-• Use Case Diagrams: Provide a high-level overview of user interactions and system functionality.
+3. UML Diagrams
+- Class Diagrams: Include all classes, attributes, methods, and relationships such as inheritance, aggregation, and composition.  
+- Sequence Diagrams: Show interactions between objects for key system processes.  
+- Use Case Diagrams: Provide a high-level overview of user interactions and system functionality.
 
 5. Documentation  
 • Design Documentation:  
