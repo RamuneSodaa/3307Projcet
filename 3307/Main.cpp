@@ -1,14 +1,11 @@
-#include <iostream>
-#include "Authentication.h"
-#include "CourseManager.h"
-#include "Scheduler.h"
-#include "Student.h"
-#include "Course.h"
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
-#include <algorithm>  // To use std::remove_if for trimming
+#include <iostream>
+#include <chrono>
+#include "Authentication.h"
 
-// Function to trim whitespace from both ends of a string
+// Logo creating prompt: https://chatgpt.com/share/6756e190-0414-8006-8cb6-5458b7d35882
+
 std::string trim(const std::string& str) {
     auto start = str.begin();
     while (start != str.end() && std::isspace(*start)) {
@@ -23,185 +20,166 @@ std::string trim(const std::string& str) {
     return std::string(start, end + 1);
 }
 
-// MAKE SURE to run CMakeLists.txt first, then run Main.cpp here
 int main() {
-    // Create a window with SFML
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Course Enrollment System");
-
-    // Load a font for SFML (use a relative path)
+    sf::RenderWindow window(sf::VideoMode(1200, 600), "Student Center");
     sf::Font font;
 
-    // MAKE SURE to set your path
-    if (!font.loadFromFile("C:\\Users\\Alexf\\Desktop\\3307Projcet\\alex\\3307\\assets\\fonts\\OpenSans-Regular.ttf")) {
+    sf::Image icon;
+    if (icon.loadFromFile("C:\\Users\\Alexf\\Desktop\\3307Projcet\\3307\\assets\\icon.png")) {
+        window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
+    }
+
+    if (!font.loadFromFile("C:\\Users\\Alexf\\Desktop\\3307Projcet\\3307\\assets\\fonts\\OpenSans-Regular.ttf")) {
         std::cerr << "Error loading font.\n";
         return -1;
     }
 
-    // Authentication setup
     Authentication* auth = Authentication::getInstance();
-    auth->addUser("student1", "password123");
+    auth->addUser("XFENG282", "password123");
 
-    // Text fields for user input
-    sf::Text usernameLabel("Username: ", font, 20);
-    usernameLabel.setPosition(50, 50);
-    usernameLabel.setFillColor(sf::Color::Black);
+    sf::Text mfaText("Login to Student Center", font, 35);
+    mfaText.setPosition(100, 100);
+    mfaText.setFillColor(sf::Color::Black);
+    mfaText.setStyle(sf::Text::Bold);
 
-    sf::Text passwordLabel("Password: ", font, 20);
-    passwordLabel.setPosition(50, 100);
+    sf::RectangleShape line(sf::Vector2f(900, 2));
+    line.setPosition(100, 170);
+    line.setFillColor(sf::Color::Black);
+
+    sf::Text userIDLabel("User ID:", font, 24);
+    userIDLabel.setPosition(300, 210);
+    userIDLabel.setFillColor(sf::Color::Black);
+    userIDLabel.setStyle(sf::Text::Bold);
+
+    sf::RectangleShape userIDBackground(sf::Vector2f(350, 30));
+    userIDBackground.setPosition(405, 210);
+    userIDBackground.setFillColor(sf::Color(230, 230, 250));
+    userIDBackground.setOutlineColor(sf::Color::Black);
+    userIDBackground.setOutlineThickness(1);
+
+    sf::Text userIDInput("", font, 24);
+    userIDInput.setPosition(410, 210);
+    userIDInput.setFillColor(sf::Color::Black);
+
+    sf::Text passwordLabel("Password:", font, 24);
+    passwordLabel.setPosition(300, 260);
     passwordLabel.setFillColor(sf::Color::Black);
+    passwordLabel.setStyle(sf::Text::Bold);
 
-    sf::Text usernameInput("", font, 20);
-    usernameInput.setPosition(200, 50);
-    usernameInput.setFillColor(sf::Color::Blue);
+    sf::RectangleShape passwordBackground(sf::Vector2f(325, 30));
+    passwordBackground.setPosition(430, 260);
+    passwordBackground.setFillColor(sf::Color(230, 230, 250));
+    passwordBackground.setOutlineColor(sf::Color::Black);
+    passwordBackground.setOutlineThickness(1);
 
-    sf::Text passwordInput("", font, 20);
-    passwordInput.setPosition(200, 100);
-    passwordInput.setFillColor(sf::Color::Blue);
+    sf::Text passwordInput("", font, 24);
+    passwordInput.setPosition(435, 260);
+    passwordInput.setFillColor(sf::Color::Black);
+
+    sf::RectangleShape loginButton(sf::Vector2f(120, 50));
+    loginButton.setPosition(550, 310);
+    loginButton.setFillColor(sf::Color(128, 0, 128));
+
+    sf::Text loginButtonText("Sign In", font, 24);
+    loginButtonText.setPosition(572, 320);
+    loginButtonText.setFillColor(sf::Color::White);
 
     std::string username = "";
     std::string password = "";
-    bool enteringUsername = true;  // Track which input field is active
+    bool focusOnUsername = true;
 
-    // Login button
-    sf::RectangleShape loginButton(sf::Vector2f(100, 40));
-    loginButton.setPosition(50, 150);
-    loginButton.setFillColor(sf::Color::Green);
+    sf::Text helpText("Need help in login? Click HERE", font, 20);
+    helpText.setPosition(100, 380);
+    helpText.setFillColor(sf::Color::Blue);
 
-    sf::Text loginButtonText("Login", font, 20);
-    loginButtonText.setFillColor(sf::Color::White);
-    loginButtonText.setPosition(60, 160);
+    sf::Text mfaContactText("Have feedback or complains? Click HERE", font, 20);
+    mfaContactText.setPosition(100, 410);
+    mfaContactText.setFillColor(sf::Color::Blue);
 
-    // CourseManager and Student Setup
-    Student student1("S12345", "student1@example.com");
-    CourseManager courseManager;
-    Course* math101 = new Course(101, "Math 101", "Monday 10:00-12:00", 30);
-    Course* physics102 = new Course(102, "Physics 102", "Tuesday 14:00-16:00", 25);
-    courseManager.addCourse(math101);
-    courseManager.addCourse(physics102);
+    // Cursor setup
+    sf::RectangleShape cursor(sf::Vector2f(2, 20)); // Width = 2px, height = text height
+    cursor.setFillColor(sf::Color::Black);
+    bool cursorVisible = true; // Blinking state
+    sf::Clock cursorClock;     // Clock for blinking
 
-    bool isLoggedIn = false;
-
-    // Main loop for GUI
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed)
+            if (event.type == sf::Event::Closed) {
                 window.close();
+            }
 
-            // Handle text entry for login fields
             if (event.type == sf::Event::TextEntered) {
-                if (enteringUsername) {
-                    if (event.text.unicode == '\b' && !username.empty()) {
-                        username.pop_back();  // Handle backspace
-                    } else if (event.text.unicode < 128 && event.text.unicode != '\b') {
-                        username += static_cast<char>(event.text.unicode);
-                    }
-                    usernameInput.setString(username);
-                } else {
-                    if (event.text.unicode == '\b' && !password.empty()) {
-                        password.pop_back();  // Handle backspace
-                    } else if (event.text.unicode < 128 && event.text.unicode != '\b') {
-                        password += static_cast<char>(event.text.unicode);
-                    }
-                    passwordInput.setString(password);
-                }
-            }
-
-            // Handle Enter or Tab key to switch between username and password, or to login
-            if (event.type == sf::Event::KeyPressed) {
-                if (event.key.code == sf::Keyboard::Tab || event.key.code == sf::Keyboard::Enter) {
-                    if (enteringUsername) {
-                        enteringUsername = false;  // Switch to password input
-                    } else if (!enteringUsername && !username.empty() && !password.empty()) {
-                        // If Enter is pressed and both fields are filled, try to log in
-                        std::string trimmedUsername = trim(username);
-                        std::string trimmedPassword = trim(password);
-                        std::cout << "Trying to log in with Username: '" << trimmedUsername << "' and Password: '" << trimmedPassword << "'\n";
-
-                        if (auth->login(trimmedUsername, trimmedPassword)) {
-                            std::cout << "Login successful!\n";
-                            isLoggedIn = true;
-
-                            // Automatically enroll the student in Math 101 for demonstration purposes
-                            bool enrolled = math101->enrollStudent(&student1);
-                            if (enrolled) {
-                                std::cout << "Successfully enrolled in " << math101->getCourseName() << "\n";
-                            } else {
-                                std::cout << "Failed to enroll in " << math101->getCourseName() << ".\n";
-                            }
-                        } else {
-                            std::cerr << "Authentication failed. Please try again.\n";
+                if (event.text.unicode < 128) {
+                    if (event.text.unicode == '\b') { // Handle backspace
+                        if (focusOnUsername && !username.empty()) {
+                            username.pop_back();
+                        } else if (!focusOnUsername && !password.empty()) {
+                            password.pop_back();
+                        }
+                    } else { // Add new character
+                        char enteredChar = static_cast<char>(event.text.unicode);
+                        if (focusOnUsername && username.length() < 20) {
+                            username += enteredChar;
+                        } else if (!focusOnUsername && password.length() < 20) {
+                            password += enteredChar;
                         }
                     }
                 }
+                userIDInput.setString(username);
+                passwordInput.setString(password);
             }
 
-            // Handle button click events
-            if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
-                sf::Vector2i mousePos = sf::Mouse::getPosition(window);
-                std::cout << "Mouse click position: " << mousePos.x << ", " << mousePos.y << std::endl;
-
-                // Handle login button click
-                if (loginButton.getGlobalBounds().contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {
-                    std::string trimmedUsername = trim(username);
-                    std::string trimmedPassword = trim(password);
-                    std::cout << "Login button clicked with Username: '" << trimmedUsername << "' and Password: '" << trimmedPassword << "'\n";
-
-                    if (auth->login(trimmedUsername, trimmedPassword)) {
+            if (event.type == sf::Event::MouseButtonPressed) {
+                sf::Vector2f mousePos = static_cast<sf::Vector2f>(sf::Mouse::getPosition(window));
+                if (userIDBackground.getGlobalBounds().contains(mousePos)) {
+                    focusOnUsername = true;
+                } else if (passwordBackground.getGlobalBounds().contains(mousePos)) {
+                    focusOnUsername = false;
+                } else if (loginButton.getGlobalBounds().contains(mousePos)) {
+                    if (auth->login(trim(username), trim(password))) {
                         std::cout << "Login successful!\n";
-                        isLoggedIn = true;
-
-                        // Automatically enroll the student in Math 101 for demonstration purposes
-                        bool enrolled = math101->enrollStudent(&student1);
-                        if (enrolled) {
-                            std::cout << "Successfully enrolled in " << math101->getCourseName() << "\n";
-                        } else {
-                            std::cout << "Failed to enroll in " << math101->getCourseName() << ".\n";
-                        }
                     } else {
-                        std::cerr << "Authentication failed. Please try again.\n";
+                        std::cerr << "Authentication failed.\n";
                     }
                 }
             }
         }
 
-        // Render GUI elements
-        window.clear(sf::Color::White);
-
-        if (!isLoggedIn) {
-            // Draw login fields
-            window.draw(usernameLabel);
-            window.draw(passwordLabel);
-            window.draw(usernameInput);
-            window.draw(passwordInput);
-            window.draw(loginButton);
-            window.draw(loginButtonText);
+        // Update cursor position
+        if (focusOnUsername) {
+            cursor.setPosition(userIDInput.getPosition().x + userIDInput.getLocalBounds().width + 5, userIDInput.getPosition().y + 5);
         } else {
-            // Display enrolled courses
-            sf::Text enrolledCoursesText("Enrolled Courses:", font, 20);
-            enrolledCoursesText.setPosition(50, 50);
-            enrolledCoursesText.setFillColor(sf::Color::Black);
-            window.draw(enrolledCoursesText);
+            cursor.setPosition(passwordInput.getPosition().x + passwordInput.getLocalBounds().width + 5, passwordInput.getPosition().y + 5);
+        }
 
-            // If the student is enrolled, show the courses
-            int yPosition = 80;
-            for (Student* student : math101->getEnrolledStudents()) {
-                if (student->getStudentID() == student1.getStudentID()) {
-                    sf::Text courseText(math101->getCourseName() + " (" + math101->getSchedule() + ")", font, 20);
-                    courseText.setPosition(50, yPosition);
-                    courseText.setFillColor(sf::Color::Black);
-                    window.draw(courseText);
-                    yPosition += 30;
-                }
-            }
+        // Handle cursor blinking
+        if (cursorClock.getElapsedTime().asMilliseconds() > 500) {
+            cursorVisible = !cursorVisible;
+            cursorClock.restart();
+        }
+
+        window.clear(sf::Color::White);
+        window.draw(mfaText);
+        window.draw(line);
+        window.draw(userIDLabel);
+        window.draw(userIDBackground);
+        window.draw(userIDInput);
+        window.draw(passwordLabel);
+        window.draw(passwordBackground);
+        window.draw(passwordInput);
+        window.draw(loginButton);
+        window.draw(loginButtonText);
+        window.draw(helpText);
+        window.draw(mfaContactText);
+
+        // Draw cursor if visible
+        if (cursorVisible) {
+            window.draw(cursor);
         }
 
         window.display();
     }
-
-    // Clean up
-    delete math101;
-    delete physics102;
 
     return 0;
 }
