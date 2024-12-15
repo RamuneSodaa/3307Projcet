@@ -1,10 +1,12 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <iostream>
-#include <chrono>
+#include <string>
 #include "Authentication.h"
+#include "MainInterface.h"
+#include "Student.h"
 
-// Logo creating prompt: https://chatgpt.com/share/6756e190-0414-8006-8cb6-5458b7d35882
+Student* currentStudent = nullptr;
 
 std::string trim(const std::string& str) {
     auto start = str.begin();
@@ -21,35 +23,32 @@ std::string trim(const std::string& str) {
 }
 
 int main() {
+    Student* currentStudent = nullptr;
+    // Initialize SFML window
     sf::RenderWindow window(sf::VideoMode(1200, 600), "Student Center");
     sf::Font font;
-
-    sf::Image icon;
-    if (icon.loadFromFile("../assets/icon.png")) {
-        window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
-    }
 
     if (!font.loadFromFile("../assets/fonts/OpenSans-Regular.ttf")) {
         std::cerr << "Error loading font.\n";
         return -1;
     }
 
+    // Set up Authentication
     Authentication* auth = Authentication::getInstance();
-    auth->addUser("XFENG282", "password123");
+    auth->addUser("1", "2"); // Example user
 
+    // UI Components
     sf::Text mfaText("Login to Student Center", font, 35);
     mfaText.setPosition(100, 100);
     mfaText.setFillColor(sf::Color::Black);
-    mfaText.setStyle(sf::Text::Bold);
-
-    sf::RectangleShape line(sf::Vector2f(900, 2));
-    line.setPosition(100, 170);
-    line.setFillColor(sf::Color::Black);
 
     sf::Text userIDLabel("User ID:", font, 24);
     userIDLabel.setPosition(300, 210);
     userIDLabel.setFillColor(sf::Color::Black);
-    userIDLabel.setStyle(sf::Text::Bold);
+
+    sf::Text passwordLabel("Password:", font, 24);
+    passwordLabel.setPosition(300, 260);
+    passwordLabel.setFillColor(sf::Color::Black);
 
     sf::RectangleShape userIDBackground(sf::Vector2f(350, 30));
     userIDBackground.setPosition(405, 210);
@@ -57,23 +56,18 @@ int main() {
     userIDBackground.setOutlineColor(sf::Color::Black);
     userIDBackground.setOutlineThickness(1);
 
-    sf::Text userIDInput("", font, 24);
-    userIDInput.setPosition(410, 210);
-    userIDInput.setFillColor(sf::Color::Black);
-
-    sf::Text passwordLabel("Password:", font, 24);
-    passwordLabel.setPosition(300, 260);
-    passwordLabel.setFillColor(sf::Color::Black);
-    passwordLabel.setStyle(sf::Text::Bold);
-
-    sf::RectangleShape passwordBackground(sf::Vector2f(325, 30));
-    passwordBackground.setPosition(430, 260);
+    sf::RectangleShape passwordBackground(sf::Vector2f(350, 30));
+    passwordBackground.setPosition(405, 260);
     passwordBackground.setFillColor(sf::Color(230, 230, 250));
     passwordBackground.setOutlineColor(sf::Color::Black);
     passwordBackground.setOutlineThickness(1);
 
+    sf::Text userIDInput("", font, 24);
+    userIDInput.setPosition(410, 210);
+    userIDInput.setFillColor(sf::Color::Black);
+
     sf::Text passwordInput("", font, 24);
-    passwordInput.setPosition(435, 260);
+    passwordInput.setPosition(410, 260);
     passwordInput.setFillColor(sf::Color::Black);
 
     sf::RectangleShape loginButton(sf::Vector2f(120, 50));
@@ -84,24 +78,25 @@ int main() {
     loginButtonText.setPosition(572, 320);
     loginButtonText.setFillColor(sf::Color::White);
 
-    std::string username = "";
-    std::string password = "";
-    bool focusOnUsername = true;
-
     sf::Text helpText("Need help in login? Click HERE", font, 20);
     helpText.setPosition(100, 380);
     helpText.setFillColor(sf::Color::Blue);
 
-    sf::Text mfaContactText("Have feedback or complains? Click HERE", font, 20);
+    sf::Text mfaContactText("Have feedback or complaints? Click HERE", font, 20);
     mfaContactText.setPosition(100, 410);
     mfaContactText.setFillColor(sf::Color::Blue);
 
-    // Cursor setup
-    sf::RectangleShape cursor(sf::Vector2f(2, 20)); // Width = 2px, height = text height
-    cursor.setFillColor(sf::Color::Black);
-    bool cursorVisible = true; // Blinking state
-    sf::Clock cursorClock;     // Clock for blinking
+    // Variables to store input and focus
+    std::string username = "";
+    std::string password = "";
+    bool focusOnUsername = true;
 
+    sf::RectangleShape cursor(sf::Vector2f(2, 20)); // Blinking cursor
+    cursor.setFillColor(sf::Color::Black);
+    bool cursorVisible = true;
+    sf::Clock cursorClock;
+
+    // Main event loop
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -109,71 +104,90 @@ int main() {
                 window.close();
             }
 
+            // Handle text input
             if (event.type == sf::Event::TextEntered) {
-                if (event.text.unicode < 128) {
-                    if (event.text.unicode == '\b') { // Handle backspace
-                        if (focusOnUsername && !username.empty()) {
-                            username.pop_back();
-                        } else if (!focusOnUsername && !password.empty()) {
-                            password.pop_back();
-                        }
-                    } else { // Add new character
-                        char enteredChar = static_cast<char>(event.text.unicode);
-                        if (focusOnUsername && username.length() < 20) {
-                            username += enteredChar;
-                        } else if (!focusOnUsername && password.length() < 20) {
-                            password += enteredChar;
-                        }
+                if (event.text.unicode >= 32 && event.text.unicode <= 126) { // Printable characters
+                    char enteredChar = static_cast<char>(event.text.unicode);
+
+                    if (focusOnUsername && username.length() < 20) {
+                        username += enteredChar;
+                    } else if (!focusOnUsername && password.length() < 20) {
+                        password += enteredChar;
                     }
+
+                    userIDInput.setString(username);
+                    passwordInput.setString(password);
                 }
-                userIDInput.setString(username);
-                passwordInput.setString(password);
+
+                // Handle backspace
+                if (event.text.unicode == '\b') { // Backspace key
+                    if (focusOnUsername && !username.empty()) {
+                        username.pop_back();
+                    } else if (!focusOnUsername && !password.empty()) {
+                        password.pop_back();
+                    }
+
+                    userIDInput.setString(username);
+                    passwordInput.setString(password);
+                }
             }
 
+            // Handle tab switching focus
+            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Tab) {
+                focusOnUsername = !focusOnUsername; // Toggle focus between username and password
+            }
+
+            // Handle mouse clicks
             if (event.type == sf::Event::MouseButtonPressed) {
                 sf::Vector2f mousePos = static_cast<sf::Vector2f>(sf::Mouse::getPosition(window));
+
                 if (userIDBackground.getGlobalBounds().contains(mousePos)) {
                     focusOnUsername = true;
                 } else if (passwordBackground.getGlobalBounds().contains(mousePos)) {
                     focusOnUsername = false;
                 } else if (loginButton.getGlobalBounds().contains(mousePos)) {
                     if (auth->login(trim(username), trim(password))) {
-                        std::cout << "Login successful!\n";
+                        std::cout << "Login successful for user: " << username << "\n";
+                        currentStudent = new Student(1, username, username + "@example.com", "active");
+                        window.close();
+                        if (!showMainMenu()) {
+                            std::cerr << "Error: Could not display Main Menu.\n";
+                        }
+                        delete currentStudent;
+                        currentStudent = nullptr;
                     } else {
-                        std::cerr << "Authentication failed.\n";
+                        std::cerr << "Invalid credentials. Please try again.\n";
                     }
                 }
             }
         }
 
-        // Update cursor position
+        // Cursor blinking logic
         if (focusOnUsername) {
             cursor.setPosition(userIDInput.getPosition().x + userIDInput.getLocalBounds().width + 5, userIDInput.getPosition().y + 5);
         } else {
             cursor.setPosition(passwordInput.getPosition().x + passwordInput.getLocalBounds().width + 5, passwordInput.getPosition().y + 5);
         }
 
-        // Handle cursor blinking
         if (cursorClock.getElapsedTime().asMilliseconds() > 500) {
             cursorVisible = !cursorVisible;
             cursorClock.restart();
         }
 
+        // Render the window
         window.clear(sf::Color::White);
         window.draw(mfaText);
-        window.draw(line);
         window.draw(userIDLabel);
-        window.draw(userIDBackground);
-        window.draw(userIDInput);
         window.draw(passwordLabel);
+        window.draw(userIDBackground);
         window.draw(passwordBackground);
+        window.draw(userIDInput);
         window.draw(passwordInput);
         window.draw(loginButton);
         window.draw(loginButtonText);
         window.draw(helpText);
         window.draw(mfaContactText);
 
-        // Draw cursor if visible
         if (cursorVisible) {
             window.draw(cursor);
         }

@@ -10,7 +10,7 @@
 Authentication* auth = Authentication::getInstance();
 CourseManager courseManager;
 Scheduler scheduler("Fall 2024");
-Student* currentStudent = nullptr;
+extern Student* currentStudent;
 
 // Login functionality
 void login() {
@@ -113,7 +113,6 @@ void manageEnrollment() {
     }
 }
 
-// Main menu
 bool showMainMenu() {
     if (!currentStudent) {
         std::cout << "Please log in first.\n";
@@ -131,17 +130,15 @@ bool showMainMenu() {
         std::cin >> choice;
 
         switch (choice) {
-            case 1: browseCourses(); break;
-            case 2: searchCourses(); break;
-            case 3: viewProfile(); break;
-            case 4: manageEnrollment(); break;
-            case 5: 
-                std::cout << "Logging out...\n"; 
-                delete currentStudent; 
-                currentStudent = nullptr;
-                return true;
-            default:
-                std::cout << "Invalid choice. Try again.\n";
+        case 1: browseCourses(); break;
+        case 2: searchCourses(); break;
+        case 3: viewProfile(); break;
+        case 4: manageEnrollment(); break;
+        case 5:
+            std::cout << "Logging out...\n";
+            return true;
+        default:
+            std::cout << "Invalid choice. Try again.\n";
         }
     } while (true);
 }
