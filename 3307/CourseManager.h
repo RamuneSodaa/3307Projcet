@@ -1,5 +1,8 @@
 #ifndef COURSEMANAGER_H
 #define COURSEMANAGER_H
+#include <vector>
+#include <SFML/Graphics.hpp>
+#include "Course.h"
 
 #include <vector>
 #include "Course.h"
@@ -13,6 +16,8 @@ public:
     CourseManager();
     ~CourseManager();
 
+    void initializeCourses();
+
     // Course management methods
     void addCourse(Course* course);
     bool removeCourse(int courseID);
@@ -20,7 +25,9 @@ public:
 
     // Utility methods
     void browseCourses() const;
+    void browseCoursesUI(sf::RenderWindow& window, sf::Font& font) const;
     void displayCourseDetails(int courseID) const;
+    const std::vector<Course*>& getCourseList() const;
 
     // Advanced feature
     std::vector<Course*> filterCoursesByDepartment(const std::string& department) const;

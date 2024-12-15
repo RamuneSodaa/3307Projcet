@@ -3,7 +3,14 @@
 #include <algorithm>
 
 // Constructor
-CourseManager::CourseManager() {}
+CourseManager::CourseManager() {
+    // Initialize the course list with some default courses
+    courseList.push_back(new Course(101, "Mathematics", "Mon-Wed", 30));
+    courseList.push_back(new Course(102, "Physics", "Tue-Thu", 25));
+    courseList.push_back(new Course(103, "Chemistry", "Mon-Fri", 20));
+
+    std::cout << "CourseManager initialized with default courses.\n";
+}
 
 // Destructor
 CourseManager::~CourseManager() {
@@ -82,4 +89,69 @@ std::vector<Course*> CourseManager::filterCoursesByDepartment(const std::string&
         }
     }
     return filteredCourses;
+}
+
+// Expose the course list
+const std::vector<Course*>& CourseManager::getCourseList() const {
+    return courseList;
+}
+
+void CourseManager::initializeCourses() {
+    courseList.push_back(new Course(101, "Mathematics", "Mon-Wed", 30));
+    courseList.push_back(new Course(102, "Physics", "Tue-Thu", 25));
+    courseList.push_back(new Course(103, "Chemistry", "Mon-Fri", 20));
+
+    std::cout << "Courses initialized.\n";
+}
+
+// Implement browseCoursesUI
+void CourseManager::browseCoursesUI(sf::RenderWindow& window, sf::Font& font) const {
+    sf::RenderWindow browseWindow(sf::VideoMode(800, 600), "Browse Courses");
+    std::vector<Course*> courses = getCourseList();
+    std::vector<sf::Text> courseTexts;
+
+    // Prepare text for each course
+    int yPosition = 50;
+    for (const auto& course : courses) {
+        sf::Text courseText;
+        courseText.setFont(font);
+        courseText.setString("ID: " + std::to_string(course->getCourseID()) + " Name: " + course->getCourseName());
+        courseText.setCharacterSize(20);
+        courseText.setPosition(50, yPosition);
+        courseText.setFillColor(sf::Color::Black);
+        courseTexts.push_back(courseText);
+        yPosition += 30; // Adjust spacing
+    }
+
+    // Scroll controls
+    int scrollOffset = 0;
+
+    // Main loop
+    while (browseWindow.isOpen()) {
+        sf::Event event;
+        while (browseWindow.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                browseWindow.close();
+            }
+
+            if (event.type == sf::Event::KeyPressed) {
+                if (event.key.code == sf::Keyboard::Up) {
+                    scrollOffset = std::max(0, scrollOffset - 20); // Scroll up
+                } else if (event.key.code == sf::Keyboard::Down) {
+                    scrollOffset += 20; // Scroll down
+                }
+            }
+        }
+
+        browseWindow.clear(sf::Color::White);
+
+        // Draw course texts
+        for (auto& courseText : courseTexts) {
+            courseText.move(0, -scrollOffset);
+            browseWindow.draw(courseText);
+            courseText.move(0, scrollOffset); // Reset position for future draws
+        }
+
+        browseWindow.display();
+    }
 }

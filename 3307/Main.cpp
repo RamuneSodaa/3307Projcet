@@ -5,6 +5,7 @@
 #include "Authentication.h"
 #include "MainInterface.h"
 #include "Student.h"
+#include "CourseManager.h"
 
 Student* currentStudent = nullptr;
 
@@ -23,11 +24,10 @@ std::string trim(const std::string& str) {
 }
 
 int main() {
-    Student* currentStudent = nullptr;
     // Initialize SFML window
     sf::RenderWindow window(sf::VideoMode(1200, 600), "Student Center");
     sf::Font font;
-
+    CourseManager courseManager;
     if (!font.loadFromFile("../assets/fonts/OpenSans-Regular.ttf")) {
         std::cerr << "Error loading font.\n";
         return -1;
@@ -96,6 +96,7 @@ int main() {
     bool cursorVisible = true;
     sf::Clock cursorClock;
 
+
     // Main event loop
     while (window.isOpen()) {
         sf::Event event;
@@ -150,6 +151,10 @@ int main() {
                         std::cout << "Login successful for user: " << username << "\n";
                         currentStudent = new Student(1, username, username + "@example.com", "active");
                         window.close();
+                        // Initialize course manager
+                        courseManager.initializeCourses();
+                        // Call browseCourses before showing the main menu
+                        courseManager.browseCoursesUI(window, font);
                         if (!showMainMenu()) {
                             std::cerr << "Error: Could not display Main Menu.\n";
                         }

@@ -11,4 +11,5 @@ void browseCourses();
 void searchCourses();
 void viewProfile();
 void manageEnrollment();
+void logout();
 #endif // MAININTERFACE_H
