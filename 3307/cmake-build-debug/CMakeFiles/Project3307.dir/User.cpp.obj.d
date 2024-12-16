@@ -1,6 +1,6 @@
 CMakeFiles/Project3307.dir/User.cpp.obj: \
- C:\Users\Alexf\Desktop\3307Projcet\3307\User.cpp \
- C:\Users\Alexf\Desktop\3307Projcet\3307\User.h \
+ C:\Users\Alexf\Desktop\CourseCoordinator\3307\User.cpp \
+ C:\Users\Alexf\Desktop\CourseCoordinator\3307\User.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \

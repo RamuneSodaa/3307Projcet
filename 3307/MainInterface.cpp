@@ -6,31 +6,182 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <string>
+#include <algorithm> // for std::max
+#include <cctype>
 
-// Shared objects
-Authentication* auth = Authentication::getInstance();
-CourseManager courseManager;
-Scheduler scheduler("Fall 2024");
+// External variables (defined in main.cpp)
 extern Student* currentStudent;
+extern Authentication* auth;
+extern CourseManager courseManager;
+extern Scheduler scheduler;
 
-// Login functionality
-void login() {
-    std::string username, password;
-    std::cout << "\n--- Login ---\n";
-    std::cout << "Username: ";
-    std::cin >> username;
-    std::cout << "Password: ";
-    std::cin >> password;
-
-    if (auth->login(username, password)) {
-        currentStudent = new Student(1, username, username + "@example.com", "active");
-        std::cout << "Login successful! Welcome, " << username << ".\n";
-    } else {
-        std::cout << "Invalid credentials. Please try again.\n";
+// Utility function to trim whitespace
+static std::string trim(const std::string& str) {
+    auto start = str.begin();
+    while (start != str.end() && std::isspace((unsigned char)*start)) {
+        start++;
     }
+
+    auto end = str.end();
+    do {
+        end--;
+    } while (std::distance(start, end) > 0 && std::isspace((unsigned char)*end));
+
+    return std::string(start, end + 1);
 }
 
-extern CourseManager courseManager;
+bool showLoginPage() {
+    sf::RenderWindow window(sf::VideoMode(1200, 600), "Student Center - Login");
+    sf::Font font;
+    if (!font.loadFromFile("../assets/fonts/OpenSans-Regular.ttf")) {
+        std::cerr << "Error loading font.\n";
+        return false;
+    }
+
+    sf::Text title("Login to Student Center", font, 35);
+    title.setPosition(100, 100);
+    title.setFillColor(sf::Color::Black);
+    title.setStyle(sf::Text::Bold);
+
+    sf::RectangleShape line(sf::Vector2f(900, 2));
+    line.setPosition(100, 170);
+    line.setFillColor(sf::Color::Black);
+
+    sf::Text userIDLabel("User ID:", font, 24);
+    userIDLabel.setPosition(320, 210);
+    userIDLabel.setFillColor(sf::Color::Black);
+    userIDLabel.setStyle(sf::Text::Bold);
+
+    sf::RectangleShape userIDBackground(sf::Vector2f(325, 30));
+    userIDBackground.setPosition(430, 210);
+    userIDBackground.setFillColor(sf::Color(230, 230, 250));
+    userIDBackground.setOutlineColor(sf::Color::Black);
+    userIDBackground.setOutlineThickness(1);
+
+    sf::Text userIDInput("", font, 24);
+    userIDInput.setPosition(435, 210);
+    userIDInput.setFillColor(sf::Color::Black);
+
+    sf::Text passwordLabel("Password:", font, 24);
+    passwordLabel.setPosition(300, 260);
+    passwordLabel.setFillColor(sf::Color::Black);
+    passwordLabel.setStyle(sf::Text::Bold);
+
+    sf::RectangleShape passwordBackground(sf::Vector2f(325, 30));
+    passwordBackground.setPosition(430, 260);
+    passwordBackground.setFillColor(sf::Color(230, 230, 250));
+    passwordBackground.setOutlineColor(sf::Color::Black);
+    passwordBackground.setOutlineThickness(1);
+
+    sf::Text passwordInput("", font, 24);
+    passwordInput.setPosition(435, 260);
+    passwordInput.setFillColor(sf::Color::Black);
+
+    sf::RectangleShape loginButton(sf::Vector2f(120, 50));
+    loginButton.setPosition(550, 310);
+    loginButton.setFillColor(sf::Color(128, 0, 128));
+
+    sf::Text loginButtonText("Sign In", font, 24);
+    loginButtonText.setPosition(572, 320);
+    loginButtonText.setFillColor(sf::Color::White);
+
+    std::string username;
+    std::string password;
+    bool focusOnUsername = true;
+
+    sf::RectangleShape cursor(sf::Vector2f(1, 20));
+    cursor.setFillColor(sf::Color::Black);
+    bool cursorVisible = true;
+    sf::Clock cursorClock;
+
+    while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                window.close();
+                return false;
+            }
+
+            if (event.type == sf::Event::TextEntered) {
+                if (event.text.unicode < 128) {
+                    if (event.text.unicode == '\b') {
+                        // Backspace
+                        if (focusOnUsername && !username.empty()) {
+                            username.pop_back();
+                        } else if (!focusOnUsername && !password.empty()) {
+                            password.pop_back();
+                        }
+                    } else {
+                        char c = static_cast<char>(event.text.unicode);
+                        if (!std::iscntrl((unsigned char)c)) {
+                            if (focusOnUsername && username.size() < 20) {
+                                username += c;
+                            } else if (!focusOnUsername && password.size() < 20) {
+                                password += c;
+                            }
+                        }
+                    }
+                    userIDInput.setString(username);
+                    passwordInput.setString(password);
+                }
+            }
+
+            if (event.type == sf::Event::MouseButtonPressed) {
+                sf::Vector2f mousePos = (sf::Vector2f)sf::Mouse::getPosition(window);
+                if (userIDBackground.getGlobalBounds().contains(mousePos)) {
+                    focusOnUsername = true;
+                } else if (passwordBackground.getGlobalBounds().contains(mousePos)) {
+                    focusOnUsername = false;
+                } else if (loginButton.getGlobalBounds().contains(mousePos)) {
+                    // Attempt login
+                    if (auth->login(trim(username), trim(password))) {
+                        std::cout << "Login successful!\n";
+                        currentStudent = new Student(1, trim(username), trim(username) + "@example.com", "active");
+                        window.close();
+                        return true;
+                    } else {
+                        std::cerr << "Authentication failed.\n";
+                    }
+                }
+            }
+        }
+
+        // Cursor blinking
+        if (cursorClock.getElapsedTime().asMilliseconds() > 500) {
+            cursorVisible = !cursorVisible;
+            cursorClock.restart();
+        }
+
+        // Update cursor position
+        if (focusOnUsername) {
+            cursor.setPosition(userIDInput.getPosition().x + userIDInput.getLocalBounds().width + 5,
+                               userIDInput.getPosition().y + 5);
+        } else {
+            cursor.setPosition(passwordInput.getPosition().x + passwordInput.getLocalBounds().width + 5,
+                               passwordInput.getPosition().y + 5);
+        }
+
+        window.clear(sf::Color::White);
+        window.draw(title);
+        window.draw(line);
+        window.draw(userIDLabel);
+        window.draw(userIDBackground);
+        window.draw(userIDInput);
+        window.draw(passwordLabel);
+        window.draw(passwordBackground);
+        window.draw(passwordInput);
+        window.draw(loginButton);
+        window.draw(loginButtonText);
+
+        if (cursorVisible) {
+            window.draw(cursor);
+        }
+
+        window.display();
+    }
+
+    return false;
+}
 
 void browseCourses() {
     sf::RenderWindow browseWindow(sf::VideoMode(800, 600), "Browse Courses");
@@ -40,12 +191,10 @@ void browseCourses() {
         return;
     }
 
-    std::vector<Course*> courses = courseManager.getCourseList(); // Assuming getCourseList() provides access to courses
+    std::vector<Course*> courses = courseManager.getCourseList();
     std::vector<sf::Text> courseTexts;
-
-    // Prepare text for each course
     int yPosition = 50;
-    for (const auto& course : courses) {
+    for (auto* course : courses) {
         sf::Text courseText;
         courseText.setFont(font);
         courseText.setString("ID: " + std::to_string(course->getCourseID()) + " Name: " + course->getCourseName());
@@ -53,13 +202,10 @@ void browseCourses() {
         courseText.setPosition(50, yPosition);
         courseText.setFillColor(sf::Color::Black);
         courseTexts.push_back(courseText);
-        yPosition += 30; // Adjust spacing
+        yPosition += 30;
     }
 
-    // Scroll controls
     int scrollOffset = 0;
-
-    // Main loop
     while (browseWindow.isOpen()) {
         sf::Event event;
         while (browseWindow.pollEvent(event)) {
@@ -69,28 +215,23 @@ void browseCourses() {
 
             if (event.type == sf::Event::KeyPressed) {
                 if (event.key.code == sf::Keyboard::Up) {
-                    scrollOffset = std::max(0, scrollOffset - 20); // Scroll up
+                    scrollOffset = std::max(0, scrollOffset - 20);
                 } else if (event.key.code == sf::Keyboard::Down) {
-                    scrollOffset += 20; // Scroll down
+                    scrollOffset += 20;
                 }
             }
         }
 
         browseWindow.clear(sf::Color::White);
-
-        // Draw course texts
         for (auto& courseText : courseTexts) {
             courseText.move(0, -scrollOffset);
             browseWindow.draw(courseText);
-            courseText.move(0, scrollOffset); // Reset position for future draws
+            courseText.move(0, scrollOffset);
         }
-
         browseWindow.display();
     }
 }
 
-
-// Search courses by keyword
 void searchCourses() {
     std::string keyword;
     std::cout << "\n--- Search Courses ---\n";
@@ -111,7 +252,6 @@ void searchCourses() {
     }
 }
 
-// View student's profile
 void viewProfile() {
     if (!currentStudent) {
         std::cout << "No student logged in.\n";
@@ -125,19 +265,19 @@ void viewProfile() {
     currentStudent->listCourses();
 }
 
-// Manage enrollment
 void manageEnrollment() {
     if (!currentStudent) {
         std::cout << "No student logged in.\n";
         return;
     }
 
-    int choice;
     std::cout << "\n--- Manage Enrollment ---\n";
     std::cout << "1. Enroll in a course\n";
     std::cout << "2. Drop a course\n";
     std::cout << "3. View draft schedule\n";
     std::cout << "4. Finalize schedule\n";
+
+    int choice;
     std::cin >> choice;
 
     if (choice == 1) {
@@ -167,33 +307,36 @@ void manageEnrollment() {
     }
 }
 
-// Show the main graphical page
+bool showMainMenu() {
+    if (!currentStudent) {
+        std::cerr << "Error: No logged-in student available for Main Menu.\n";
+        return false;
+    }
+
+    showMainPage();
+    return true;
+}
+
 void showMainPage() {
     if (!currentStudent) {
         std::cerr << "Error: No logged-in student available for Main Page.\n";
         return;
     }
 
-    // Create SFML window
     sf::RenderWindow window(sf::VideoMode(800, 600), "Student Center - Main Page");
-
-    // Load font
     sf::Font font;
     if (!font.loadFromFile("../assets/fonts/OpenSans-Regular.ttf")) {
         std::cerr << "Error loading font.\n";
         return;
     }
 
-    // Title
     sf::Text title("Main Menu", font, 40);
     title.setPosition(300, 50);
     title.setFillColor(sf::Color::Black);
 
-    // Buttons
     sf::RectangleShape browseButton(sf::Vector2f(200, 50));
     browseButton.setPosition(300, 150);
     browseButton.setFillColor(sf::Color(128, 0, 128));
-
     sf::Text browseText("Browse Courses", font, 24);
     browseText.setPosition(320, 160);
     browseText.setFillColor(sf::Color::White);
@@ -201,7 +344,6 @@ void showMainPage() {
     sf::RectangleShape searchButton(sf::Vector2f(200, 50));
     searchButton.setPosition(300, 220);
     searchButton.setFillColor(sf::Color(128, 0, 128));
-
     sf::Text searchText("Search Courses", font, 24);
     searchText.setPosition(320, 230);
     searchText.setFillColor(sf::Color::White);
@@ -209,7 +351,6 @@ void showMainPage() {
     sf::RectangleShape profileButton(sf::Vector2f(200, 50));
     profileButton.setPosition(300, 290);
     profileButton.setFillColor(sf::Color(128, 0, 128));
-
     sf::Text profileText("View Profile", font, 24);
     profileText.setPosition(320, 300);
     profileText.setFillColor(sf::Color::White);
@@ -217,12 +358,10 @@ void showMainPage() {
     sf::RectangleShape logoutButton(sf::Vector2f(200, 50));
     logoutButton.setPosition(300, 360);
     logoutButton.setFillColor(sf::Color(128, 0, 128));
-
     sf::Text logoutText("Logout", font, 24);
     logoutText.setPosition(350, 370);
     logoutText.setFillColor(sf::Color::White);
 
-    // Main event loop
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -231,7 +370,7 @@ void showMainPage() {
             }
 
             if (event.type == sf::Event::MouseButtonPressed) {
-                sf::Vector2f mousePos = static_cast<sf::Vector2f>(sf::Mouse::getPosition(window));
+                sf::Vector2f mousePos = (sf::Vector2f)sf::Mouse::getPosition(window);
 
                 if (browseButton.getGlobalBounds().contains(mousePos)) {
                     browseCourses();
@@ -260,23 +399,4 @@ void showMainPage() {
         window.draw(logoutText);
         window.display();
     }
-}
-
-// Update showMainMenu to call showMainPage
-bool showMainMenu() {
-    if (!currentStudent) {
-        std::cerr << "Error: No logged-in student available for Main Menu.\n";
-        return false;
-    }
-
-    showMainPage();
-    return true;
-}
-
-// Logout functionality
-void logout(sf::RenderWindow& window) {
-    std::cout << "Logging out...\n";
-    delete currentStudent; // Free the memory
-    currentStudent = nullptr; // Reset the pointer
-    window.close(); // Close the main menu window
 }

@@ -56,10 +56,10 @@ RM = "D:\CLion 2024.1.4\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Alexf\Desktop\3307Projcet\3307
+CMAKE_SOURCE_DIR = C:\Users\Alexf\Desktop\CourseCoordinator\3307
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Alexf\Desktop\CourseCoordinator\3307\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug\CMakeFiles C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Alexf\Desktop\CourseCoordinator\3307\cmake-build-debug\CMakeFiles C:\Users\Alexf\Desktop\CourseCoordinator\3307\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Alexf\Desktop\CourseCoordinator\3307\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -248,6 +248,30 @@ Main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/Main.cpp.s
 .PHONY : Main.cpp.s
 
+MainInterface.obj: MainInterface.cpp.obj
+.PHONY : MainInterface.obj
+
+# target to build an object file
+MainInterface.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/MainInterface.cpp.obj
+.PHONY : MainInterface.cpp.obj
+
+MainInterface.i: MainInterface.cpp.i
+.PHONY : MainInterface.i
+
+# target to preprocess a source file
+MainInterface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/MainInterface.cpp.i
+.PHONY : MainInterface.cpp.i
+
+MainInterface.s: MainInterface.cpp.s
+.PHONY : MainInterface.s
+
+# target to generate assembly for a file
+MainInterface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/MainInterface.cpp.s
+.PHONY : MainInterface.cpp.s
+
 PrerequisiteChecker.obj: PrerequisiteChecker.cpp.obj
 .PHONY : PrerequisiteChecker.obj
 
@@ -392,6 +416,9 @@ help:
 	@echo ... Main.obj
 	@echo ... Main.i
 	@echo ... Main.s
+	@echo ... MainInterface.obj
+	@echo ... MainInterface.i
+	@echo ... MainInterface.s
 	@echo ... PrerequisiteChecker.obj
 	@echo ... PrerequisiteChecker.i
 	@echo ... PrerequisiteChecker.s

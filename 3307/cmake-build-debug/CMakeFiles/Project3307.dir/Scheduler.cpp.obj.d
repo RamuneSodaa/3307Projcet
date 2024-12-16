@@ -1,6 +1,6 @@
 CMakeFiles/Project3307.dir/Scheduler.cpp.obj: \
- C:\Users\Alexf\Desktop\3307Projcet\3307\Scheduler.cpp \
- C:\Users\Alexf\Desktop\3307Projcet\3307\Scheduler.h \
+ C:\Users\Alexf\Desktop\CourseCoordinator\3307\Scheduler.cpp \
+ C:\Users\Alexf\Desktop\CourseCoordinator\3307\Scheduler.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -61,7 +61,7 @@ CMakeFiles/Project3307.dir/Scheduler.cpp.obj: \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uses_allocator.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uses_allocator_args.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tuple \
- C:\Users\Alexf\Desktop\3307Projcet\3307\Course.h \
+ C:\Users\Alexf\Desktop\CourseCoordinator\3307\Course.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stringfwd.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/char_traits.h \
@@ -112,8 +112,8 @@ CMakeFiles/Project3307.dir/Scheduler.cpp.obj: \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tempbuf.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_algorithm_defs.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/execution_defs.h \
- C:\Users\Alexf\Desktop\3307Projcet\3307\PrerequisiteChecker.h \
- C:\Users\Alexf\Desktop\3307Projcet\3307\Student.h \
+ C:\Users\Alexf\Desktop\CourseCoordinator\3307\PrerequisiteChecker.h \
+ C:\Users\Alexf\Desktop\CourseCoordinator\3307\Student.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime \
  D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/time.h \
  D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/sys/timeb.h \

@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Project3307.dir/EnrollmentStrategies.cpp.obj.d"
   "CMakeFiles/Project3307.dir/Main.cpp.obj"
   "CMakeFiles/Project3307.dir/Main.cpp.obj.d"
+  "CMakeFiles/Project3307.dir/MainInterface.cpp.obj"
+  "CMakeFiles/Project3307.dir/MainInterface.cpp.obj.d"
   "CMakeFiles/Project3307.dir/PrerequisiteChecker.cpp.obj"
   "CMakeFiles/Project3307.dir/PrerequisiteChecker.cpp.obj.d"
   "CMakeFiles/Project3307.dir/Scheduler.cpp.obj"

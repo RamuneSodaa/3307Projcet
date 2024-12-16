@@ -58,6 +58,8 @@ add_executable(${PROJECT_NAME}
         Student.cpp
         User.cpp
         SearchEngine.cpp
+        MainInterface.cpp
+        MainInterface.h
 )
 
 # Link SFML libraries and additional dependencies

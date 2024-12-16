@@ -8,23 +8,23 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Project3307">
-				<Option output="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Project3307.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug"/>
+				<Option output="C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Project3307.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/SFML-2.6.2/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include"/>
 					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
 					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
 					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
@@ -34,20 +34,20 @@
 					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 Project3307"/>
-					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 Project3307"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Project3307/fast">
-				<Option output="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Project3307.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug"/>
+				<Option output="C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Project3307.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/SFML-2.6.2/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include"/>
 					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
 					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
 					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
@@ -57,91 +57,97 @@
 					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 Project3307/fast"/>
-					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 Project3307/fast"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/Authentication.cpp">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/Authentication.cpp">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/Authentication.h">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/Authentication.h">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/Course.cpp">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/Course.cpp">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/Course.h">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/Course.h">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/CourseManager.cpp">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/CourseManager.cpp">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/CourseManager.h">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/CourseManager.h">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/EnrollmentStrategies.cpp">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/EnrollmentStrategies.cpp">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/EnrollmentStrategies.h">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/EnrollmentStrategies.h">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/Main.cpp">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/Main.cpp">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/PrerequisiteChecker.cpp">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/MainInterface.cpp">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/PrerequisiteChecker.h">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/MainInterface.h">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/Scheduler.cpp">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/PrerequisiteChecker.cpp">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/Scheduler.h">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/PrerequisiteChecker.h">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/SearchEngine.cpp">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/Scheduler.cpp">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/SearchEngine.h">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/Scheduler.h">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/Student.cpp">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/SearchEngine.cpp">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/Student.h">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/SearchEngine.h">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/User.cpp">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/Student.cpp">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/User.h">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/Student.h">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/CMakeLists.txt">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/User.cpp">
+			<Option target="Project3307"/>
+		</Unit>
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/User.h">
+			<Option target="Project3307"/>
+		</Unit>
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
