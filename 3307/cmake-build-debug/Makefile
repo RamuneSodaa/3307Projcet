@@ -200,6 +200,30 @@ CourseManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/CourseManager.cpp.s
 .PHONY : CourseManager.cpp.s
 
+DatabaseManager.obj: DatabaseManager.cpp.obj
+.PHONY : DatabaseManager.obj
+
+# target to build an object file
+DatabaseManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/DatabaseManager.cpp.obj
+.PHONY : DatabaseManager.cpp.obj
+
+DatabaseManager.i: DatabaseManager.cpp.i
+.PHONY : DatabaseManager.i
+
+# target to preprocess a source file
+DatabaseManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/DatabaseManager.cpp.i
+.PHONY : DatabaseManager.cpp.i
+
+DatabaseManager.s: DatabaseManager.cpp.s
+.PHONY : DatabaseManager.s
+
+# target to generate assembly for a file
+DatabaseManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/DatabaseManager.cpp.s
+.PHONY : DatabaseManager.cpp.s
+
 EnrollmentStrategies.obj: EnrollmentStrategies.cpp.obj
 .PHONY : EnrollmentStrategies.obj
 
@@ -223,6 +247,30 @@ EnrollmentStrategies.s: EnrollmentStrategies.cpp.s
 EnrollmentStrategies.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/EnrollmentStrategies.cpp.s
 .PHONY : EnrollmentStrategies.cpp.s
+
+LoginInterface.obj: LoginInterface.cpp.obj
+.PHONY : LoginInterface.obj
+
+# target to build an object file
+LoginInterface.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/LoginInterface.cpp.obj
+.PHONY : LoginInterface.cpp.obj
+
+LoginInterface.i: LoginInterface.cpp.i
+.PHONY : LoginInterface.i
+
+# target to preprocess a source file
+LoginInterface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/LoginInterface.cpp.i
+.PHONY : LoginInterface.cpp.i
+
+LoginInterface.s: LoginInterface.cpp.s
+.PHONY : LoginInterface.s
+
+# target to generate assembly for a file
+LoginInterface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/LoginInterface.cpp.s
+.PHONY : LoginInterface.cpp.s
 
 Main.obj: Main.cpp.obj
 .PHONY : Main.obj
@@ -248,29 +296,53 @@ Main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/Main.cpp.s
 .PHONY : Main.cpp.s
 
-MainInterface.obj: MainInterface.cpp.obj
-.PHONY : MainInterface.obj
+MainMenuInterface.obj: MainMenuInterface.cpp.obj
+.PHONY : MainMenuInterface.obj
 
 # target to build an object file
-MainInterface.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/MainInterface.cpp.obj
-.PHONY : MainInterface.cpp.obj
+MainMenuInterface.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/MainMenuInterface.cpp.obj
+.PHONY : MainMenuInterface.cpp.obj
 
-MainInterface.i: MainInterface.cpp.i
-.PHONY : MainInterface.i
+MainMenuInterface.i: MainMenuInterface.cpp.i
+.PHONY : MainMenuInterface.i
 
 # target to preprocess a source file
-MainInterface.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/MainInterface.cpp.i
-.PHONY : MainInterface.cpp.i
+MainMenuInterface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/MainMenuInterface.cpp.i
+.PHONY : MainMenuInterface.cpp.i
 
-MainInterface.s: MainInterface.cpp.s
-.PHONY : MainInterface.s
+MainMenuInterface.s: MainMenuInterface.cpp.s
+.PHONY : MainMenuInterface.s
 
 # target to generate assembly for a file
-MainInterface.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/MainInterface.cpp.s
-.PHONY : MainInterface.cpp.s
+MainMenuInterface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/MainMenuInterface.cpp.s
+.PHONY : MainMenuInterface.cpp.s
+
+NotificationInterface.obj: NotificationInterface.cpp.obj
+.PHONY : NotificationInterface.obj
+
+# target to build an object file
+NotificationInterface.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/NotificationInterface.cpp.obj
+.PHONY : NotificationInterface.cpp.obj
+
+NotificationInterface.i: NotificationInterface.cpp.i
+.PHONY : NotificationInterface.i
+
+# target to preprocess a source file
+NotificationInterface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/NotificationInterface.cpp.i
+.PHONY : NotificationInterface.cpp.i
+
+NotificationInterface.s: NotificationInterface.cpp.s
+.PHONY : NotificationInterface.s
+
+# target to generate assembly for a file
+NotificationInterface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/NotificationInterface.cpp.s
+.PHONY : NotificationInterface.cpp.s
 
 PrerequisiteChecker.obj: PrerequisiteChecker.cpp.obj
 .PHONY : PrerequisiteChecker.obj
@@ -320,30 +392,6 @@ Scheduler.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/Scheduler.cpp.s
 .PHONY : Scheduler.cpp.s
 
-SearchEngine.obj: SearchEngine.cpp.obj
-.PHONY : SearchEngine.obj
-
-# target to build an object file
-SearchEngine.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/SearchEngine.cpp.obj
-.PHONY : SearchEngine.cpp.obj
-
-SearchEngine.i: SearchEngine.cpp.i
-.PHONY : SearchEngine.i
-
-# target to preprocess a source file
-SearchEngine.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/SearchEngine.cpp.i
-.PHONY : SearchEngine.cpp.i
-
-SearchEngine.s: SearchEngine.cpp.s
-.PHONY : SearchEngine.s
-
-# target to generate assembly for a file
-SearchEngine.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/SearchEngine.cpp.s
-.PHONY : SearchEngine.cpp.s
-
 Student.obj: Student.cpp.obj
 .PHONY : Student.obj
 
@@ -392,6 +440,30 @@ User.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/User.cpp.s
 .PHONY : User.cpp.s
 
+sqlite3.obj: sqlite3.c.obj
+.PHONY : sqlite3.obj
+
+# target to build an object file
+sqlite3.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/sqlite3.c.obj
+.PHONY : sqlite3.c.obj
+
+sqlite3.i: sqlite3.c.i
+.PHONY : sqlite3.i
+
+# target to preprocess a source file
+sqlite3.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/sqlite3.c.i
+.PHONY : sqlite3.c.i
+
+sqlite3.s: sqlite3.c.s
+.PHONY : sqlite3.s
+
+# target to generate assembly for a file
+sqlite3.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/sqlite3.c.s
+.PHONY : sqlite3.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -410,30 +482,39 @@ help:
 	@echo ... CourseManager.obj
 	@echo ... CourseManager.i
 	@echo ... CourseManager.s
+	@echo ... DatabaseManager.obj
+	@echo ... DatabaseManager.i
+	@echo ... DatabaseManager.s
 	@echo ... EnrollmentStrategies.obj
 	@echo ... EnrollmentStrategies.i
 	@echo ... EnrollmentStrategies.s
+	@echo ... LoginInterface.obj
+	@echo ... LoginInterface.i
+	@echo ... LoginInterface.s
 	@echo ... Main.obj
 	@echo ... Main.i
 	@echo ... Main.s
-	@echo ... MainInterface.obj
-	@echo ... MainInterface.i
-	@echo ... MainInterface.s
+	@echo ... MainMenuInterface.obj
+	@echo ... MainMenuInterface.i
+	@echo ... MainMenuInterface.s
+	@echo ... NotificationInterface.obj
+	@echo ... NotificationInterface.i
+	@echo ... NotificationInterface.s
 	@echo ... PrerequisiteChecker.obj
 	@echo ... PrerequisiteChecker.i
 	@echo ... PrerequisiteChecker.s
 	@echo ... Scheduler.obj
 	@echo ... Scheduler.i
 	@echo ... Scheduler.s
-	@echo ... SearchEngine.obj
-	@echo ... SearchEngine.i
-	@echo ... SearchEngine.s
 	@echo ... Student.obj
 	@echo ... Student.i
 	@echo ... Student.s
 	@echo ... User.obj
 	@echo ... User.i
 	@echo ... User.s
+	@echo ... sqlite3.obj
+	@echo ... sqlite3.i
+	@echo ... sqlite3.s
 .PHONY : help
 
 

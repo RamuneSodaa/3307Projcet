@@ -1,36 +1,31 @@
-#ifndef COURSEMANAGER_H
-#define COURSEMANAGER_H
-#include <vector>
-#include <SFML/Graphics.hpp>
-#include "Course.h"
+#ifndef COURSE_MANAGER_H
+#define COURSE_MANAGER_H
 
 #include <vector>
+#include <string>
 #include "Course.h"
 
 class CourseManager {
-private:
-    std::vector<Course*> courseList; // Stores all available courses
-
 public:
-    // Constructor and Destructor
     CourseManager();
     ~CourseManager();
 
-    void initializeCourses();
-
-    // Course management methods
     void addCourse(Course* course);
     bool removeCourse(int courseID);
-    Course* searchCourse(int courseID) const;
 
-    // Utility methods
+    // New unified search method:
+    // If query is numeric, search by ID.
+    // If query is non-numeric, search by partial name.
+    std::vector<Course*> searchCourses(const std::string& query) const;
+
     void browseCourses() const;
-    void browseCoursesUI(sf::RenderWindow& window, sf::Font& font) const;
     void displayCourseDetails(int courseID) const;
+
+    std::vector<Course*> filterCoursesByDepartment(const std::string& department) const;
     const std::vector<Course*>& getCourseList() const;
 
-    // Advanced feature
-    std::vector<Course*> filterCoursesByDepartment(const std::string& department) const;
+private:
+    std::vector<Course*> courseList;
 };
 
-#endif // COURSEMANAGER_H
+#endif // COURSE_MANAGER_H

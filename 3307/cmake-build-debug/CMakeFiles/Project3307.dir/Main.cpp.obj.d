@@ -157,23 +157,7 @@ CMakeFiles/Project3307.dir/Main.cpp.obj: \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Config.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/Clock.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/Export.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/Time.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/Err.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/FileInputStream.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/InputStream.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/NonCopyable.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/Lock.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/MemoryInputStream.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/Mutex.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/Sleep.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/String.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/Utf.hpp \
+ C:\Users\Alexf\Desktop\CourseCoordinator\3307\Course.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/algorithm \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algo.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/algorithmfwd.h \
@@ -182,83 +166,10 @@ CMakeFiles/Project3307.dir/Main.cpp.obj: \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tempbuf.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_algorithm_defs.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/execution_defs.h \
- D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/locale \
- D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets_nonio.h \
- D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime \
- D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/time_members.h \
- D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/messages_members.h \
- D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/codecvt.h \
- D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets_nonio.tcc \
- D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_conv.h \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/Utf.inl \
- D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iterator \
- D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stream_iterator.h \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/String.inl \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/Thread.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/Thread.inl \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/ThreadLocal.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/ThreadLocalPtr.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/ThreadLocalPtr.inl \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/Vector2.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/Vector2.inl \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/Vector3.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/System/Vector3.inl \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window/Clipboard.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window/Export.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window/Context.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window/GlResource.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window/ContextSettings.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window/Cursor.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window/Event.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window/Joystick.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window/Keyboard.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window/Mouse.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window/Sensor.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window/Touch.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window/VideoMode.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window/Window.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window/WindowBase.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window/Vulkan.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window/WindowHandle.hpp \
- D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h \
- D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/stdint.h \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window/WindowStyle.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/BlendMode.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/Export.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/CircleShape.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/Shape.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/Drawable.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/RenderStates.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/Transform.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/Rect.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/Rect.inl \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/Transformable.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/VertexArray.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/Vertex.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/Color.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/PrimitiveType.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/ConvexShape.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/Font.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/Glyph.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/Texture.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/Image.hpp \
- D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/map \
- D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tree.h \
- D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_map.h \
- D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multimap.h \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/RectangleShape.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/RenderTarget.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/View.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/RenderTexture.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/RenderWindow.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/Shader.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/Glsl.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/Glsl.inl \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/Sprite.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/Text.hpp \
- C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Graphics/VertexBuffer.hpp \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\Course.h \
  C:\Users\Alexf\Desktop\CourseCoordinator\3307\Scheduler.h \
  C:\Users\Alexf\Desktop\CourseCoordinator\3307\PrerequisiteChecker.h \
  C:\Users\Alexf\Desktop\CourseCoordinator\3307\Student.h \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\MainInterface.h
+ D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime \
+ C:\Users\Alexf\Desktop\CourseCoordinator\3307\DatabaseManager.h \
+ C:\Users\Alexf\Desktop\CourseCoordinator\3307\LoginInterface.h \
+ C:\Users\Alexf\Desktop\CourseCoordinator\3307\MainMenuInterface.h

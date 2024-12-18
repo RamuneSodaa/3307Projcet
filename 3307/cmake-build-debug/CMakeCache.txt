@@ -259,6 +259,9 @@ Project3307_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 Project3307_SOURCE_DIR:STATIC=C:/Users/Alexf/Desktop/CourseCoordinator/3307
 
+//The directory containing a CMake configuration file for SFML.
+SFML_DIR:PATH=SFML_DIR-NOTFOUND
+
 
 ########################
 # INTERNAL cache entries
