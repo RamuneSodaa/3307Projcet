@@ -1,6 +1,8 @@
 #include "MainMenuInterface.h"
 #include "Authentication.h"
 #include "Student.h"
+#include "DatabaseManager.h"
+#include "EnrollmentManager.h"
 #include <iostream>
 #include <algorithm>
 #include <cctype>
@@ -75,6 +77,71 @@ void MainMenuInterface::show() {
     logoutText.setPosition(160, 510 + offsetY);
     logoutText.setFillColor(sf::Color::White);
 
+    // Fetch enrollment records from the database for the current student
+    std::vector<EnrollmentRecord> enrollmentRecords = DatabaseManager::getEnrollmentsForStudent(currentStudent->getStudentID());
+
+    float tableStartY = 150.0f;
+    float tableStartX = 400.0f;
+
+    sf::Text tableTitle("Enrolled Courses", font, 30);
+    tableTitle.setFillColor(sf::Color::Black);
+    tableTitle.setPosition(tableStartX, tableStartY);
+
+    // Column headers
+    sf::Text colCourseID("Course ID", font, 20);
+    colCourseID.setFillColor(sf::Color::Black);
+    colCourseID.setPosition(tableStartX, tableStartY + 40);
+
+    sf::Text colCourseName("Course Name", font, 20);
+    colCourseName.setFillColor(sf::Color::Black);
+    colCourseName.setPosition(tableStartX+150, tableStartY + 40);
+
+    sf::Text colEnrollmentDate("Enrollment Date", font, 20);
+    colEnrollmentDate.setFillColor(sf::Color::Black);
+    colEnrollmentDate.setPosition(tableStartX+300, tableStartY + 40);
+
+    // We'll add the drop button to the right of Enrollment Date
+    // Let's say at tableStartX + 480 for spacing
+    sf::Text colAction("Action", font, 20);
+    colAction.setFillColor(sf::Color::Black);
+    colAction.setPosition(tableStartX+480, tableStartY + 40);
+
+    sf::RectangleShape headerLine(sf::Vector2f(650, 2));
+    headerLine.setPosition(tableStartX, tableStartY + 70);
+    headerLine.setFillColor(sf::Color::Black);
+
+    // We'll store drop buttons for each enrollment in a vector
+    struct DropButton {
+        sf::RectangleShape shape;
+        sf::Text text;
+        int courseID;
+    };
+    std::vector<DropButton> dropButtons;
+
+    // Helper function to rebuild drop buttons after changes
+    auto rebuildDropButtons = [&](const std::vector<EnrollmentRecord>& records) {
+        dropButtons.clear();
+        float yPos = tableStartY + 90;
+        for (auto& rec : records) {
+            DropButton db;
+            db.shape.setSize(sf::Vector2f(80, 30));
+            db.shape.setFillColor(sf::Color(128,0,0)); // Red to indicate dropping
+            db.shape.setPosition(tableStartX+480, yPos);
+
+            db.text.setFont(font);
+            db.text.setString("Drop");
+            db.text.setCharacterSize(20);
+            db.text.setFillColor(sf::Color::White);
+            db.text.setPosition(db.shape.getPosition().x + 16, db.shape.getPosition().y + 1);
+            db.courseID = rec.courseID;
+
+            dropButtons.push_back(db);
+            yPos += 30;
+        }
+    };
+
+    rebuildDropButtons(enrollmentRecords);
+
     while (window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -84,20 +151,42 @@ void MainMenuInterface::show() {
 
             if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
                 sf::Vector2f mp(static_cast<float>(event.mouseButton.x), static_cast<float>(event.mouseButton.y));
+
                 if (searchButton.getGlobalBounds().contains(mp)) {
-                    window.close();
+                    // Show search page, don't close main window
                     showSearchPage();
+                    // After returning from search page, refetch enrollments
+                    enrollmentRecords = DatabaseManager::getEnrollmentsForStudent(currentStudent->getStudentID());
+                    rebuildDropButtons(enrollmentRecords);
                 }
+
                 if (logoutButton.getGlobalBounds().contains(mp)) {
                     auth->logout(currentStudent->getUsername());
                     currentStudent = nullptr;
                     window.close();
                     std::cout << "User logged out.\n";
                 }
+
+                // Check if any drop button was clicked
+                for (auto &db : dropButtons) {
+                    if (db.shape.getGlobalBounds().contains(mp)) {
+                        // Drop the course
+                        if (enrollmentManager.dropEnrollment(currentStudent, db.courseID)) {
+                            std::cout << "Dropped course ID: " << db.courseID << "\n";
+                            // Refetch enrollments after dropping
+                            enrollmentRecords = DatabaseManager::getEnrollmentsForStudent(currentStudent->getStudentID());
+                            rebuildDropButtons(enrollmentRecords);
+                            break; // break out after handling one button
+                        } else {
+                            std::cout << "Failed to drop course ID: " << db.courseID << "\n";
+                        }
+                    }
+                }
             }
         }
 
         window.clear(sf::Color::White);
+        // Draw main page elements
         window.draw(title);
         window.draw(line);
         window.draw(picSprite);
@@ -107,6 +196,43 @@ void MainMenuInterface::show() {
         window.draw(searchText);
         window.draw(logoutButton);
         window.draw(logoutText);
+
+        // Draw the enrollment table
+        window.draw(tableTitle);
+        window.draw(colCourseID);
+        window.draw(colCourseName);
+        window.draw(colEnrollmentDate);
+        window.draw(colAction);
+        window.draw(headerLine);
+
+        float yPos = tableStartY + 90;
+        for (size_t i = 0; i < enrollmentRecords.size(); ++i) {
+            const auto& rec = enrollmentRecords[i];
+
+            sf::Text cID(std::to_string(rec.courseID), font, 18);
+            cID.setFillColor(sf::Color::Black);
+            cID.setPosition(tableStartX, yPos);
+
+            sf::Text cName(rec.courseName, font, 18);
+            cName.setFillColor(sf::Color::Black);
+            cName.setPosition(tableStartX+150, yPos);
+
+            sf::Text cDate(rec.enrollmentDate, font, 18);
+            cDate.setFillColor(sf::Color::Black);
+            cDate.setPosition(tableStartX+300, yPos);
+
+            window.draw(cID);
+            window.draw(cName);
+            window.draw(cDate);
+
+            // Draw the drop button
+            auto &db = dropButtons[i];
+            window.draw(db.shape);
+            window.draw(db.text);
+
+            yPos += 30;
+        }
+
         window.display();
     }
 }
@@ -140,13 +266,23 @@ void MainMenuInterface::showSearchPage() {
     bool cursorVisible = true;
     sf::Clock cursorClock;
 
+    // Search button
     sf::RectangleShape doSearchButton(sf::Vector2f(120, 50));
     doSearchButton.setPosition(620, 180);
     doSearchButton.setFillColor(sf::Color(128,0,128));
 
     sf::Text doSearchButtonText("Search", font, 24);
-    doSearchButtonText.setPosition(640, 190);
+    doSearchButtonText.setPosition(645, 190);
     doSearchButtonText.setFillColor(sf::Color::White);
+
+    // Back button
+    sf::RectangleShape backButton(sf::Vector2f(120, 50));
+    backButton.setPosition(760, 180);
+    backButton.setFillColor(sf::Color(128,0,128));
+
+    sf::Text backButtonText("Back", font, 24);
+    backButtonText.setPosition(795, 190);
+    backButtonText.setFillColor(sf::Color::White);
 
     std::string query;
     bool focusOnSearchBar = false;
@@ -184,13 +320,13 @@ void MainMenuInterface::showSearchPage() {
         for (auto c : searchResults) {
             EnrollButton eb;
             eb.shape.setSize(sf::Vector2f(80, 30));
-            eb.shape.setFillColor(sf::Color(0, 128, 0)); // Green
+            eb.shape.setFillColor(sf::Color(0, 128, 0));
             eb.shape.setPosition(900, yPos);
             eb.text.setFont(font);
             eb.text.setString("Enroll");
             eb.text.setCharacterSize(20);
             eb.text.setFillColor(sf::Color::White);
-            eb.text.setPosition(eb.shape.getPosition().x + 10, eb.shape.getPosition().y + 2);
+            eb.text.setPosition(eb.shape.getPosition().x + 13, eb.shape.getPosition().y + 2);
             eb.courseID = c->getCourseID();
 
             enrollButtons.push_back(eb);
@@ -205,6 +341,7 @@ void MainMenuInterface::showSearchPage() {
         while (searchWindow.pollEvent(event)) {
             if (event.type == sf::Event::Closed) {
                 searchWindow.close();
+                return;
             }
 
             if (event.type == sf::Event::TextEntered && focusOnSearchBar) {
@@ -232,6 +369,12 @@ void MainMenuInterface::showSearchPage() {
                 if (doSearchButton.getGlobalBounds().contains(mp)) {
                     // Perform search with the current query
                     performSearch(query);
+                }
+
+                if (backButton.getGlobalBounds().contains(mp)) {
+                    // Close search window and return to the main menu without closing it
+                    searchWindow.close();
+                    return;
                 }
 
                 // Check if enroll button clicked
@@ -265,6 +408,10 @@ void MainMenuInterface::showSearchPage() {
         if (focusOnSearchBar && cursorVisible) searchWindow.draw(cursor);
         searchWindow.draw(doSearchButton);
         searchWindow.draw(doSearchButtonText);
+
+        // Draw back button
+        searchWindow.draw(backButton);
+        searchWindow.draw(backButtonText);
 
         float yPos = resultsStartY;
         if (!searchResults.empty()) {

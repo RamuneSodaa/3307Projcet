@@ -1,14 +1,15 @@
 #include "Student.h"
+#include "Course.h"
 #include <iostream>
 #include <fstream>
 #include <iomanip>
 #include <sstream>
 #include <algorithm>
 
-
 // Constructor
 Student::Student(int id, const std::string& uname, const std::string& email, const std::string& status)
     : studentID(id), username(uname), email(email), status(status) {}
+
 Student::Student(const std::string& id, const std::string& email) {
     try {
         studentID = std::stoi(id);
@@ -55,6 +56,7 @@ std::vector<Course*>& Student::getDraftSchedule() {
 void Student::setStatus(const std::string& newStatus) {
     status = newStatus;
 }
+
 void Student::finalizeEnrollment(Course* course) {
     if (!course) {
         std::cerr << "Cannot finalize enrollment for a null course.\n";
@@ -101,7 +103,7 @@ void Student::addToDraftSchedule(Course* course) {
     std::cout << "Course " << course->getCourseName() << " added to draft schedule for student " << username << ".\n";
 }
 
-// Drop a course from the student's schedule
+// Drop a course from the student's schedule by course ID
 void Student::dropCourse(int courseID) {
     auto it = std::remove_if(registeredCourses.begin(), registeredCourses.end(),
                              [courseID](Course* course) { return course->getCourseID() == courseID; });
@@ -114,7 +116,7 @@ void Student::dropCourse(int courseID) {
     }
 }
 
-// Drop a course from the draft schedule
+// Drop a course from the draft schedule by course ID
 void Student::dropFromDraftSchedule(int courseID) {
     auto it = std::remove_if(draftSchedule.begin(), draftSchedule.end(),
                              [courseID](Course* course) { return course->getCourseID() == courseID; });
@@ -140,7 +142,17 @@ void Student::listCourses() const {
     }
 }
 
-// Log activity to the student's activity log
+// Additional method: remove a specific course pointer
+void Student::removeCourse(Course* course) {
+    if (!course) return;
+    auto it = std::remove(registeredCourses.begin(), registeredCourses.end(), course);
+    if (it != registeredCourses.end()) {
+        registeredCourses.erase(it, registeredCourses.end());
+        logActivity("Removed course: " + course->getCourseName());
+    }
+}
+
+// Log activity
 void Student::logActivity(const std::string& activityDescription) {
     std::string timestampedLog = getCurrentTimestamp() + " - " + activityDescription;
     activityLog.push_back(timestampedLog);

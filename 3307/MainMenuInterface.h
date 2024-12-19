@@ -12,14 +12,14 @@ public:
     void show();
 
 private:
+    void showSearchPage();
+    void showEnrollmentsPage(); // New function
+
     CourseManager& courseManager;
     Scheduler& scheduler;
     EnrollmentManager& enrollmentManager;
-
     sf::RenderWindow window;
     sf::Font font;
-
-    void showSearchPage();
 };
 
-#endif // MAINMENUINTERFACE_H
+#endif

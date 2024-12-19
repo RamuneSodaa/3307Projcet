@@ -655,6 +655,7 @@ CMakeFiles/Project3307.dir/EnrollmentManager.cpp.obj: C:/Users/Alexf/Desktop/Cou
   C:/Users/Alexf/Desktop/CourseCoordinator/3307/CourseManager.h \
   C:/Users/Alexf/Desktop/CourseCoordinator/3307/DatabaseManager.h \
   C:/Users/Alexf/Desktop/CourseCoordinator/3307/EnrollmentManager.h \
+  C:/Users/Alexf/Desktop/CourseCoordinator/3307/NotificationInterface.h \
   C:/Users/Alexf/Desktop/CourseCoordinator/3307/PrerequisiteChecker.h \
   C:/Users/Alexf/Desktop/CourseCoordinator/3307/Scheduler.h \
   C:/Users/Alexf/Desktop/CourseCoordinator/3307/Student.h \
@@ -896,7 +897,6 @@ CMakeFiles/Project3307.dir/LoginInterface.cpp.obj: C:/Users/Alexf/Desktop/Course
   C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window/WindowHandle.hpp \
   C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/include/SFML/Window/WindowStyle.hpp \
   C:/Users/Alexf/Desktop/CourseCoordinator/3307/Authentication.h \
-  C:/Users/Alexf/Desktop/CourseCoordinator/3307/Course.h \
   C:/Users/Alexf/Desktop/CourseCoordinator/3307/LoginInterface.h \
   C:/Users/Alexf/Desktop/CourseCoordinator/3307/Student.h \
   C:/Users/Alexf/Desktop/CourseCoordinator/3307/Utils.h \
@@ -1427,6 +1427,7 @@ CMakeFiles/Project3307.dir/MainMenuInterface.cpp.obj: C:/Users/Alexf/Desktop/Cou
   C:/Users/Alexf/Desktop/CourseCoordinator/3307/Authentication.h \
   C:/Users/Alexf/Desktop/CourseCoordinator/3307/Course.h \
   C:/Users/Alexf/Desktop/CourseCoordinator/3307/CourseManager.h \
+  C:/Users/Alexf/Desktop/CourseCoordinator/3307/DatabaseManager.h \
   C:/Users/Alexf/Desktop/CourseCoordinator/3307/EnrollmentManager.h \
   C:/Users/Alexf/Desktop/CourseCoordinator/3307/MainMenuInterface.h \
   C:/Users/Alexf/Desktop/CourseCoordinator/3307/PrerequisiteChecker.h \
@@ -1716,6 +1717,7 @@ CMakeFiles/Project3307.dir/NotificationInterface.cpp.obj: C:/Users/Alexf/Desktop
   D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hash_bytes.h \
   D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/invoke.h \
   D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ios_base.h \
+  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
   D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_classes.h \
   D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_classes.tcc \
   D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_conv.h \
@@ -1786,6 +1788,8 @@ CMakeFiles/Project3307.dir/NotificationInterface.cpp.obj: C:/Users/Alexf/Desktop
   D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/initializer_list \
   D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios \
   D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iosfwd \
+  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
+  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
   D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iterator \
   D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/locale \
   D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/map \
@@ -3365,6 +3369,10 @@ C:/Users/Alexf/Desktop/CourseCoordinator/3307/EnrollmentManager.cpp:
 
 C:/Users/Alexf/Desktop/CourseCoordinator/3307/EnrollmentManager.h:
 
+D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/urlmon.h:
+
+C:/Users/Alexf/Desktop/CourseCoordinator/3307/NotificationInterface.h:
+
 C:/Users/Alexf/Desktop/CourseCoordinator/3307/Scheduler.h:
 
 C:/Users/Alexf/Desktop/CourseCoordinator/3307/Utils.h:
@@ -3556,10 +3564,6 @@ D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/tmmintrin
 C:/Users/Alexf/Desktop/CourseCoordinator/3307/MainMenuInterface.cpp:
 
 D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/fibersapi.h:
-
-D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/urlmon.h:
-
-C:/Users/Alexf/Desktop/CourseCoordinator/3307/NotificationInterface.h:
 
 C:/Users/Alexf/Desktop/CourseCoordinator/3307/PrerequisiteChecker.cpp:
 
