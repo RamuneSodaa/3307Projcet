@@ -224,29 +224,29 @@ DatabaseManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/DatabaseManager.cpp.s
 .PHONY : DatabaseManager.cpp.s
 
-EnrollmentStrategies.obj: EnrollmentStrategies.cpp.obj
-.PHONY : EnrollmentStrategies.obj
+EnrollmentManager.obj: EnrollmentManager.cpp.obj
+.PHONY : EnrollmentManager.obj
 
 # target to build an object file
-EnrollmentStrategies.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/EnrollmentStrategies.cpp.obj
-.PHONY : EnrollmentStrategies.cpp.obj
+EnrollmentManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/EnrollmentManager.cpp.obj
+.PHONY : EnrollmentManager.cpp.obj
 
-EnrollmentStrategies.i: EnrollmentStrategies.cpp.i
-.PHONY : EnrollmentStrategies.i
+EnrollmentManager.i: EnrollmentManager.cpp.i
+.PHONY : EnrollmentManager.i
 
 # target to preprocess a source file
-EnrollmentStrategies.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/EnrollmentStrategies.cpp.i
-.PHONY : EnrollmentStrategies.cpp.i
+EnrollmentManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/EnrollmentManager.cpp.i
+.PHONY : EnrollmentManager.cpp.i
 
-EnrollmentStrategies.s: EnrollmentStrategies.cpp.s
-.PHONY : EnrollmentStrategies.s
+EnrollmentManager.s: EnrollmentManager.cpp.s
+.PHONY : EnrollmentManager.s
 
 # target to generate assembly for a file
-EnrollmentStrategies.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/EnrollmentStrategies.cpp.s
-.PHONY : EnrollmentStrategies.cpp.s
+EnrollmentManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/EnrollmentManager.cpp.s
+.PHONY : EnrollmentManager.cpp.s
 
 LoginInterface.obj: LoginInterface.cpp.obj
 .PHONY : LoginInterface.obj
@@ -485,9 +485,9 @@ help:
 	@echo ... DatabaseManager.obj
 	@echo ... DatabaseManager.i
 	@echo ... DatabaseManager.s
-	@echo ... EnrollmentStrategies.obj
-	@echo ... EnrollmentStrategies.i
-	@echo ... EnrollmentStrategies.s
+	@echo ... EnrollmentManager.obj
+	@echo ... EnrollmentManager.i
+	@echo ... EnrollmentManager.s
 	@echo ... LoginInterface.obj
 	@echo ... LoginInterface.i
 	@echo ... LoginInterface.s

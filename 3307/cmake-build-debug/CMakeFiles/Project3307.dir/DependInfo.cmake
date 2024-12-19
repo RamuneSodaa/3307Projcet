@@ -13,7 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/Alexf/Desktop/CourseCoordinator/3307/Course.cpp" "CMakeFiles/Project3307.dir/Course.cpp.obj" "gcc" "CMakeFiles/Project3307.dir/Course.cpp.obj.d"
   "C:/Users/Alexf/Desktop/CourseCoordinator/3307/CourseManager.cpp" "CMakeFiles/Project3307.dir/CourseManager.cpp.obj" "gcc" "CMakeFiles/Project3307.dir/CourseManager.cpp.obj.d"
   "C:/Users/Alexf/Desktop/CourseCoordinator/3307/DatabaseManager.cpp" "CMakeFiles/Project3307.dir/DatabaseManager.cpp.obj" "gcc" "CMakeFiles/Project3307.dir/DatabaseManager.cpp.obj.d"
-  "C:/Users/Alexf/Desktop/CourseCoordinator/3307/EnrollmentStrategies.cpp" "CMakeFiles/Project3307.dir/EnrollmentStrategies.cpp.obj" "gcc" "CMakeFiles/Project3307.dir/EnrollmentStrategies.cpp.obj.d"
+  "C:/Users/Alexf/Desktop/CourseCoordinator/3307/EnrollmentManager.cpp" "CMakeFiles/Project3307.dir/EnrollmentManager.cpp.obj" "gcc" "CMakeFiles/Project3307.dir/EnrollmentManager.cpp.obj.d"
   "C:/Users/Alexf/Desktop/CourseCoordinator/3307/LoginInterface.cpp" "CMakeFiles/Project3307.dir/LoginInterface.cpp.obj" "gcc" "CMakeFiles/Project3307.dir/LoginInterface.cpp.obj.d"
   "C:/Users/Alexf/Desktop/CourseCoordinator/3307/Main.cpp" "CMakeFiles/Project3307.dir/Main.cpp.obj" "gcc" "CMakeFiles/Project3307.dir/Main.cpp.obj.d"
   "C:/Users/Alexf/Desktop/CourseCoordinator/3307/MainMenuInterface.cpp" "CMakeFiles/Project3307.dir/MainMenuInterface.cpp.obj" "gcc" "CMakeFiles/Project3307.dir/MainMenuInterface.cpp.obj.d"

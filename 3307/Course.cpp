@@ -1,42 +1,34 @@
 #include "Course.h"
 #include "Student.h"
 #include <iostream>
+#include <sstream>
 #include <algorithm>
 
 // Constructor
-Course::Course(int id, const std::string& name, const std::string& schedule, int capacity)
-    : courseID(id), courseName(name), schedule(schedule), capacity(capacity) {}
+Course::Course(int id, const std::string& name, const std::string& sched, int cap, const std::string& prereq)
+    : courseID(id), courseName(name), schedule(sched), capacity(cap), prereqStr(prereq) {
+}
 
 // Destructor
 Course::~Course() {}
 
 // Getters
-int Course::getCourseID() const {
-    return courseID;
-}
-
-std::string Course::getCourseName() const {
-    return courseName;
-}
-
-std::string Course::getSchedule() const {
-    return schedule;
-}
-
-int Course::getCapacity() const {
-    return capacity;
-}
+int Course::getCourseID() const { return courseID; }
+std::string Course::getCourseName() const { return courseName; }
+std::string Course::getSchedule() const { return schedule; }
+int Course::getCapacity() const { return capacity; }
 
 const std::vector<Course*>& Course::getPrerequisites() const {
+    // If 100-level course, no prerequisites
+    if (courseID < 200) {
+        static std::vector<Course*> empty;
+        return empty;
+    }
     return prerequisites;
 }
 
 const std::vector<Student*>& Course::getEnrolledStudents() const {
     return enrolledStudents;
-}
-
-const std::vector<Student*>& Course::getWaitlist() const {
-    return waitlist;
 }
 
 // Setters
@@ -53,19 +45,23 @@ void Course::setCourseName(const std::string& name) {
 }
 
 void Course::addPrerequisite(Course* prerequisite) {
-    prerequisites.push_back(prerequisite);
+    if (courseID >= 200 && prerequisite) {
+        prerequisites.push_back(prerequisite);
+    }
 }
 
-// Enrollment and Waitlist Management
+// Enrollment Management
 bool Course::enrollStudent(Student* student) {
-    if (isFull()) {
-        addToWaitlist(student);
+    if (capacity <= 0) {
+        std::cout << "Course is full.\n";
         return false;
     }
+
     if (!checkPrerequisitesMet(student)) {
         listMissingPrerequisites(student);
         return false;
     }
+
     enrolledStudents.push_back(student);
     capacity--;
     return true;
@@ -79,29 +75,16 @@ void Course::dropStudent(Student* student) {
     }
 }
 
-void Course::addToWaitlist(Student* student) {
-    waitlist.push_back(student);
-}
-
-void Course::removeFromWaitlist(Student* student) {
-    auto it = std::find(waitlist.begin(), waitlist.end(), student);
-    if (it != waitlist.end()) {
-        waitlist.erase(it);
-    }
-}
-
-// Status Checkers
-bool Course::isFull() const {
-    return capacity <= 0;
-}
-
-bool Course::hasPrerequisite(Course* course) const {
-    return std::find(prerequisites.begin(), prerequisites.end(), course) != prerequisites.end();
-}
-
+// Prerequisite Checking
 bool Course::checkPrerequisitesMet(Student* student) const {
+    // No prerequisites if 100-level course
+    if (courseID < 200) {
+        return true;
+    }
+
+    const auto& regCourses = student->getRegisteredCourses();
     for (Course* prereq : prerequisites) {
-        if (std::find(student->getRegisteredCourses().begin(), student->getRegisteredCourses().end(), prereq) == student->getRegisteredCourses().end()) {
+        if (std::find(regCourses.begin(), regCourses.end(), prereq) == regCourses.end()) {
             return false;
         }
     }
@@ -110,16 +93,32 @@ bool Course::checkPrerequisitesMet(Student* student) const {
 
 void Course::listMissingPrerequisites(Student* student) const {
     std::cout << "Missing prerequisites for course " << courseName << ":\n";
+    if (courseID < 200) {
+        std::cout << "None required for a 100-level course.\n";
+        return;
+    }
+
+    const auto& regCourses = student->getRegisteredCourses();
     for (Course* prereq : prerequisites) {
-        if (std::find(student->getRegisteredCourses().begin(), student->getRegisteredCourses().end(), prereq) == student->getRegisteredCourses().end()) {
+        if (std::find(regCourses.begin(), regCourses.end(), prereq) == regCourses.end()) {
             std::cout << "- " << prereq->getCourseName() << "\n";
         }
     }
 }
 
-// Notifications
-void Course::notifyWaitlist() {
-    for (Student* student : waitlist) {
-        std::cout << "Notifying student: " << student->getUsername() << "\n";
+// Resolve prerequisites by parsing prereqStr
+void Course::resolvePrerequisites(const std::vector<Course*>& allCourses) {
+    if (courseID < 200 || prereqStr.empty()) return;
+
+    std::istringstream iss(prereqStr);
+    std::string token;
+    while (std::getline(iss, token, ',')) {
+        int prereqID = std::stoi(token);
+        for (auto c : allCourses) {
+            if (c->getCourseID() == prereqID) {
+                addPrerequisite(c);
+                break;
+            }
+        }
     }
 }

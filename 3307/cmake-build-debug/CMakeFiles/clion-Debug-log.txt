@@ -9,6 +9,6 @@ CMake Deprecation Warning:
 
 
 SFML_DIR is set to: C:/Users/Alexf/Desktop/CourseCoordinator/3307/SFML-2.6.2/lib/cmake/SFML
--- Configuring done (0.2s)
--- Generating done (0.0s)
+-- Configuring done (0.3s)
+-- Generating done (0.1s)
 -- Build files have been written to: C:/Users/Alexf/Desktop/CourseCoordinator/3307/cmake-build-debug

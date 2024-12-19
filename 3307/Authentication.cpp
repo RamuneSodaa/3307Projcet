@@ -7,10 +7,7 @@ Authentication* Authentication::instance = nullptr;
 
 // Private constructor
 Authentication::Authentication() {
-    // Initialize some demo user credentials
-    userCredentials["student1"] = "password123";
-    userCredentials["student2"] = "securePass456";
-    userCredentials["admin"] = "adminPass";
+
 
     // Initialize account state
     for (const auto& user : userCredentials) {

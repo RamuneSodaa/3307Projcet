@@ -55,7 +55,6 @@ add_executable(${PROJECT_NAME}
         Authentication.cpp
         Course.cpp
         CourseManager.cpp
-        EnrollmentStrategies.cpp
         PrerequisiteChecker.cpp
         Scheduler.cpp
         Student.cpp
@@ -69,6 +68,8 @@ add_executable(${PROJECT_NAME}
         Utils.h
         NotificationInterface.h
         NotificationInterface.cpp
+        EnrollmentManager.h
+        EnrollmentManager.cpp
 )
 
 # Link SFML libraries and additional dependencies

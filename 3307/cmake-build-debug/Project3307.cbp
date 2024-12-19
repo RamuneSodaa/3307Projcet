@@ -110,10 +110,10 @@
 		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/DatabaseManager.h">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/EnrollmentStrategies.cpp">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/EnrollmentManager.cpp">
 			<Option target="Project3307"/>
 		</Unit>
-		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/EnrollmentStrategies.h">
+		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/EnrollmentManager.h">
 			<Option target="Project3307"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/CourseCoordinator/3307/LoginInterface.cpp">
