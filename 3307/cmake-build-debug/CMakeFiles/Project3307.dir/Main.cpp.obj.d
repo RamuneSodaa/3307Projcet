@@ -118,8 +118,8 @@ CMakeFiles/Project3307.dir/Main.cpp.obj: \
  D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
  D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/_timeval.h \
  D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/pthread_time.h \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\Course.h \
  C:\Users\Alexf\Desktop\CourseCoordinator\3307\DatabaseManager.h \
+ C:\Users\Alexf\Desktop\CourseCoordinator\3307\Course.h \
  C:\Users\Alexf\Desktop\CourseCoordinator\3307\CourseManager.h \
  C:\Users\Alexf\Desktop\CourseCoordinator\3307\Scheduler.h \
  C:\Users\Alexf\Desktop\CourseCoordinator\3307\PrerequisiteChecker.h \

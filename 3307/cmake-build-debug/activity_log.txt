@@ -155,3 +155,5 @@ Student ID: 1 | 2024-12-19 16:32:50 - Added course: Math II
 Student ID: 1 | 2024-12-19 16:32:53 - Removed course: Math II
 Student ID: 1 | 2024-12-19 16:32:53 - Removed course: Math I
 Student ID: 1 | 2024-12-19 16:32:57 - Added course: Math I
+Student ID: 1 | 2024-12-19 16:34:54 - Added course: Math II
+Student ID: 1 | 2024-12-19 16:35:02 - Removed course: Math II
