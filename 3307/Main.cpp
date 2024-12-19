@@ -9,9 +9,11 @@
 #include "MainMenuInterface.h"
 #include <iostream>
 
-// Global variables
-Authentication* auth = Authentication::getInstance();
+extern Student* currentStudent;
+extern Authentication* auth;
 Student* currentStudent = nullptr;
+Authentication* auth = Authentication::getInstance();
+
 
 int main() {
     // Initialize the database
@@ -32,15 +34,29 @@ int main() {
     auth->addUser("1", "1");
     auth->addUser("2", "2");
 
-    // Add a new course to the database BEFORE loading them into CourseManager
-    // This ensures it's present when we call loadCoursesFromDatabase().
+    // Add courses:
+    // Math I (ID:101, no prereq)
+    // Math II (ID:201, prereq = "101")
+    // Biology I (ID:102, no prereq since <200)
+    // Biology II (ID:202, prereq = "102")
+
     Course c1(101, "Math I", "Monday", 40);
-    Course c2(201, "Math II", "Monday", 40,"Math I");
+    Course c2(201, "Math II", "Monday", 40, "101");
+    Course c3(102, "Biology I", "Monday", 40);
+    Course c4(202, "Biology II", "Monday", 40, "102");
     DatabaseManager::addCourse(c1);
     DatabaseManager::addCourse(c2);
+    DatabaseManager::addCourse(c3);
+    DatabaseManager::addCourse(c4);
 
     // Now load courses from the DB into CourseManager's courseList
     cm.loadCoursesFromDatabase();
+
+    // Resolve prerequisites for all loaded courses
+    // This ensures that course->getPrerequisites() is populated
+    for (auto c : cm.getCourseList()) {
+        c->resolvePrerequisites(cm.getCourseList());
+    }
 
     // After loading courses into CourseManager, add them to the Scheduler
     for (auto c : cm.getCourseList()) {
