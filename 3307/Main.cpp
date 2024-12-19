@@ -9,14 +9,11 @@
 #include "MainMenuInterface.h"
 #include <iostream>
 
-extern Student* currentStudent;
-extern Authentication* auth;
+// Define extern variables once here
 Student* currentStudent = nullptr;
 Authentication* auth = Authentication::getInstance();
 
-
 int main() {
-    // Initialize the database
     DatabaseManager::initializeDatabase("database.sqlite", "init_db.sql");
 
     CourseManager cm;
@@ -24,22 +21,19 @@ int main() {
     PrerequisiteChecker checker;
     EnrollmentManager em(cm, sched, checker);
 
-    // Add some sample students to the database
     Student s1(1, "student1", "student1@example.com", "active");
     Student s2(2, "student2", "student2@example.com", "active");
     DatabaseManager::addStudent(s1);
     DatabaseManager::addStudent(s2);
 
-    // Add user credentials for them
     auth->addUser("1", "1");
     auth->addUser("2", "2");
 
-    // Add courses:
-    // Math I (ID:101, no prereq)
-    // Math II (ID:201, prereq = "101")
-    // Biology I (ID:102, no prereq since <200)
-    // Biology II (ID:202, prereq = "102")
-
+    // Courses with numeric prereqs
+    // Math I = 101 (no prereq)
+    // Math II = 201 (prereq = 101)
+    // Biology I = 102 (no prereq)
+    // Biology II = 202 (prereq = 102)
     Course c1(101, "Math I", "Monday", 40);
     Course c2(201, "Math II", "Monday", 40, "101");
     Course c3(102, "Biology I", "Monday", 40);
@@ -49,21 +43,17 @@ int main() {
     DatabaseManager::addCourse(c3);
     DatabaseManager::addCourse(c4);
 
-    // Now load courses from the DB into CourseManager's courseList
     cm.loadCoursesFromDatabase();
 
-    // Resolve prerequisites for all loaded courses
-    // This ensures that course->getPrerequisites() is populated
+    // Resolve prerequisites for all courses before enrollment checks
     for (auto c : cm.getCourseList()) {
         c->resolvePrerequisites(cm.getCourseList());
     }
 
-    // After loading courses into CourseManager, add them to the Scheduler
     for (auto c : cm.getCourseList()) {
         sched.addCourse(c);
     }
 
-    // Show login interface
     LoginInterface login;
     if (login.show()) {
         std::cout << "Login successful. Welcome: " << currentStudent->getUsername() << "\n";

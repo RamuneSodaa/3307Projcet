@@ -16,7 +16,6 @@ public:
     std::string getSchedule() const;
     int getCapacity() const;
     const std::vector<Course*>& getPrerequisites() const;
-    const std::vector<Student*>& getEnrolledStudents() const;
 
     void setSchedule(const std::string& newSchedule);
     void setCapacity(int newCapacity);
@@ -26,13 +25,11 @@ public:
     bool enrollStudent(Student* student);
     void dropStudent(Student* student);
 
-    bool checkPrerequisitesMet(Student* student) const;
-    void listMissingPrerequisites(Student* student) const;
-
-    void resolvePrerequisites(const std::vector<Course*>& allCourses);
-
-    // Add a public getter for prereqStr
+    // Returns the raw prereqStr from DB
     std::string getPrereqStr() const { return prereqStr; }
+
+    // Resolve prerequisites using the given course list
+    void resolvePrerequisites(const std::vector<Course*>& allCourses);
 
 private:
     int courseID;
@@ -42,6 +39,9 @@ private:
     std::vector<Course*> prerequisites;
     std::vector<Student*> enrolledStudents;
     std::string prereqStr; // Raw prerequisites string from DB if any
+
+    bool checkPrerequisitesMet(Student* student) const;
+    void listMissingPrerequisites(Student* student) const;
 };
 
 #endif

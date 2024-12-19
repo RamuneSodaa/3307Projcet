@@ -5,7 +5,6 @@
 #include <algorithm>
 #include <cctype>
 
-// Helper to convert string to lowercase
 static std::string toLowerCase(const std::string& s) {
     std::string lower = s;
     std::transform(lower.begin(), lower.end(), lower.begin(),
@@ -16,7 +15,6 @@ static std::string toLowerCase(const std::string& s) {
 CourseManager::CourseManager() {
     // Load additional courses from the database
     loadCoursesFromDatabase();
-
     std::cout << "CourseManager initialized with default and DB courses.\n";
 }
 
@@ -38,7 +36,7 @@ void CourseManager::loadCoursesFromDatabase() {
             }
         }
         if (!exists) {
-            courseList.push_back(new Course(c.getCourseID(), c.getCourseName(), c.getSchedule(), c.getCapacity()));
+            courseList.push_back(new Course(c.getCourseID(), c.getCourseName(), c.getSchedule(), c.getCapacity(), c.getPrereqStr()));
             std::cout << "Course loaded from DB: " << c.getCourseName() << " (ID: " << c.getCourseID() << ")\n";
         }
     }
@@ -53,7 +51,6 @@ void CourseManager::addCourse(Course* course) {
     std::cout << "Course added: " << course->getCourseName()
               << " (ID: " << course->getCourseID() << ")\n";
 
-    // Also add to database
     DatabaseManager::addCourse(*course);
 }
 
@@ -66,10 +63,6 @@ bool CourseManager::removeCourse(int courseID) {
         delete *it;
         courseList.erase(it, courseList.end());
         std::cout << "Course with ID " << courseID << " removed.\n";
-
-        // Optionally remove from database as well if you implement DatabaseManager::removeCourse(courseID)
-        // DatabaseManager::removeCourse(courseID);
-
         return true;
     }
     std::cout << "Course with ID " << courseID << " not found.\n";
@@ -86,7 +79,7 @@ std::vector<Course*> CourseManager::searchCourses(const std::string& query) cons
         for (auto& course : courseList) {
             if (course->getCourseID() == courseID) {
                 results.push_back(course);
-                return results;  // << Might be returning too early
+                return results;
             }
         }
         return results;

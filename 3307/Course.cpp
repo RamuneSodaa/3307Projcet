@@ -4,34 +4,21 @@
 #include <sstream>
 #include <algorithm>
 
-// Constructor
 Course::Course(int id, const std::string& name, const std::string& sched, int cap, const std::string& prereq)
     : courseID(id), courseName(name), schedule(sched), capacity(cap), prereqStr(prereq) {
 }
 
-// Destructor
-Course::~Course() {}
+Course::~Course() { }
 
-// Getters
 int Course::getCourseID() const { return courseID; }
 std::string Course::getCourseName() const { return courseName; }
 std::string Course::getSchedule() const { return schedule; }
 int Course::getCapacity() const { return capacity; }
 
 const std::vector<Course*>& Course::getPrerequisites() const {
-    // If 100-level course, no prerequisites
-    if (courseID < 200) {
-        static std::vector<Course*> empty;
-        return empty;
-    }
     return prerequisites;
 }
 
-const std::vector<Student*>& Course::getEnrolledStudents() const {
-    return enrolledStudents;
-}
-
-// Setters
 void Course::setSchedule(const std::string& newSchedule) {
     schedule = newSchedule;
 }
@@ -45,20 +32,14 @@ void Course::setCourseName(const std::string& name) {
 }
 
 void Course::addPrerequisite(Course* prerequisite) {
-    if (courseID >= 200 && prerequisite) {
+    if (prerequisite) {
         prerequisites.push_back(prerequisite);
     }
 }
 
-// Enrollment Management
 bool Course::enrollStudent(Student* student) {
     if (capacity <= 0) {
         std::cout << "Course is full.\n";
-        return false;
-    }
-
-    if (!checkPrerequisitesMet(student)) {
-        listMissingPrerequisites(student);
         return false;
     }
 
@@ -71,54 +52,54 @@ void Course::dropStudent(Student* student) {
     auto it = std::find(enrolledStudents.begin(), enrolledStudents.end(), student);
     if (it != enrolledStudents.end()) {
         enrolledStudents.erase(it);
-        capacity++;
+        capacity++; // free up a slot
     }
 }
 
-// Prerequisite Checking
-bool Course::checkPrerequisitesMet(Student* student) const {
-    // No prerequisites if 100-level course
-    if (courseID < 200) {
-        return true;
-    }
-
-    const auto& regCourses = student->getRegisteredCourses();
-    for (Course* prereq : prerequisites) {
-        if (std::find(regCourses.begin(), regCourses.end(), prereq) == regCourses.end()) {
-            return false;
-        }
-    }
-    return true;
-}
-
-void Course::listMissingPrerequisites(Student* student) const {
-    std::cout << "Missing prerequisites for course " << courseName << ":\n";
-    if (courseID < 200) {
-        std::cout << "None required for a 100-level course.\n";
-        return;
-    }
-
-    const auto& regCourses = student->getRegisteredCourses();
-    for (Course* prereq : prerequisites) {
-        if (std::find(regCourses.begin(), regCourses.end(), prereq) == regCourses.end()) {
-            std::cout << "- " << prereq->getCourseName() << "\n";
-        }
-    }
-}
-
-// Resolve prerequisites by parsing prereqStr
 void Course::resolvePrerequisites(const std::vector<Course*>& allCourses) {
-    if (courseID < 200 || prereqStr.empty()) return;
+    if (courseID < 200 || prereqStr.empty()) return; // no prereqs for <200, or empty string
 
     std::istringstream iss(prereqStr);
     std::string token;
     while (std::getline(iss, token, ',')) {
-        int prereqID = std::stoi(token);
+        // Trim spaces
+        token.erase(token.begin(), std::find_if(token.begin(), token.end(), [](unsigned char ch){ return !std::isspace(ch); }));
+        token.erase(std::find_if(token.rbegin(), token.rend(), [](unsigned char ch){ return !std::isspace(ch); }).base(), token.end());
+
+        if (token.empty()) {
+            // If empty token, just continue
+            continue;
+        }
+
+        // Check if token is numeric
+        if (!std::all_of(token.begin(), token.end(), ::isdigit)) {
+            std::cerr << "Prerequisite token '" << token << "' is not numeric. Skipping.\n";
+            continue; // skip non-numeric token
+        }
+
+        int prereqID;
+        try {
+            prereqID = std::stoi(token);
+        } catch (const std::invalid_argument& e) {
+            std::cerr << "Invalid prerequisite token '" << token << "', cannot convert to int. Skipping.\n";
+            continue; // skip invalid token
+        }
+
+        // Now find the course with prereqID
+        bool found = false;
         for (auto c : allCourses) {
             if (c->getCourseID() == prereqID) {
                 addPrerequisite(c);
+                found = true;
                 break;
             }
         }
+        if (!found) {
+            std::cerr << "No course found with ID " << prereqID << " for prerequisite of course ID " << courseID << ".\n";
+        }
     }
 }
+
+
+// The following methods (checkPrerequisitesMet, listMissingPrerequisites) may be defined if needed,
+// but PrerequisiteChecker uses its own logic so we can omit them here or keep empty.
