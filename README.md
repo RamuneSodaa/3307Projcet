@@ -1,39 +1,79 @@
-# Course coordinator 
-## C++ project with GUI that enables users to schedule course enrollments and administrator to control course information. Imported Graphics.hpp and Window.hpp in SFML to achieve GUI
-### TO-DO List
-1. Implementation  
-- Classses
-  - PrerequisiteChecker.cpp
-   - EnrollmentStrategies.cpp
-   - Optimization
-- Interface
-   - ~~Login Interface~~
-  - Main page
-   - Course Searching page
-  - Instructor page
-- SQL implementation
-- Comments
+# **College Course Enrollment System**
 
+## **Overview**
+The College Course Enrollment System is a comprehensive C++ application with a GUI, designed to streamline course scheduling and management. The system provides functionality for students to enroll in courses and administrators to manage course information efficiently. It utilizes the **SFML (Simple and Fast Multimedia Library)** for GUI components and SQLite for database integration.
 
+---
 
-2. UML Diagrams
-- ~~Class Diagrams: Include all classes, attributes, methods, and relationships such as inheritance, aggregation, and composition.~~  
-- ~~Sequence Diagrams: Show interactions between objects for key system processes.~~  
-- ~~Use Case Diagrams: Provide a high-level overview of user interactions and system functionality.~~
+## **Features**
+- **Student Features**:
+  - Browse and search for available courses.
+  - Enroll in courses, ensuring prerequisites are met.
+  - View and manage personal course schedules.
 
+- **Administrator Features**:
+  - Add, update, and delete course information.
+  - View and manage student enrollments.
+  - Access real-time data through database integration.
 
+- **Backend**:
+  - Persistent data storage using SQLite.
+  - Optimized scheduling algorithms to manage complex enrollments.
 
-3. Documentation  
-- ~~Design Documentation: Explain your system’s overall architecture, and discuss how OOD principles were applied and their role in achieving a scalable, maintainable, and efficient design.~~   
-- ~~Design Patterns: Justify your choice of design patterns and describe how they improved the system.~~  
-- Testing Report: Focus on unit testing using Google Test (GTest) and mocking with Google Mock (gMock).  
-   - Minimum Testing Requirement
-      - Test at least two key classes using mocks to simulate dependencies and verify interactions.
-      - Include examples of EXPECT_CALL statements and test cases for critical functionality and edge cases.
-   - Include explanations of:
-      - How mocks were created and used.
-      - The test results and how they validate the system.
-      - Provide a summary of the testing outcomes and discuss how edge cases and potential issues were handled.
-- Reflection on Challenges:
-     - Summarize the challenges faced during the project and explain how they were addressed
-      1. Difficulties on choosing and importing GUI tools
+- **GUI**:
+  - User-friendly graphical interfaces for students and administrators.
+  - Multiple pages including:
+    - Login Interface
+    - Course Search Page
+    - Main Dashboard
+    - Administrator Panel
+
+---
+
+## **Technical Details**
+- **Programming Language**: C++
+- **GUI Framework**: SFML
+- **Database**: SQLite
+- **Design Patterns**:
+  - Factory Pattern
+  - Singleton Pattern
+  - Observer Pattern
+  - DAO (Data Access Object) Pattern
+
+---
+
+## **Project Structure**
+```plaintext
+3307/
+├── Authentication.cpp/h       # User authentication logic
+├── Course.cpp/h               # Course data and operations
+├── CourseManager.cpp/h        # Manages course-related actions
+├── DatabaseManager.cpp/h      # Handles SQLite database interactions
+├── Scheduler.cpp/h            # Optimized course scheduling algorithms
+├── MainMenuInterface.cpp/h    # GUI for the main menu
+├── LoginInterface.cpp/h       # GUI for user login
+├── PrerequisiteChecker.cpp/h  # Validates course prerequisites
+├── assets/                    # Images and resources for the GUI
+└── CMakeLists.txt             # Build configuration
+
+Setup and Installation
+Clone the Repository
+
+Build the Project:
+Ensure you have CMake and a C++ compiler installed.
+Run the following commands:
+mkdir build
+cd build
+cmake ..
+make
+
+Run the Application：
+./CourseEnrollmentSystem
+Database Setup:
+
+Ensure SQLite is installed.
+Initialize the database using the provided SQL scripts in assets/sql/.
+
+Contributors
+Shaotian Li
+Xiaowei Feng
