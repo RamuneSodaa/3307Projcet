@@ -64,6 +64,16 @@ CMAKE_BINARY_DIR = C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	"D:\CLion 2024.1.4\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -83,6 +93,51 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"gmock\" \"gtest\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	"D:\CLion 2024.1.4\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	"D:\CLion 2024.1.4\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	"D:\CLion 2024.1.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	"D:\CLion 2024.1.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	"D:\CLion 2024.1.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	"D:\CLion 2024.1.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -116,6 +171,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named core_lib
+
+# Build rule for target.
+core_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 core_lib
+.PHONY : core_lib
+
+# fast build rule for target.
+core_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/build
+.PHONY : core_lib/fast
+
+#=============================================================================
 # Target rules for targets named Project3307
 
 # Build rule for target.
@@ -128,12 +196,77 @@ Project3307/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/build
 .PHONY : Project3307/fast
 
+#=============================================================================
+# Target rules for targets named Project3307_Tests
+
+# Build rule for target.
+Project3307_Tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Project3307_Tests
+.PHONY : Project3307_Tests
+
+# fast build rule for target.
+Project3307_Tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307_Tests.dir\build.make CMakeFiles/Project3307_Tests.dir/build
+.PHONY : Project3307_Tests/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f googletest\googlemock\CMakeFiles\gmock.dir\build.make googletest/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f googletest\googlemock\CMakeFiles\gmock_main.dir\build.make googletest/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f googletest\googletest\CMakeFiles\gtest.dir\build.make googletest/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f googletest\googletest\CMakeFiles\gtest_main.dir\build.make googletest/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
 Authentication.obj: Authentication.cpp.obj
 .PHONY : Authentication.obj
 
 # target to build an object file
 Authentication.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/Authentication.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/Authentication.cpp.obj
 .PHONY : Authentication.cpp.obj
 
 Authentication.i: Authentication.cpp.i
@@ -141,7 +274,7 @@ Authentication.i: Authentication.cpp.i
 
 # target to preprocess a source file
 Authentication.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/Authentication.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/Authentication.cpp.i
 .PHONY : Authentication.cpp.i
 
 Authentication.s: Authentication.cpp.s
@@ -149,7 +282,7 @@ Authentication.s: Authentication.cpp.s
 
 # target to generate assembly for a file
 Authentication.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/Authentication.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/Authentication.cpp.s
 .PHONY : Authentication.cpp.s
 
 Course.obj: Course.cpp.obj
@@ -157,7 +290,7 @@ Course.obj: Course.cpp.obj
 
 # target to build an object file
 Course.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/Course.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/Course.cpp.obj
 .PHONY : Course.cpp.obj
 
 Course.i: Course.cpp.i
@@ -165,7 +298,7 @@ Course.i: Course.cpp.i
 
 # target to preprocess a source file
 Course.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/Course.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/Course.cpp.i
 .PHONY : Course.cpp.i
 
 Course.s: Course.cpp.s
@@ -173,7 +306,7 @@ Course.s: Course.cpp.s
 
 # target to generate assembly for a file
 Course.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/Course.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/Course.cpp.s
 .PHONY : Course.cpp.s
 
 CourseManager.obj: CourseManager.cpp.obj
@@ -181,7 +314,7 @@ CourseManager.obj: CourseManager.cpp.obj
 
 # target to build an object file
 CourseManager.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/CourseManager.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/CourseManager.cpp.obj
 .PHONY : CourseManager.cpp.obj
 
 CourseManager.i: CourseManager.cpp.i
@@ -189,7 +322,7 @@ CourseManager.i: CourseManager.cpp.i
 
 # target to preprocess a source file
 CourseManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/CourseManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/CourseManager.cpp.i
 .PHONY : CourseManager.cpp.i
 
 CourseManager.s: CourseManager.cpp.s
@@ -197,7 +330,7 @@ CourseManager.s: CourseManager.cpp.s
 
 # target to generate assembly for a file
 CourseManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/CourseManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/CourseManager.cpp.s
 .PHONY : CourseManager.cpp.s
 
 DatabaseManager.obj: DatabaseManager.cpp.obj
@@ -205,7 +338,7 @@ DatabaseManager.obj: DatabaseManager.cpp.obj
 
 # target to build an object file
 DatabaseManager.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/DatabaseManager.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/DatabaseManager.cpp.obj
 .PHONY : DatabaseManager.cpp.obj
 
 DatabaseManager.i: DatabaseManager.cpp.i
@@ -213,7 +346,7 @@ DatabaseManager.i: DatabaseManager.cpp.i
 
 # target to preprocess a source file
 DatabaseManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/DatabaseManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/DatabaseManager.cpp.i
 .PHONY : DatabaseManager.cpp.i
 
 DatabaseManager.s: DatabaseManager.cpp.s
@@ -221,7 +354,7 @@ DatabaseManager.s: DatabaseManager.cpp.s
 
 # target to generate assembly for a file
 DatabaseManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/DatabaseManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/DatabaseManager.cpp.s
 .PHONY : DatabaseManager.cpp.s
 
 EnrollmentManager.obj: EnrollmentManager.cpp.obj
@@ -229,7 +362,7 @@ EnrollmentManager.obj: EnrollmentManager.cpp.obj
 
 # target to build an object file
 EnrollmentManager.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/EnrollmentManager.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/EnrollmentManager.cpp.obj
 .PHONY : EnrollmentManager.cpp.obj
 
 EnrollmentManager.i: EnrollmentManager.cpp.i
@@ -237,7 +370,7 @@ EnrollmentManager.i: EnrollmentManager.cpp.i
 
 # target to preprocess a source file
 EnrollmentManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/EnrollmentManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/EnrollmentManager.cpp.i
 .PHONY : EnrollmentManager.cpp.i
 
 EnrollmentManager.s: EnrollmentManager.cpp.s
@@ -245,7 +378,7 @@ EnrollmentManager.s: EnrollmentManager.cpp.s
 
 # target to generate assembly for a file
 EnrollmentManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/EnrollmentManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/EnrollmentManager.cpp.s
 .PHONY : EnrollmentManager.cpp.s
 
 LoginInterface.obj: LoginInterface.cpp.obj
@@ -253,7 +386,7 @@ LoginInterface.obj: LoginInterface.cpp.obj
 
 # target to build an object file
 LoginInterface.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/LoginInterface.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/LoginInterface.cpp.obj
 .PHONY : LoginInterface.cpp.obj
 
 LoginInterface.i: LoginInterface.cpp.i
@@ -261,7 +394,7 @@ LoginInterface.i: LoginInterface.cpp.i
 
 # target to preprocess a source file
 LoginInterface.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/LoginInterface.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/LoginInterface.cpp.i
 .PHONY : LoginInterface.cpp.i
 
 LoginInterface.s: LoginInterface.cpp.s
@@ -269,7 +402,7 @@ LoginInterface.s: LoginInterface.cpp.s
 
 # target to generate assembly for a file
 LoginInterface.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/LoginInterface.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/LoginInterface.cpp.s
 .PHONY : LoginInterface.cpp.s
 
 Main.obj: Main.cpp.obj
@@ -301,7 +434,7 @@ MainMenuInterface.obj: MainMenuInterface.cpp.obj
 
 # target to build an object file
 MainMenuInterface.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/MainMenuInterface.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/MainMenuInterface.cpp.obj
 .PHONY : MainMenuInterface.cpp.obj
 
 MainMenuInterface.i: MainMenuInterface.cpp.i
@@ -309,7 +442,7 @@ MainMenuInterface.i: MainMenuInterface.cpp.i
 
 # target to preprocess a source file
 MainMenuInterface.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/MainMenuInterface.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/MainMenuInterface.cpp.i
 .PHONY : MainMenuInterface.cpp.i
 
 MainMenuInterface.s: MainMenuInterface.cpp.s
@@ -317,7 +450,7 @@ MainMenuInterface.s: MainMenuInterface.cpp.s
 
 # target to generate assembly for a file
 MainMenuInterface.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/MainMenuInterface.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/MainMenuInterface.cpp.s
 .PHONY : MainMenuInterface.cpp.s
 
 NotificationInterface.obj: NotificationInterface.cpp.obj
@@ -325,7 +458,7 @@ NotificationInterface.obj: NotificationInterface.cpp.obj
 
 # target to build an object file
 NotificationInterface.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/NotificationInterface.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/NotificationInterface.cpp.obj
 .PHONY : NotificationInterface.cpp.obj
 
 NotificationInterface.i: NotificationInterface.cpp.i
@@ -333,7 +466,7 @@ NotificationInterface.i: NotificationInterface.cpp.i
 
 # target to preprocess a source file
 NotificationInterface.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/NotificationInterface.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/NotificationInterface.cpp.i
 .PHONY : NotificationInterface.cpp.i
 
 NotificationInterface.s: NotificationInterface.cpp.s
@@ -341,7 +474,7 @@ NotificationInterface.s: NotificationInterface.cpp.s
 
 # target to generate assembly for a file
 NotificationInterface.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/NotificationInterface.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/NotificationInterface.cpp.s
 .PHONY : NotificationInterface.cpp.s
 
 PrerequisiteChecker.obj: PrerequisiteChecker.cpp.obj
@@ -349,7 +482,7 @@ PrerequisiteChecker.obj: PrerequisiteChecker.cpp.obj
 
 # target to build an object file
 PrerequisiteChecker.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/PrerequisiteChecker.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/PrerequisiteChecker.cpp.obj
 .PHONY : PrerequisiteChecker.cpp.obj
 
 PrerequisiteChecker.i: PrerequisiteChecker.cpp.i
@@ -357,7 +490,7 @@ PrerequisiteChecker.i: PrerequisiteChecker.cpp.i
 
 # target to preprocess a source file
 PrerequisiteChecker.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/PrerequisiteChecker.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/PrerequisiteChecker.cpp.i
 .PHONY : PrerequisiteChecker.cpp.i
 
 PrerequisiteChecker.s: PrerequisiteChecker.cpp.s
@@ -365,7 +498,7 @@ PrerequisiteChecker.s: PrerequisiteChecker.cpp.s
 
 # target to generate assembly for a file
 PrerequisiteChecker.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/PrerequisiteChecker.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/PrerequisiteChecker.cpp.s
 .PHONY : PrerequisiteChecker.cpp.s
 
 Scheduler.obj: Scheduler.cpp.obj
@@ -373,7 +506,7 @@ Scheduler.obj: Scheduler.cpp.obj
 
 # target to build an object file
 Scheduler.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/Scheduler.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/Scheduler.cpp.obj
 .PHONY : Scheduler.cpp.obj
 
 Scheduler.i: Scheduler.cpp.i
@@ -381,7 +514,7 @@ Scheduler.i: Scheduler.cpp.i
 
 # target to preprocess a source file
 Scheduler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/Scheduler.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/Scheduler.cpp.i
 .PHONY : Scheduler.cpp.i
 
 Scheduler.s: Scheduler.cpp.s
@@ -389,7 +522,7 @@ Scheduler.s: Scheduler.cpp.s
 
 # target to generate assembly for a file
 Scheduler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/Scheduler.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/Scheduler.cpp.s
 .PHONY : Scheduler.cpp.s
 
 Student.obj: Student.cpp.obj
@@ -397,7 +530,7 @@ Student.obj: Student.cpp.obj
 
 # target to build an object file
 Student.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/Student.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/Student.cpp.obj
 .PHONY : Student.cpp.obj
 
 Student.i: Student.cpp.i
@@ -405,7 +538,7 @@ Student.i: Student.cpp.i
 
 # target to preprocess a source file
 Student.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/Student.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/Student.cpp.i
 .PHONY : Student.cpp.i
 
 Student.s: Student.cpp.s
@@ -413,7 +546,7 @@ Student.s: Student.cpp.s
 
 # target to generate assembly for a file
 Student.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/Student.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/Student.cpp.s
 .PHONY : Student.cpp.s
 
 User.obj: User.cpp.obj
@@ -421,7 +554,7 @@ User.obj: User.cpp.obj
 
 # target to build an object file
 User.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/User.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/User.cpp.obj
 .PHONY : User.cpp.obj
 
 User.i: User.cpp.i
@@ -429,7 +562,7 @@ User.i: User.cpp.i
 
 # target to preprocess a source file
 User.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/User.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/User.cpp.i
 .PHONY : User.cpp.i
 
 User.s: User.cpp.s
@@ -437,7 +570,7 @@ User.s: User.cpp.s
 
 # target to generate assembly for a file
 User.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/User.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/User.cpp.s
 .PHONY : User.cpp.s
 
 sqlite3.obj: sqlite3.c.obj
@@ -445,7 +578,7 @@ sqlite3.obj: sqlite3.c.obj
 
 # target to build an object file
 sqlite3.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/sqlite3.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/sqlite3.c.obj
 .PHONY : sqlite3.c.obj
 
 sqlite3.i: sqlite3.c.i
@@ -453,7 +586,7 @@ sqlite3.i: sqlite3.c.i
 
 # target to preprocess a source file
 sqlite3.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/sqlite3.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/sqlite3.c.i
 .PHONY : sqlite3.c.i
 
 sqlite3.s: sqlite3.c.s
@@ -461,8 +594,80 @@ sqlite3.s: sqlite3.c.s
 
 # target to generate assembly for a file
 sqlite3.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307.dir\build.make CMakeFiles/Project3307.dir/sqlite3.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\core_lib.dir\build.make CMakeFiles/core_lib.dir/sqlite3.c.s
 .PHONY : sqlite3.c.s
+
+tests/Authentication_test.obj: tests/Authentication_test.cpp.obj
+.PHONY : tests/Authentication_test.obj
+
+# target to build an object file
+tests/Authentication_test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307_Tests.dir\build.make CMakeFiles/Project3307_Tests.dir/tests/Authentication_test.cpp.obj
+.PHONY : tests/Authentication_test.cpp.obj
+
+tests/Authentication_test.i: tests/Authentication_test.cpp.i
+.PHONY : tests/Authentication_test.i
+
+# target to preprocess a source file
+tests/Authentication_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307_Tests.dir\build.make CMakeFiles/Project3307_Tests.dir/tests/Authentication_test.cpp.i
+.PHONY : tests/Authentication_test.cpp.i
+
+tests/Authentication_test.s: tests/Authentication_test.cpp.s
+.PHONY : tests/Authentication_test.s
+
+# target to generate assembly for a file
+tests/Authentication_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307_Tests.dir\build.make CMakeFiles/Project3307_Tests.dir/tests/Authentication_test.cpp.s
+.PHONY : tests/Authentication_test.cpp.s
+
+tests/CourseManager_test.obj: tests/CourseManager_test.cpp.obj
+.PHONY : tests/CourseManager_test.obj
+
+# target to build an object file
+tests/CourseManager_test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307_Tests.dir\build.make CMakeFiles/Project3307_Tests.dir/tests/CourseManager_test.cpp.obj
+.PHONY : tests/CourseManager_test.cpp.obj
+
+tests/CourseManager_test.i: tests/CourseManager_test.cpp.i
+.PHONY : tests/CourseManager_test.i
+
+# target to preprocess a source file
+tests/CourseManager_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307_Tests.dir\build.make CMakeFiles/Project3307_Tests.dir/tests/CourseManager_test.cpp.i
+.PHONY : tests/CourseManager_test.cpp.i
+
+tests/CourseManager_test.s: tests/CourseManager_test.cpp.s
+.PHONY : tests/CourseManager_test.s
+
+# target to generate assembly for a file
+tests/CourseManager_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307_Tests.dir\build.make CMakeFiles/Project3307_Tests.dir/tests/CourseManager_test.cpp.s
+.PHONY : tests/CourseManager_test.cpp.s
+
+tests/test_main.obj: tests/test_main.cpp.obj
+.PHONY : tests/test_main.obj
+
+# target to build an object file
+tests/test_main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307_Tests.dir\build.make CMakeFiles/Project3307_Tests.dir/tests/test_main.cpp.obj
+.PHONY : tests/test_main.cpp.obj
+
+tests/test_main.i: tests/test_main.cpp.i
+.PHONY : tests/test_main.i
+
+# target to preprocess a source file
+tests/test_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307_Tests.dir\build.make CMakeFiles/Project3307_Tests.dir/tests/test_main.cpp.i
+.PHONY : tests/test_main.cpp.i
+
+tests/test_main.s: tests/test_main.cpp.s
+.PHONY : tests/test_main.s
+
+# target to generate assembly for a file
+tests/test_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project3307_Tests.dir\build.make CMakeFiles/Project3307_Tests.dir/tests/test_main.cpp.s
+.PHONY : tests/test_main.cpp.s
 
 # Help Target
 help:
@@ -471,8 +676,19 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
+	@echo ... install
+	@echo ... install/local
+	@echo ... install/strip
+	@echo ... list_install_components
 	@echo ... rebuild_cache
+	@echo ... test
 	@echo ... Project3307
+	@echo ... Project3307_Tests
+	@echo ... core_lib
+	@echo ... gmock
+	@echo ... gmock_main
+	@echo ... gtest
+	@echo ... gtest_main
 	@echo ... Authentication.obj
 	@echo ... Authentication.i
 	@echo ... Authentication.s
@@ -515,6 +731,15 @@ help:
 	@echo ... sqlite3.obj
 	@echo ... sqlite3.i
 	@echo ... sqlite3.s
+	@echo ... tests/Authentication_test.obj
+	@echo ... tests/Authentication_test.i
+	@echo ... tests/Authentication_test.s
+	@echo ... tests/CourseManager_test.obj
+	@echo ... tests/CourseManager_test.i
+	@echo ... tests/CourseManager_test.s
+	@echo ... tests/test_main.obj
+	@echo ... tests/test_main.i
+	@echo ... tests/test_main.s
 .PHONY : help
 
 

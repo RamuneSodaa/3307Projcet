@@ -8,6 +8,9 @@ project(Project3307)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+# Include directories for project headers
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
 # Set SFML directory (assuming SFML folder is in the same directory as CMakeLists.txt)
 set(SFML_DIR "${CMAKE_SOURCE_DIR}/SFML-2.6.2/lib/cmake/SFML")
 message("SFML_DIR is set to: ${SFML_DIR}") # Print to confirm SFML path
@@ -48,10 +51,15 @@ else()
     )
 endif()
 
-# Add executable for the project
-# Add sqlite3.c to the source list
-add_executable(${PROJECT_NAME}
-        Main.cpp
+# Set the Google Test directory and include it
+set(GTEST_DIRECTORY "${CMAKE_SOURCE_DIR}/googletest-main")
+add_subdirectory(${GTEST_DIRECTORY} ${CMAKE_BINARY_DIR}/googletest)
+
+include_directories(${GTEST_DIRECTORY}/googletest/include)
+include_directories(${GTEST_DIRECTORY}/googlemock/include)
+
+# Define source files
+set(SOURCE_FILES
         Authentication.cpp
         Course.cpp
         CourseManager.cpp
@@ -60,21 +68,42 @@ add_executable(${PROJECT_NAME}
         Student.cpp
         User.cpp
         MainMenuInterface.cpp
-        MainMenuInterface.h
         sqlite3.c
         DatabaseManager.cpp
-        LoginInterface.h
         LoginInterface.cpp
         Utils.h
-        NotificationInterface.h
         NotificationInterface.cpp
-        EnrollmentManager.h
         EnrollmentManager.cpp
 )
 
-# Link SFML libraries and additional dependencies
-target_link_libraries(${PROJECT_NAME}
-        ${SFML_LIBS}
-        winmm
-        gdi32
+# Create a library from source files
+add_library(core_lib STATIC ${SOURCE_FILES})
+
+# Add executable for the project
+add_executable(${PROJECT_NAME} Main.cpp)
+target_link_libraries(${PROJECT_NAME} core_lib ${SFML_LIBS})
+
+if(WIN32)
+    target_link_libraries(${PROJECT_NAME} winmm gdi32)
+endif()
+
+# Add the test executable
+add_executable(${PROJECT_NAME}_Tests
+        tests/test_main.cpp
+        tests/Authentication_test.cpp
+        tests/CourseManager_test.cpp
 )
+
+# Link Google Test and Google Mock to the test executable
+target_link_libraries(${PROJECT_NAME}_Tests
+        gtest
+        gtest_main
+        gmock
+        gmock_main
+        core_lib  # Link with the library containing the main functionality
+)
+
+# Enable testing and discover tests
+enable_testing()
+include(GoogleTest)
+gtest_discover_tests(${PROJECT_NAME}_Tests)

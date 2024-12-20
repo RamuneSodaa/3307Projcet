@@ -78,11 +78,10 @@ cmake ..
 make
 
 Run the Application：
-./CourseEnrollmentSystem
-Database Setup:
+Main.cpp
 
-Ensure SQLite is installed.
-Initialize the database using the provided SQL scripts in assets/sql/.
+Database reminder:
+Database should have be created, if not run the SQL file in cmake-build-debug
 
 Contributors
 Shaotian Li

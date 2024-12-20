@@ -83,236 +83,16 @@ CMakeFiles/Project3307.dir/Main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project3307.dir/Main.cpp.s"
 	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Alexf\Desktop\3307Projcet\3307\Main.cpp -o CMakeFiles\Project3307.dir\Main.cpp.s
 
-CMakeFiles/Project3307.dir/Authentication.cpp.obj: CMakeFiles/Project3307.dir/flags.make
-CMakeFiles/Project3307.dir/Authentication.cpp.obj: CMakeFiles/Project3307.dir/includes_CXX.rsp
-CMakeFiles/Project3307.dir/Authentication.cpp.obj: C:/Users/Alexf/Desktop/3307Projcet/3307/Authentication.cpp
-CMakeFiles/Project3307.dir/Authentication.cpp.obj: CMakeFiles/Project3307.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Project3307.dir/Authentication.cpp.obj"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project3307.dir/Authentication.cpp.obj -MF CMakeFiles\Project3307.dir\Authentication.cpp.obj.d -o CMakeFiles\Project3307.dir\Authentication.cpp.obj -c C:\Users\Alexf\Desktop\3307Projcet\3307\Authentication.cpp
-
-CMakeFiles/Project3307.dir/Authentication.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project3307.dir/Authentication.cpp.i"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Alexf\Desktop\3307Projcet\3307\Authentication.cpp > CMakeFiles\Project3307.dir\Authentication.cpp.i
-
-CMakeFiles/Project3307.dir/Authentication.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project3307.dir/Authentication.cpp.s"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Alexf\Desktop\3307Projcet\3307\Authentication.cpp -o CMakeFiles\Project3307.dir\Authentication.cpp.s
-
-CMakeFiles/Project3307.dir/Course.cpp.obj: CMakeFiles/Project3307.dir/flags.make
-CMakeFiles/Project3307.dir/Course.cpp.obj: CMakeFiles/Project3307.dir/includes_CXX.rsp
-CMakeFiles/Project3307.dir/Course.cpp.obj: C:/Users/Alexf/Desktop/3307Projcet/3307/Course.cpp
-CMakeFiles/Project3307.dir/Course.cpp.obj: CMakeFiles/Project3307.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Project3307.dir/Course.cpp.obj"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project3307.dir/Course.cpp.obj -MF CMakeFiles\Project3307.dir\Course.cpp.obj.d -o CMakeFiles\Project3307.dir\Course.cpp.obj -c C:\Users\Alexf\Desktop\3307Projcet\3307\Course.cpp
-
-CMakeFiles/Project3307.dir/Course.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project3307.dir/Course.cpp.i"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Alexf\Desktop\3307Projcet\3307\Course.cpp > CMakeFiles\Project3307.dir\Course.cpp.i
-
-CMakeFiles/Project3307.dir/Course.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project3307.dir/Course.cpp.s"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Alexf\Desktop\3307Projcet\3307\Course.cpp -o CMakeFiles\Project3307.dir\Course.cpp.s
-
-CMakeFiles/Project3307.dir/CourseManager.cpp.obj: CMakeFiles/Project3307.dir/flags.make
-CMakeFiles/Project3307.dir/CourseManager.cpp.obj: CMakeFiles/Project3307.dir/includes_CXX.rsp
-CMakeFiles/Project3307.dir/CourseManager.cpp.obj: C:/Users/Alexf/Desktop/3307Projcet/3307/CourseManager.cpp
-CMakeFiles/Project3307.dir/CourseManager.cpp.obj: CMakeFiles/Project3307.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Project3307.dir/CourseManager.cpp.obj"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project3307.dir/CourseManager.cpp.obj -MF CMakeFiles\Project3307.dir\CourseManager.cpp.obj.d -o CMakeFiles\Project3307.dir\CourseManager.cpp.obj -c C:\Users\Alexf\Desktop\3307Projcet\3307\CourseManager.cpp
-
-CMakeFiles/Project3307.dir/CourseManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project3307.dir/CourseManager.cpp.i"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Alexf\Desktop\3307Projcet\3307\CourseManager.cpp > CMakeFiles\Project3307.dir\CourseManager.cpp.i
-
-CMakeFiles/Project3307.dir/CourseManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project3307.dir/CourseManager.cpp.s"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Alexf\Desktop\3307Projcet\3307\CourseManager.cpp -o CMakeFiles\Project3307.dir\CourseManager.cpp.s
-
-CMakeFiles/Project3307.dir/PrerequisiteChecker.cpp.obj: CMakeFiles/Project3307.dir/flags.make
-CMakeFiles/Project3307.dir/PrerequisiteChecker.cpp.obj: CMakeFiles/Project3307.dir/includes_CXX.rsp
-CMakeFiles/Project3307.dir/PrerequisiteChecker.cpp.obj: C:/Users/Alexf/Desktop/3307Projcet/3307/PrerequisiteChecker.cpp
-CMakeFiles/Project3307.dir/PrerequisiteChecker.cpp.obj: CMakeFiles/Project3307.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Project3307.dir/PrerequisiteChecker.cpp.obj"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project3307.dir/PrerequisiteChecker.cpp.obj -MF CMakeFiles\Project3307.dir\PrerequisiteChecker.cpp.obj.d -o CMakeFiles\Project3307.dir\PrerequisiteChecker.cpp.obj -c C:\Users\Alexf\Desktop\3307Projcet\3307\PrerequisiteChecker.cpp
-
-CMakeFiles/Project3307.dir/PrerequisiteChecker.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project3307.dir/PrerequisiteChecker.cpp.i"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Alexf\Desktop\3307Projcet\3307\PrerequisiteChecker.cpp > CMakeFiles\Project3307.dir\PrerequisiteChecker.cpp.i
-
-CMakeFiles/Project3307.dir/PrerequisiteChecker.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project3307.dir/PrerequisiteChecker.cpp.s"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Alexf\Desktop\3307Projcet\3307\PrerequisiteChecker.cpp -o CMakeFiles\Project3307.dir\PrerequisiteChecker.cpp.s
-
-CMakeFiles/Project3307.dir/Scheduler.cpp.obj: CMakeFiles/Project3307.dir/flags.make
-CMakeFiles/Project3307.dir/Scheduler.cpp.obj: CMakeFiles/Project3307.dir/includes_CXX.rsp
-CMakeFiles/Project3307.dir/Scheduler.cpp.obj: C:/Users/Alexf/Desktop/3307Projcet/3307/Scheduler.cpp
-CMakeFiles/Project3307.dir/Scheduler.cpp.obj: CMakeFiles/Project3307.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Project3307.dir/Scheduler.cpp.obj"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project3307.dir/Scheduler.cpp.obj -MF CMakeFiles\Project3307.dir\Scheduler.cpp.obj.d -o CMakeFiles\Project3307.dir\Scheduler.cpp.obj -c C:\Users\Alexf\Desktop\3307Projcet\3307\Scheduler.cpp
-
-CMakeFiles/Project3307.dir/Scheduler.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project3307.dir/Scheduler.cpp.i"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Alexf\Desktop\3307Projcet\3307\Scheduler.cpp > CMakeFiles\Project3307.dir\Scheduler.cpp.i
-
-CMakeFiles/Project3307.dir/Scheduler.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project3307.dir/Scheduler.cpp.s"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Alexf\Desktop\3307Projcet\3307\Scheduler.cpp -o CMakeFiles\Project3307.dir\Scheduler.cpp.s
-
-CMakeFiles/Project3307.dir/Student.cpp.obj: CMakeFiles/Project3307.dir/flags.make
-CMakeFiles/Project3307.dir/Student.cpp.obj: CMakeFiles/Project3307.dir/includes_CXX.rsp
-CMakeFiles/Project3307.dir/Student.cpp.obj: C:/Users/Alexf/Desktop/3307Projcet/3307/Student.cpp
-CMakeFiles/Project3307.dir/Student.cpp.obj: CMakeFiles/Project3307.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Project3307.dir/Student.cpp.obj"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project3307.dir/Student.cpp.obj -MF CMakeFiles\Project3307.dir\Student.cpp.obj.d -o CMakeFiles\Project3307.dir\Student.cpp.obj -c C:\Users\Alexf\Desktop\3307Projcet\3307\Student.cpp
-
-CMakeFiles/Project3307.dir/Student.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project3307.dir/Student.cpp.i"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Alexf\Desktop\3307Projcet\3307\Student.cpp > CMakeFiles\Project3307.dir\Student.cpp.i
-
-CMakeFiles/Project3307.dir/Student.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project3307.dir/Student.cpp.s"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Alexf\Desktop\3307Projcet\3307\Student.cpp -o CMakeFiles\Project3307.dir\Student.cpp.s
-
-CMakeFiles/Project3307.dir/User.cpp.obj: CMakeFiles/Project3307.dir/flags.make
-CMakeFiles/Project3307.dir/User.cpp.obj: CMakeFiles/Project3307.dir/includes_CXX.rsp
-CMakeFiles/Project3307.dir/User.cpp.obj: C:/Users/Alexf/Desktop/3307Projcet/3307/User.cpp
-CMakeFiles/Project3307.dir/User.cpp.obj: CMakeFiles/Project3307.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Project3307.dir/User.cpp.obj"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project3307.dir/User.cpp.obj -MF CMakeFiles\Project3307.dir\User.cpp.obj.d -o CMakeFiles\Project3307.dir\User.cpp.obj -c C:\Users\Alexf\Desktop\3307Projcet\3307\User.cpp
-
-CMakeFiles/Project3307.dir/User.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project3307.dir/User.cpp.i"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Alexf\Desktop\3307Projcet\3307\User.cpp > CMakeFiles\Project3307.dir\User.cpp.i
-
-CMakeFiles/Project3307.dir/User.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project3307.dir/User.cpp.s"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Alexf\Desktop\3307Projcet\3307\User.cpp -o CMakeFiles\Project3307.dir\User.cpp.s
-
-CMakeFiles/Project3307.dir/MainMenuInterface.cpp.obj: CMakeFiles/Project3307.dir/flags.make
-CMakeFiles/Project3307.dir/MainMenuInterface.cpp.obj: CMakeFiles/Project3307.dir/includes_CXX.rsp
-CMakeFiles/Project3307.dir/MainMenuInterface.cpp.obj: C:/Users/Alexf/Desktop/3307Projcet/3307/MainMenuInterface.cpp
-CMakeFiles/Project3307.dir/MainMenuInterface.cpp.obj: CMakeFiles/Project3307.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Project3307.dir/MainMenuInterface.cpp.obj"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project3307.dir/MainMenuInterface.cpp.obj -MF CMakeFiles\Project3307.dir\MainMenuInterface.cpp.obj.d -o CMakeFiles\Project3307.dir\MainMenuInterface.cpp.obj -c C:\Users\Alexf\Desktop\3307Projcet\3307\MainMenuInterface.cpp
-
-CMakeFiles/Project3307.dir/MainMenuInterface.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project3307.dir/MainMenuInterface.cpp.i"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Alexf\Desktop\3307Projcet\3307\MainMenuInterface.cpp > CMakeFiles\Project3307.dir\MainMenuInterface.cpp.i
-
-CMakeFiles/Project3307.dir/MainMenuInterface.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project3307.dir/MainMenuInterface.cpp.s"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Alexf\Desktop\3307Projcet\3307\MainMenuInterface.cpp -o CMakeFiles\Project3307.dir\MainMenuInterface.cpp.s
-
-CMakeFiles/Project3307.dir/sqlite3.c.obj: CMakeFiles/Project3307.dir/flags.make
-CMakeFiles/Project3307.dir/sqlite3.c.obj: CMakeFiles/Project3307.dir/includes_C.rsp
-CMakeFiles/Project3307.dir/sqlite3.c.obj: C:/Users/Alexf/Desktop/3307Projcet/3307/sqlite3.c
-CMakeFiles/Project3307.dir/sqlite3.c.obj: CMakeFiles/Project3307.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Project3307.dir/sqlite3.c.obj"
-	"D:\CLion 2024.1.4\bin\mingw\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Project3307.dir/sqlite3.c.obj -MF CMakeFiles\Project3307.dir\sqlite3.c.obj.d -o CMakeFiles\Project3307.dir\sqlite3.c.obj -c C:\Users\Alexf\Desktop\3307Projcet\3307\sqlite3.c
-
-CMakeFiles/Project3307.dir/sqlite3.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Project3307.dir/sqlite3.c.i"
-	"D:\CLion 2024.1.4\bin\mingw\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\Alexf\Desktop\3307Projcet\3307\sqlite3.c > CMakeFiles\Project3307.dir\sqlite3.c.i
-
-CMakeFiles/Project3307.dir/sqlite3.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Project3307.dir/sqlite3.c.s"
-	"D:\CLion 2024.1.4\bin\mingw\bin\gcc.exe" $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\Alexf\Desktop\3307Projcet\3307\sqlite3.c -o CMakeFiles\Project3307.dir\sqlite3.c.s
-
-CMakeFiles/Project3307.dir/DatabaseManager.cpp.obj: CMakeFiles/Project3307.dir/flags.make
-CMakeFiles/Project3307.dir/DatabaseManager.cpp.obj: CMakeFiles/Project3307.dir/includes_CXX.rsp
-CMakeFiles/Project3307.dir/DatabaseManager.cpp.obj: C:/Users/Alexf/Desktop/3307Projcet/3307/DatabaseManager.cpp
-CMakeFiles/Project3307.dir/DatabaseManager.cpp.obj: CMakeFiles/Project3307.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Project3307.dir/DatabaseManager.cpp.obj"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project3307.dir/DatabaseManager.cpp.obj -MF CMakeFiles\Project3307.dir\DatabaseManager.cpp.obj.d -o CMakeFiles\Project3307.dir\DatabaseManager.cpp.obj -c C:\Users\Alexf\Desktop\3307Projcet\3307\DatabaseManager.cpp
-
-CMakeFiles/Project3307.dir/DatabaseManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project3307.dir/DatabaseManager.cpp.i"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Alexf\Desktop\3307Projcet\3307\DatabaseManager.cpp > CMakeFiles\Project3307.dir\DatabaseManager.cpp.i
-
-CMakeFiles/Project3307.dir/DatabaseManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project3307.dir/DatabaseManager.cpp.s"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Alexf\Desktop\3307Projcet\3307\DatabaseManager.cpp -o CMakeFiles\Project3307.dir\DatabaseManager.cpp.s
-
-CMakeFiles/Project3307.dir/LoginInterface.cpp.obj: CMakeFiles/Project3307.dir/flags.make
-CMakeFiles/Project3307.dir/LoginInterface.cpp.obj: CMakeFiles/Project3307.dir/includes_CXX.rsp
-CMakeFiles/Project3307.dir/LoginInterface.cpp.obj: C:/Users/Alexf/Desktop/3307Projcet/3307/LoginInterface.cpp
-CMakeFiles/Project3307.dir/LoginInterface.cpp.obj: CMakeFiles/Project3307.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Project3307.dir/LoginInterface.cpp.obj"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project3307.dir/LoginInterface.cpp.obj -MF CMakeFiles\Project3307.dir\LoginInterface.cpp.obj.d -o CMakeFiles\Project3307.dir\LoginInterface.cpp.obj -c C:\Users\Alexf\Desktop\3307Projcet\3307\LoginInterface.cpp
-
-CMakeFiles/Project3307.dir/LoginInterface.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project3307.dir/LoginInterface.cpp.i"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Alexf\Desktop\3307Projcet\3307\LoginInterface.cpp > CMakeFiles\Project3307.dir\LoginInterface.cpp.i
-
-CMakeFiles/Project3307.dir/LoginInterface.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project3307.dir/LoginInterface.cpp.s"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Alexf\Desktop\3307Projcet\3307\LoginInterface.cpp -o CMakeFiles\Project3307.dir\LoginInterface.cpp.s
-
-CMakeFiles/Project3307.dir/NotificationInterface.cpp.obj: CMakeFiles/Project3307.dir/flags.make
-CMakeFiles/Project3307.dir/NotificationInterface.cpp.obj: CMakeFiles/Project3307.dir/includes_CXX.rsp
-CMakeFiles/Project3307.dir/NotificationInterface.cpp.obj: C:/Users/Alexf/Desktop/3307Projcet/3307/NotificationInterface.cpp
-CMakeFiles/Project3307.dir/NotificationInterface.cpp.obj: CMakeFiles/Project3307.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Project3307.dir/NotificationInterface.cpp.obj"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project3307.dir/NotificationInterface.cpp.obj -MF CMakeFiles\Project3307.dir\NotificationInterface.cpp.obj.d -o CMakeFiles\Project3307.dir\NotificationInterface.cpp.obj -c C:\Users\Alexf\Desktop\3307Projcet\3307\NotificationInterface.cpp
-
-CMakeFiles/Project3307.dir/NotificationInterface.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project3307.dir/NotificationInterface.cpp.i"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Alexf\Desktop\3307Projcet\3307\NotificationInterface.cpp > CMakeFiles\Project3307.dir\NotificationInterface.cpp.i
-
-CMakeFiles/Project3307.dir/NotificationInterface.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project3307.dir/NotificationInterface.cpp.s"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Alexf\Desktop\3307Projcet\3307\NotificationInterface.cpp -o CMakeFiles\Project3307.dir\NotificationInterface.cpp.s
-
-CMakeFiles/Project3307.dir/EnrollmentManager.cpp.obj: CMakeFiles/Project3307.dir/flags.make
-CMakeFiles/Project3307.dir/EnrollmentManager.cpp.obj: CMakeFiles/Project3307.dir/includes_CXX.rsp
-CMakeFiles/Project3307.dir/EnrollmentManager.cpp.obj: C:/Users/Alexf/Desktop/3307Projcet/3307/EnrollmentManager.cpp
-CMakeFiles/Project3307.dir/EnrollmentManager.cpp.obj: CMakeFiles/Project3307.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Project3307.dir/EnrollmentManager.cpp.obj"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Project3307.dir/EnrollmentManager.cpp.obj -MF CMakeFiles\Project3307.dir\EnrollmentManager.cpp.obj.d -o CMakeFiles\Project3307.dir\EnrollmentManager.cpp.obj -c C:\Users\Alexf\Desktop\3307Projcet\3307\EnrollmentManager.cpp
-
-CMakeFiles/Project3307.dir/EnrollmentManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Project3307.dir/EnrollmentManager.cpp.i"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Alexf\Desktop\3307Projcet\3307\EnrollmentManager.cpp > CMakeFiles\Project3307.dir\EnrollmentManager.cpp.i
-
-CMakeFiles/Project3307.dir/EnrollmentManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Project3307.dir/EnrollmentManager.cpp.s"
-	"D:\CLion 2024.1.4\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Alexf\Desktop\3307Projcet\3307\EnrollmentManager.cpp -o CMakeFiles\Project3307.dir\EnrollmentManager.cpp.s
-
 # Object files for target Project3307
 Project3307_OBJECTS = \
-"CMakeFiles/Project3307.dir/Main.cpp.obj" \
-"CMakeFiles/Project3307.dir/Authentication.cpp.obj" \
-"CMakeFiles/Project3307.dir/Course.cpp.obj" \
-"CMakeFiles/Project3307.dir/CourseManager.cpp.obj" \
-"CMakeFiles/Project3307.dir/PrerequisiteChecker.cpp.obj" \
-"CMakeFiles/Project3307.dir/Scheduler.cpp.obj" \
-"CMakeFiles/Project3307.dir/Student.cpp.obj" \
-"CMakeFiles/Project3307.dir/User.cpp.obj" \
-"CMakeFiles/Project3307.dir/MainMenuInterface.cpp.obj" \
-"CMakeFiles/Project3307.dir/sqlite3.c.obj" \
-"CMakeFiles/Project3307.dir/DatabaseManager.cpp.obj" \
-"CMakeFiles/Project3307.dir/LoginInterface.cpp.obj" \
-"CMakeFiles/Project3307.dir/NotificationInterface.cpp.obj" \
-"CMakeFiles/Project3307.dir/EnrollmentManager.cpp.obj"
+"CMakeFiles/Project3307.dir/Main.cpp.obj"
 
 # External object files for target Project3307
 Project3307_EXTERNAL_OBJECTS =
 
 Project3307.exe: CMakeFiles/Project3307.dir/Main.cpp.obj
-Project3307.exe: CMakeFiles/Project3307.dir/Authentication.cpp.obj
-Project3307.exe: CMakeFiles/Project3307.dir/Course.cpp.obj
-Project3307.exe: CMakeFiles/Project3307.dir/CourseManager.cpp.obj
-Project3307.exe: CMakeFiles/Project3307.dir/PrerequisiteChecker.cpp.obj
-Project3307.exe: CMakeFiles/Project3307.dir/Scheduler.cpp.obj
-Project3307.exe: CMakeFiles/Project3307.dir/Student.cpp.obj
-Project3307.exe: CMakeFiles/Project3307.dir/User.cpp.obj
-Project3307.exe: CMakeFiles/Project3307.dir/MainMenuInterface.cpp.obj
-Project3307.exe: CMakeFiles/Project3307.dir/sqlite3.c.obj
-Project3307.exe: CMakeFiles/Project3307.dir/DatabaseManager.cpp.obj
-Project3307.exe: CMakeFiles/Project3307.dir/LoginInterface.cpp.obj
-Project3307.exe: CMakeFiles/Project3307.dir/NotificationInterface.cpp.obj
-Project3307.exe: CMakeFiles/Project3307.dir/EnrollmentManager.cpp.obj
 Project3307.exe: CMakeFiles/Project3307.dir/build.make
+Project3307.exe: libcore_lib.a
 Project3307.exe: C:/Users/Alexf/Desktop/3307Projcet/3307/SFML-2.6.2/lib/libsfml-graphics-d.a
 Project3307.exe: C:/Users/Alexf/Desktop/3307Projcet/3307/SFML-2.6.2/lib/libsfml-window-d.a
 Project3307.exe: C:/Users/Alexf/Desktop/3307Projcet/3307/SFML-2.6.2/lib/libsfml-system-d.a
@@ -321,8 +101,9 @@ Project3307.exe: C:/Users/Alexf/Desktop/3307Projcet/3307/SFML-2.6.2/lib/libopena
 Project3307.exe: CMakeFiles/Project3307.dir/linkLibs.rsp
 Project3307.exe: CMakeFiles/Project3307.dir/objects1.rsp
 Project3307.exe: CMakeFiles/Project3307.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable Project3307.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Project3307.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Project3307.dir\link.txt --verbose=$(VERBOSE)
+	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/Alexf/.vcpkg-clion/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Project3307.exe -installedDir C:/Users/Alexf/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/debug/bin -OutVariable out
 
 # Rule to build all files generated by this target.
 CMakeFiles/Project3307.dir/build: Project3307.exe

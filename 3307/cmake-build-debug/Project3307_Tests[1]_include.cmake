@@ -1,0 +1,5 @@
+if(EXISTS "C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Project3307_Tests[1]_tests.cmake")
+  include("C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Project3307_Tests[1]_tests.cmake")
+else()
+  add_test(Project3307_Tests_NOT_BUILT Project3307_Tests_NOT_BUILT)
+endif()

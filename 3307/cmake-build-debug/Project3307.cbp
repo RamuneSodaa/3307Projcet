@@ -5,13 +5,67 @@
 		<Option title="Project3307"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\.vcpkg-clion\;CMake Files\..\..\..\.vcpkg-clion\vcpkg\;CMake Files\..\..\..\.vcpkg-clion\vcpkg\scripts\;CMake Files\..\..\..\.vcpkg-clion\vcpkg\scripts\buildsystems\;CMake Files\googletest-main\;CMake Files\googletest-main\googlemock\;CMake Files\googletest-main\googlemock\cmake\;CMake Files\googletest-main\googletest\;CMake Files\googletest-main\googletest\cmake\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="core_lib">
+				<Option output="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/libcore_lib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/SFML-2.6.2/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock/include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 core_lib"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="core_lib/fast">
+				<Option output="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/libcore_lib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/SFML-2.6.2/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock/include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 core_lib/fast"/>
 					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -24,8 +78,11 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/include"/>
 					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/SFML-2.6.2/include"/>
 					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock/include"/>
 					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
 					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
 					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
@@ -48,8 +105,11 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/include"/>
 					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/SFML-2.6.2/include"/>
 					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock/include"/>
 					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
 					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
 					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
@@ -60,6 +120,74 @@
 				</Compiler>
 				<MakeCommands>
 					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 Project3307/fast"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Project3307_Tests">
+				<Option output="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Project3307_Tests.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/SFML-2.6.2/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 Project3307_Tests"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Project3307_Tests/fast">
+				<Option output="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Project3307_Tests.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/SFML-2.6.2/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 Project3307_Tests/fast"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test">
+				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 test"/>
 					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -85,93 +213,408 @@
 					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock">
+				<Option output="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/lib/libgmock.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/SFML-2.6.2/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock/fast">
+				<Option output="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/lib/libgmock.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/SFML-2.6.2/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock/fast"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock_main">
+				<Option output="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/lib/libgmock_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/SFML-2.6.2/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock_main"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gmock_main/fast">
+				<Option output="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/lib/libgmock_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/SFML-2.6.2/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock/Makefile&quot;  VERBOSE=1 gmock_main/fast"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest">
+				<Option output="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/lib/libgtest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/SFML-2.6.2/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest/Makefile&quot;  VERBOSE=1 gtest"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest/fast">
+				<Option output="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/lib/libgtest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/SFML-2.6.2/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main">
+				<Option output="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/lib/libgtest_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/SFML-2.6.2/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest/Makefile&quot;  VERBOSE=1 gtest_main"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main/fast">
+				<Option output="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/lib/libgtest_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/SFML-2.6.2/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/include"/>
+					<Add directory="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"/>
+					<Add directory="D:/CLion 2024.1.4/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
+					<CompileFile command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2024.1.4/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/Authentication.cpp">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/Authentication.h">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/Course.cpp">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/Course.h">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/CourseManager.cpp">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/CourseManager.h">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/DatabaseManager.cpp">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/DatabaseManager.h">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/EnrollmentManager.cpp">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/EnrollmentManager.h">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/LoginInterface.cpp">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/LoginInterface.h">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/Main.cpp">
 			<Option target="Project3307"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/MainMenuInterface.cpp">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/MainMenuInterface.h">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/NotificationInterface.cpp">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/NotificationInterface.h">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/PrerequisiteChecker.cpp">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/PrerequisiteChecker.h">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/Scheduler.cpp">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/Scheduler.h">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/Student.cpp">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/Student.h">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/User.cpp">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/User.h">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/Utils.h">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
+		</Unit>
+		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock/src/gmock-all.cc">
+			<Option target="gmock"/>
+		</Unit>
+		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock/src/gmock_main.cc">
+			<Option target="gmock_main"/>
+		</Unit>
+		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/src/gtest-all.cc">
+			<Option target="gtest"/>
+		</Unit>
+		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/src/gtest_main.cc">
+			<Option target="gtest_main"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/sqlite3.c">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/sqlite3.h">
-			<Option target="Project3307"/>
+			<Option target="core_lib"/>
+		</Unit>
+		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/tests/Authentication_test.cpp">
+			<Option target="Project3307_Tests"/>
+		</Unit>
+		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/tests/CourseManager_test.cpp">
+			<Option target="Project3307_Tests"/>
+		</Unit>
+		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/tests/test_main.cpp">
+			<Option target="Project3307_Tests"/>
 		</Unit>
 		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/../../../.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\.vcpkg-clion\vcpkg\scripts\buildsystems\"/>
+		</Unit>
+		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\googletest-main\"/>
+		</Unit>
+		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\googletest-main\googlemock\"/>
+		</Unit>
+		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock/cmake/gmock.pc.in">
+			<Option virtualFolder="CMake Files\googletest-main\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock/cmake/gmock_main.pc.in">
+			<Option virtualFolder="CMake Files\googletest-main\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\googletest-main\googletest\"/>
+		</Unit>
+		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/cmake/Config.cmake.in">
+			<Option virtualFolder="CMake Files\googletest-main\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/cmake/gtest.pc.in">
+			<Option virtualFolder="CMake Files\googletest-main\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/cmake/gtest_main.pc.in">
+			<Option virtualFolder="CMake Files\googletest-main\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest/cmake/internal_utils.cmake">
+			<Option virtualFolder="CMake Files\googletest-main\googletest\cmake\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

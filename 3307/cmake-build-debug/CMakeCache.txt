@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//Builds the googlemock subproject
+BUILD_GMOCK:BOOL=ON
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=D:/CLion 2024.1.4/bin/mingw/bin/addr2line.exe
 
@@ -120,8 +123,56 @@ CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=C:/Users/Alexf/Desktop/3307Projcet/3307/
 //Convert GNU import libraries to MS format (requires Visual Studio)
 CMAKE_GNUtoMS:BOOL=OFF
 
+//User executables (bin)
+CMAKE_INSTALL_BINDIR:PATH=bin
+
+//Read-only architecture-independent data (DATAROOTDIR)
+CMAKE_INSTALL_DATADIR:PATH=
+
+//Read-only architecture-independent data root (share)
+CMAKE_INSTALL_DATAROOTDIR:PATH=share
+
+//Documentation root (DATAROOTDIR/doc/PROJECT_NAME)
+CMAKE_INSTALL_DOCDIR:PATH=
+
+//C header files (include)
+CMAKE_INSTALL_INCLUDEDIR:PATH=include
+
+//Info documentation (DATAROOTDIR/info)
+CMAKE_INSTALL_INFODIR:PATH=
+
+//Object code libraries (lib)
+CMAKE_INSTALL_LIBDIR:PATH=lib
+
+//Program executables (libexec)
+CMAKE_INSTALL_LIBEXECDIR:PATH=libexec
+
+//Locale-dependent data (DATAROOTDIR/locale)
+CMAKE_INSTALL_LOCALEDIR:PATH=
+
+//Modifiable single-machine data (var)
+CMAKE_INSTALL_LOCALSTATEDIR:PATH=var
+
+//Man documentation (DATAROOTDIR/man)
+CMAKE_INSTALL_MANDIR:PATH=
+
+//C header files for non-gcc (/usr/include)
+CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
+
 //Install path prefix, prepended onto install directories.
 CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/Project3307
+
+//Run-time variable data (LOCALSTATEDIR/run)
+CMAKE_INSTALL_RUNSTATEDIR:PATH=
+
+//System admin executables (sbin)
+CMAKE_INSTALL_SBINDIR:PATH=sbin
+
+//Modifiable architecture-independent data (com)
+CMAKE_INSTALL_SHAREDSTATEDIR:PATH=com
+
+//Read-only single-machine data (etc)
+CMAKE_INSTALL_SYSCONFDIR:PATH=etc
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=D:/CLion 2024.1.4/bin/mingw/bin/ld.exe
@@ -166,6 +217,21 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=Project3307
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION:STATIC=1.15.2
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MAJOR:STATIC=1
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MINOR:STATIC=15
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_PATCH:STATIC=2
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_TWEAK:STATIC=
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=D:/CLion 2024.1.4/bin/mingw/bin/ranlib.exe
@@ -244,11 +310,52 @@ CMAKE_STRIP:FILEPATH=D:/CLion 2024.1.4/bin/mingw/bin/strip.exe
 //Path to a program.
 CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 
+//No help, variable specified on the command line.
+CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=C:\Users\Alexf\.vcpkg-clion\vcpkg\scripts\buildsystems\vcpkg.cmake
+
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
 // during the make.  This is useful for debugging only. With Visual
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
+
+//Path to a library.
+GMOCK_LIBRARY:FILEPATH=GMOCK_LIBRARY-NOTFOUND
+
+//Path to a library.
+GMOCK_LIBRARY_DEBUG:FILEPATH=GMOCK_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+GMOCK_MAIN_LIBRARY:FILEPATH=C:/Users/Alexf/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/debug/lib/manual-link/libgmock_main.dll.a
+
+//Path to a library.
+GMOCK_MAIN_LIBRARY_DEBUG:FILEPATH=GMOCK_MAIN_LIBRARY_DEBUG-NOTFOUND
+
+//Use Abseil and RE2. Requires Abseil and RE2 to be separately
+// added to the build.
+GTEST_HAS_ABSL:BOOL=OFF
+
+//Path to a file.
+GTEST_INCLUDE_DIR:PATH=C:/Users/Alexf/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/include
+
+//Path to a library.
+GTEST_LIBRARY:FILEPATH=GTEST_LIBRARY-NOTFOUND
+
+//Path to a library.
+GTEST_LIBRARY_DEBUG:FILEPATH=GTEST_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+GTEST_MAIN_LIBRARY:FILEPATH=C:/Users/Alexf/.vcpkg-clion/vcpkg/installed/x64-mingw-dynamic/debug/lib/manual-link/libgtest_main.dll.a
+
+//Path to a library.
+GTEST_MAIN_LIBRARY_DEBUG:FILEPATH=GTEST_MAIN_LIBRARY_DEBUG-NOTFOUND
+
+//The directory containing a CMake configuration file for GTest.
+GTest_DIR:PATH=GTest_DIR-NOTFOUND
+
+//Enable installation of googletest. (Projects embedding googletest
+// may want to turn this OFF.)
+INSTALL_GTEST:BOOL=ON
 
 //Value Computed by CMake
 Project3307_BINARY_DIR:STATIC=C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug
@@ -258,6 +365,104 @@ Project3307_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 Project3307_SOURCE_DIR:STATIC=C:/Users/Alexf/Desktop/3307Projcet/3307
+
+//Path to a file.
+SFML_DOC_DIR:PATH=SFML_DOC_DIR-NOTFOUND
+
+//Automatically copy dependencies into the output directory for
+// executables.
+VCPKG_APPLOCAL_DEPS:BOOL=ON
+
+//The directory which contains the installed libraries for each
+// triplet
+VCPKG_INSTALLED_DIR:PATH=C:/Users/Alexf/.vcpkg-clion/vcpkg/installed
+
+//The path to the vcpkg manifest directory.
+VCPKG_MANIFEST_DIR:PATH=
+
+//Use manifest mode, as opposed to classic mode.
+VCPKG_MANIFEST_MODE:BOOL=OFF
+
+//Appends the vcpkg paths to CMAKE_PREFIX_PATH, CMAKE_LIBRARY_PATH
+// and CMAKE_FIND_ROOT_PATH so that vcpkg libraries/packages are
+// found after toolchain/system libraries/packages.
+VCPKG_PREFER_SYSTEM_LIBS:BOOL=OFF
+
+//Enable the setup of CMAKE_PROGRAM_PATH to vcpkg paths
+VCPKG_SETUP_CMAKE_PROGRAM_PATH:BOOL=ON
+
+//Vcpkg target triplet (ex. x86-windows)
+VCPKG_TARGET_TRIPLET:STRING=x64-mingw-dynamic
+
+//Trace calls to find_package()
+VCPKG_TRACE_FIND_PACKAGE:BOOL=OFF
+
+//Enables messages from the VCPKG toolchain for debugging purposes.
+VCPKG_VERBOSE:BOOL=OFF
+
+//(experimental) Automatically copy dependencies into the install
+// target directory for executables. Requires CMake 3.14.
+X_VCPKG_APPLOCAL_DEPS_INSTALL:BOOL=OFF
+
+//(experimental) Add USES_TERMINAL to VCPKG_APPLOCAL_DEPS to force
+// serialization.
+X_VCPKG_APPLOCAL_DEPS_SERIALIZED:BOOL=OFF
+
+//Path to a program.
+Z_VCPKG_BUILTIN_POWERSHELL_PATH:FILEPATH=C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe
+
+//Path to a program.
+Z_VCPKG_PWSH_PATH:FILEPATH=Z_VCPKG_PWSH_PATH-NOTFOUND
+
+//The directory which contains the installed libraries for each
+// triplet
+_VCPKG_INSTALLED_DIR:PATH=C:/Users/Alexf/.vcpkg-clion/vcpkg/installed
+
+//Value Computed by CMake
+gmock_BINARY_DIR:STATIC=C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googlemock
+
+//Value Computed by CMake
+gmock_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+gmock_SOURCE_DIR:STATIC=C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googlemock
+
+//Build all of Google Mock's own tests.
+gmock_build_tests:BOOL=OFF
+
+//Value Computed by CMake
+googletest-distribution_BINARY_DIR:STATIC=C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest
+
+//Value Computed by CMake
+googletest-distribution_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+googletest-distribution_SOURCE_DIR:STATIC=C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main
+
+//Value Computed by CMake
+gtest_BINARY_DIR:STATIC=C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest
+
+//Value Computed by CMake
+gtest_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+gtest_SOURCE_DIR:STATIC=C:/Users/Alexf/Desktop/3307Projcet/3307/googletest-main/googletest
+
+//Build gtest's sample programs.
+gtest_build_samples:BOOL=OFF
+
+//Build all of gtest's own tests.
+gtest_build_tests:BOOL=OFF
+
+//Disable uses of pthreads in gtest.
+gtest_disable_pthreads:BOOL=OFF
+
+//Use shared (DLL) run-time lib even when Google Test is built
+// as static lib.
+gtest_force_shared_crt:BOOL=ON
+
+//Build gtest with internal symbols hidden in shared libraries.
+gtest_hide_internal_symbols:BOOL=OFF
 
 
 ########################
@@ -353,6 +558,38 @@ CMAKE_GENERATOR_TOOLSET:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=C:/Users/Alexf/Desktop/3307Projcet/3307
+//ADVANCED property for variable: CMAKE_INSTALL_BINDIR
+CMAKE_INSTALL_BINDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DATADIR
+CMAKE_INSTALL_DATADIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DATAROOTDIR
+CMAKE_INSTALL_DATAROOTDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DOCDIR
+CMAKE_INSTALL_DOCDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_INCLUDEDIR
+CMAKE_INSTALL_INCLUDEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_INFODIR
+CMAKE_INSTALL_INFODIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LIBDIR
+CMAKE_INSTALL_LIBDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LIBEXECDIR
+CMAKE_INSTALL_LIBEXECDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LOCALEDIR
+CMAKE_INSTALL_LOCALEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LOCALSTATEDIR
+CMAKE_INSTALL_LOCALSTATEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_MANDIR
+CMAKE_INSTALL_MANDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_OLDINCLUDEDIR
+CMAKE_INSTALL_OLDINCLUDEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_RUNSTATEDIR
+CMAKE_INSTALL_RUNSTATEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SBINDIR
+CMAKE_INSTALL_SBINDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SHAREDSTATEDIR
+CMAKE_INSTALL_SHAREDSTATEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SYSCONFDIR
+CMAKE_INSTALL_SYSCONFDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
 CMAKE_LINKER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MAKE_PROGRAM
@@ -370,7 +607,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -424,8 +661,59 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 CMAKE_STRIP-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_TAPI
 CMAKE_TAPI-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_TOOLCHAIN_FILE
+CMAKE_TOOLCHAIN_FILE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GMOCK_LIBRARY
+GMOCK_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GMOCK_LIBRARY_DEBUG
+GMOCK_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GMOCK_MAIN_LIBRARY
+GMOCK_MAIN_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GMOCK_MAIN_LIBRARY_DEBUG
+GMOCK_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTEST_INCLUDE_DIR
+GTEST_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTEST_LIBRARY
+GTEST_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTEST_LIBRARY_DEBUG
+GTEST_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTEST_MAIN_LIBRARY
+GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTEST_MAIN_LIBRARY_DEBUG
+GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//Install the dependencies listed in your manifest:
+//\n    If this is off, you will have to manually install your dependencies.
+//\n    See https://github.com/microsoft/vcpkg/tree/master/docs/specifications/manifests.md
+// for more info.
+//\n
+VCPKG_MANIFEST_INSTALL:INTERNAL=OFF
+//ADVANCED property for variable: VCPKG_VERBOSE
+VCPKG_VERBOSE-ADVANCED:INTERNAL=1
+//Making sure VCPKG_MANIFEST_MODE doesn't change
+Z_VCPKG_CHECK_MANIFEST_MODE:INTERNAL=OFF
+//The path to the PowerShell implementation to use.
+Z_VCPKG_POWERSHELL_PATH:INTERNAL=C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe
+//Vcpkg root directory
+Z_VCPKG_ROOT_DIR:INTERNAL=C:/Users/Alexf/.vcpkg-clion/vcpkg
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
+//CMAKE_INSTALL_PREFIX during last run
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/Project3307
+cmake_package_name:INTERNAL=GTest
+generated_dir:INTERNAL=C:/Users/Alexf/Desktop/3307Projcet/3307/cmake-build-debug/googletest/googletest/generated
+//ADVANCED property for variable: gmock_build_tests
+gmock_build_tests-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: gtest_build_samples
+gtest_build_samples-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: gtest_build_tests
+gtest_build_tests-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: gtest_disable_pthreads
+gtest_disable_pthreads-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: gtest_force_shared_crt
+gtest_force_shared_crt-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: gtest_hide_internal_symbols
+gtest_hide_internal_symbols-ADVANCED:INTERNAL=1
+targets_export_name:INTERNAL=GTestTargets
 
