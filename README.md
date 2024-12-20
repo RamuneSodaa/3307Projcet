@@ -42,6 +42,16 @@ The College Course Enrollment System is a comprehensive C++ application with a G
 
 ---
 
+## **Icon used**
+
+![icon.png](3307%2Fassets%2Ficon.png)
+
+![user_profile.png](3307%2Fassets%2Fuser_profile.png)
+
+All images used in the project created by ChatGPT: https://chatgpt.com/share/6756e190-0414-8006-8cb6-5458b7d35882
+
+---
+
 ## **Project Structure**
 ```plaintext
 3307/
@@ -77,3 +87,8 @@ Initialize the database using the provided SQL scripts in assets/sql/.
 Contributors
 Shaotian Li
 Xiaowei Feng
+
+
+
+
+

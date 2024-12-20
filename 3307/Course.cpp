@@ -4,6 +4,16 @@
 #include <sstream>
 #include <algorithm>
 
+/**
+ * Constructor for the Course class.
+ * Initializes a new instance of Course with specified parameters.
+ *
+ * @param id The unique identifier for the course.
+ * @param name The name of the course.
+ * @param sched The scheduled time for the course.
+ * @param cap The maximum number of students that can enroll in the course.
+ * @param prereq A string representing the prerequisites of the course.
+ */
 Course::Course(int id, const std::string& name, const std::string& sched, int cap, const std::string& prereq)
     : courseID(id), courseName(name), schedule(sched), capacity(cap), prereqStr(prereq) {
 }
@@ -31,12 +41,21 @@ void Course::setCourseName(const std::string& name) {
     courseName = name;
 }
 
+/**
+ * Adds a prerequisite to the course.
+ * @param prerequisite A pointer to a Course object that is a prerequisite.
+ */
 void Course::addPrerequisite(Course* prerequisite) {
     if (prerequisite) {
         prerequisites.push_back(prerequisite);
     }
 }
 
+/**
+ * Enrolls a student in the course.
+ * @param student A pointer to a Student object to be enrolled in the course.
+ * @return true if the enrollment is successful, false if the course is full.
+ */
 bool Course::enrollStudent(Student* student) {
     if (capacity <= 0) {
         std::cout << "Course is full.\n";
@@ -48,14 +67,22 @@ bool Course::enrollStudent(Student* student) {
     return true;
 }
 
+/**
+ * Drops a student from the course.
+ * @param student A pointer to a Student object to be dropped from the course.
+ */
 void Course::dropStudent(Student* student) {
     auto it = std::find(enrolledStudents.begin(), enrolledStudents.end(), student);
     if (it != enrolledStudents.end()) {
         enrolledStudents.erase(it);
-        capacity++; // free up a slot
+        capacity++;
     }
 }
 
+/**
+ * Resolves the prerequisites for the course based on a list of all courses.
+ * @param allCourses A vector of all available courses used to match prerequisites.
+ */
 void Course::resolvePrerequisites(const std::vector<Course*>& allCourses) {
     if (courseID < 200 || prereqStr.empty()) return; // no prereqs for <200, or empty string
 
@@ -99,7 +126,3 @@ void Course::resolvePrerequisites(const std::vector<Course*>& allCourses) {
         }
     }
 }
-
-
-// The following methods (checkPrerequisitesMet, listMissingPrerequisites) may be defined if needed,
-// but PrerequisiteChecker uses its own logic so we can omit them here or keep empty.

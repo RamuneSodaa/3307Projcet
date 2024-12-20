@@ -1,22 +1,22 @@
 #include "Authentication.h"
+#include "NotificationInterface.h"
 #include <iostream>
 #include <algorithm>
 
-// Initialize static member
 Authentication* Authentication::instance = nullptr;
-
-// Private constructor
 Authentication::Authentication() {
-
-
-    // Initialize account state
     for (const auto& user : userCredentials) {
         failedAttempts[user.first] = 0;
         lockedAccounts[user.first] = false;
     }
 }
 
-// Get singleton instance
+/**
+ * Static method to get the singleton instance of the Authentication class.
+ * If the instance does not exist, it is created. Otherwise, the existing instance is returned.
+ *
+ * @return Pointer to the singleton Authentication instance.
+ */
 Authentication* Authentication::getInstance() {
     if (instance == nullptr) {
         instance = new Authentication();
@@ -24,20 +24,33 @@ Authentication* Authentication::getInstance() {
     return instance;
 }
 
-// Verify username and password
+/**
+ * Verifies if the provided username and password match those stored in the system.
+ *
+ * @param username The username of the user trying to log in.
+ * @param password The password provided by the user.
+ * @return true if the credentials match, false otherwise.
+ */
 bool Authentication::verifyCredentials(const std::string& username, const std::string& password) {
     auto it = userCredentials.find(username);
     if (it == userCredentials.end()) {
-        std::cout << "Username not found: " << username << std::endl;
+        NotificationInterface::show("Username not found: " + username) ;
         return false;
     }
     return it->second == password;
 }
 
-// Login function
+/**
+ * Attempts to log a user in with the provided username and password.
+ * If the account is locked or the credentials do not match, the login will fail.
+ *
+ * @param username The username of the user trying to log in.
+ * @param password The password provided by the user.
+ * @return true if login is successful, false otherwise.
+ */
 bool Authentication::login(const std::string& username, const std::string& password) {
     if (isAccountLocked(username)) {
-        std::cout << "Account locked for user: " << username << std::endl;
+        NotificationInterface::show("Account locked for user: " + username) ;
         return false;
     }
     if (verifyCredentials(username, password)) {
@@ -49,12 +62,21 @@ bool Authentication::login(const std::string& username, const std::string& passw
     return false;
 }
 
-// Logout function
+/**
+ * Logs a user out of the system.
+ *
+ * @param username The username of the user logging out.
+ */
 void Authentication::logout(const std::string& username) {
     std::cout << "User " << username << " has logged out." << std::endl;
 }
 
-// Add a new user
+/**
+ * Adds a new user to the system with the specified username and password.
+ *
+ * @param username The username for the new user.
+ * @param password The password for the new user.
+ */
 void Authentication::addUser(const std::string& username, const std::string& password) {
     userCredentials[username] = password;
     failedAttempts[username] = 0; // Reset failed attempts for the new user
@@ -62,18 +84,11 @@ void Authentication::addUser(const std::string& username, const std::string& pas
     std::cout << "New user added: " << username << std::endl;
 }
 
-// Change password function
-bool Authentication::changePassword(const std::string& username, const std::string& oldPassword, const std::string& newPassword) {
-    if (verifyCredentials(username, oldPassword)) {
-        userCredentials[username] = newPassword;
-        std::cout << "Password changed successfully for user: " << username << std::endl;
-        return true;
-    }
-    std::cout << "Password change failed for user: " << username << std::endl;
-    return false;
-}
-
-// Increment failed login attempts
+/**
+ * Increments the failed login attempts for a user and locks the account if the maximum attempts are exceeded.
+ *
+ * @param username The username of the user whose failed attempts are to be incremented.
+ */
 void Authentication::incrementFailedAttempts(const std::string& username) {
     failedAttempts[username]++;
     if (failedAttempts[username] >= 3) { // Lock account after 3 failed attempts
@@ -82,12 +97,21 @@ void Authentication::incrementFailedAttempts(const std::string& username) {
     }
 }
 
-// Check if account is locked
+/**
+ * Checks if a user's account is locked.
+ *
+ * @param username The username of the user to check.
+ * @return true if the account is locked, false otherwise.
+ */
 bool Authentication::isAccountLocked(const std::string& username) {
     return lockedAccounts.find(username) != lockedAccounts.end() && lockedAccounts[username];
 }
 
-// Unlock account function
+/**
+ * Unlocks a user's account and resets their failed login attempts.
+ *
+ * @param username The username of the user whose account is to be unlocked.
+ */
 void Authentication::unlockAccount(const std::string& username) {
     if (lockedAccounts.find(username) != lockedAccounts.end()) {
         lockedAccounts[username] = false;

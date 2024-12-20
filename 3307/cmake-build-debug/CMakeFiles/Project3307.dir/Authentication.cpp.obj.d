@@ -1,6 +1,6 @@
 CMakeFiles/Project3307.dir/Authentication.cpp.obj: \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\Authentication.cpp \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\Authentication.h \
+ C:\Users\Alexf\Desktop\3307Projcet\3307\Authentication.cpp \
+ C:\Users\Alexf\Desktop\3307Projcet\3307\Authentication.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -106,6 +106,7 @@ CMakeFiles/Project3307.dir/Authentication.cpp.obj: \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/enable_special_members.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/node_handle.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/erase_if.h \
+ C:\Users\Alexf\Desktop\3307Projcet\3307\NotificationInterface.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios \

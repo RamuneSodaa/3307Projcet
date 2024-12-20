@@ -38,7 +38,7 @@ private:
     int capacity;
     std::vector<Course*> prerequisites;
     std::vector<Student*> enrolledStudents;
-    std::string prereqStr; // Raw prerequisites string from DB if any
+    std::string prereqStr;
 
     bool checkPrerequisitesMet(Student* student) const;
     void listMissingPrerequisites(Student* student) const;

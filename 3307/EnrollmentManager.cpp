@@ -11,10 +11,24 @@
 #include <sstream>
 #include "NotificationInterface.h"
 
+/**
+ * Constructs the EnrollmentManager with the specified managers and checker.
+ *
+ * @param cm Reference to the CourseManager instance.
+ * @param sched Reference to the Scheduler instance.
+ * @param checker Reference to the PrerequisiteChecker instance.
+ */
 EnrollmentManager::EnrollmentManager(CourseManager& cm, Scheduler& sched, PrerequisiteChecker& checker)
 : courseManager(cm), scheduler(sched), prereqChecker(checker) {
 }
 
+/**
+ * Enrolls a student in a specified course by ID if all conditions are met.
+ *
+ * @param student Pointer to the Student object.
+ * @param courseID ID of the course to enroll in.
+ * @return True if enrollment is successful, false otherwise.
+ */
 bool EnrollmentManager::enrollStudentInCourse(Student* student, int courseID) {
     if (!student) {
         NotificationInterface::show("\nError: Student object is null.\n");
@@ -66,11 +80,19 @@ bool EnrollmentManager::enrollStudentInCourse(Student* student, int courseID) {
         return false;
     }
 
-    std::cout << "Enrollment successful for student: " << student->getUsername()
-              << " in course: " << course->getCourseName() << "\n";
+    NotificationInterface::show("Enrollment successful for student: " + student->getUsername() + " in course: " + course->getCourseName()  ) ;
     return true;
 }
 
+/**
+ * Adds an enrollment record to the database.
+ *
+ * @param studentID ID of the student.
+ * @param courseID ID of the course.
+ * @param courseName Name of the course.
+ * @param enrollmentDate Date of enrollment.
+ * @return True if the record was added successfully, false otherwise.
+ */
 bool EnrollmentManager::addEnrollment(int studentID, int courseID, const std::string& courseName, const std::string& enrollmentDate) {
     DatabaseManager::addEnrollment(studentID, courseID, courseName, enrollmentDate);
     std::cout << "Enrollment record added: StudentID=" << studentID
@@ -80,6 +102,13 @@ bool EnrollmentManager::addEnrollment(int studentID, int courseID, const std::st
     return true;
 }
 
+/**
+ * Drops a student's enrollment from a specific course.
+ *
+ * @param student Pointer to the Student object.
+ * @param courseID ID of the course from which to unenroll the student.
+ * @return True if the enrollment was successfully removed, false otherwise.
+ */
 bool EnrollmentManager::dropEnrollment(Student* student, int courseID) {
     if (!student) {
         std::cerr << "Error: Student is null.\n";

@@ -1,5 +1,5 @@
 CMakeFiles/Project3307.dir/sqlite3.c.obj: \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\sqlite3.c \
+ C:\Users\Alexf\Desktop\3307Projcet\3307\sqlite3.c \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdarg.h \
  D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/stdarg.h \
  D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/_mingw_stdarg.h \

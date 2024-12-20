@@ -30,7 +30,6 @@ public:
 
     // Account management functions
     void addUser(const std::string& username, const std::string& password);
-    bool changePassword(const std::string& username, const std::string& oldPassword, const std::string& newPassword);
 
     // Security functions
     void incrementFailedAttempts(const std::string& username);

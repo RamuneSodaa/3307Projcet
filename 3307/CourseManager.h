@@ -18,7 +18,6 @@ public:
     std::vector<Course*> searchCourses(const std::string& query) const;
     void browseCourses() const;
     void displayCourseDetails(int courseID) const;
-    std::vector<Course*> filterCoursesByDepartment(const std::string& department) const;
     const std::vector<Course*>& getCourseList() const;
 
 private:

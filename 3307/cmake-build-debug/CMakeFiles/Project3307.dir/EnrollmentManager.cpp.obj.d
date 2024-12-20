@@ -1,6 +1,6 @@
 CMakeFiles/Project3307.dir/EnrollmentManager.cpp.obj: \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\EnrollmentManager.cpp \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\EnrollmentManager.h \
+ C:\Users\Alexf\Desktop\3307Projcet\3307\EnrollmentManager.cpp \
+ C:\Users\Alexf\Desktop\3307Projcet\3307\EnrollmentManager.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -98,23 +98,23 @@ CMakeFiles/Project3307.dir/EnrollmentManager.cpp.obj: \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uses_allocator.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uses_allocator_args.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tuple \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\CourseManager.h \
+ C:\Users\Alexf\Desktop\3307Projcet\3307\CourseManager.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_uninitialized.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\Scheduler.h \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\PrerequisiteChecker.h \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\Student.h \
+ C:\Users\Alexf\Desktop\3307Projcet\3307\Scheduler.h \
+ C:\Users\Alexf\Desktop\3307Projcet\3307\PrerequisiteChecker.h \
+ C:\Users\Alexf\Desktop\3307Projcet\3307\Student.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime \
  D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/time.h \
  D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/sys/timeb.h \
  D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
  D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/_timeval.h \
  D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/pthread_time.h \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\Course.h \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\DatabaseManager.h \
+ C:\Users\Alexf\Desktop\3307Projcet\3307\Course.h \
+ C:\Users\Alexf\Desktop\3307Projcet\3307\DatabaseManager.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios \
@@ -166,4 +166,4 @@ CMakeFiles/Project3307.dir/EnrollmentManager.cpp.obj: \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/quoted_string.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\NotificationInterface.h
+ C:\Users\Alexf\Desktop\3307Projcet\3307\NotificationInterface.h

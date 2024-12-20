@@ -1,6 +1,6 @@
 CMakeFiles/Project3307.dir/Student.cpp.obj: \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\Student.cpp \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\Student.h \
+ C:\Users\Alexf\Desktop\3307Projcet\3307\Student.cpp \
+ C:\Users\Alexf\Desktop\3307Projcet\3307\Student.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -109,7 +109,7 @@ CMakeFiles/Project3307.dir/Student.cpp.obj: \
  D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/sec_api/sys/timeb_s.h \
  D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/_timeval.h \
  D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/pthread_time.h \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\Course.h \
+ C:\Users\Alexf\Desktop\3307Projcet\3307\Course.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios \

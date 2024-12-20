@@ -10,6 +10,15 @@
 extern Student* currentStudent;
 extern Authentication* auth;
 
+/**
+ * Constructs the MainMenuInterface with references to course manager, scheduler, and enrollment manager.
+ * Initializes the main window with a predefined video mode and title.
+ *
+ * @param cm Reference to the CourseManager managing the courses.
+ * @param sched Reference to the Scheduler managing the scheduling of courses.
+ * @param em Reference to the EnrollmentManager managing student enrollments.
+ */
+
 MainMenuInterface::MainMenuInterface(CourseManager& cm, Scheduler& sched, EnrollmentManager& em)
 : courseManager(cm), scheduler(sched), enrollmentManager(em), window(sf::VideoMode(1280, 720), "Student Center - Main Page") {
     if (!font.loadFromFile("../assets/fonts/OpenSans-Regular.ttf")) {
@@ -17,6 +26,10 @@ MainMenuInterface::MainMenuInterface(CourseManager& cm, Scheduler& sched, Enroll
     }
 }
 
+/**
+ * Displays the main menu interface, allowing students to view enrolled courses, search for courses,
+ * and logout. The interface updates dynamically based on user interactions such as searching and logging out.
+ */
 void MainMenuInterface::show() {
     if (!currentStudent) return;
 
@@ -77,7 +90,6 @@ void MainMenuInterface::show() {
     logoutText.setPosition(160, 510 + offsetY);
     logoutText.setFillColor(sf::Color::White);
 
-    // Fetch enrollment records from the database for the current student
     std::vector<EnrollmentRecord> enrollmentRecords = DatabaseManager::getEnrollmentsForStudent(currentStudent->getStudentID());
 
     float tableStartY = 150.0f;
@@ -87,7 +99,6 @@ void MainMenuInterface::show() {
     tableTitle.setFillColor(sf::Color::Black);
     tableTitle.setPosition(tableStartX, tableStartY);
 
-    // Column headers
     sf::Text colCourseID("Course ID", font, 20);
     colCourseID.setFillColor(sf::Color::Black);
     colCourseID.setPosition(tableStartX, tableStartY + 40);
@@ -100,8 +111,6 @@ void MainMenuInterface::show() {
     colEnrollmentDate.setFillColor(sf::Color::Black);
     colEnrollmentDate.setPosition(tableStartX+300, tableStartY + 40);
 
-    // We'll add the drop button to the right of Enrollment Date
-    // Let's say at tableStartX + 480 for spacing
     sf::Text colAction("Action", font, 20);
     colAction.setFillColor(sf::Color::Black);
     colAction.setPosition(tableStartX+480, tableStartY + 40);
@@ -110,7 +119,6 @@ void MainMenuInterface::show() {
     headerLine.setPosition(tableStartX, tableStartY + 70);
     headerLine.setFillColor(sf::Color::Black);
 
-    // We'll store drop buttons for each enrollment in a vector
     struct DropButton {
         sf::RectangleShape shape;
         sf::Text text;
@@ -118,7 +126,6 @@ void MainMenuInterface::show() {
     };
     std::vector<DropButton> dropButtons;
 
-    // Helper function to rebuild drop buttons after changes
     auto rebuildDropButtons = [&](const std::vector<EnrollmentRecord>& records) {
         dropButtons.clear();
         float yPos = tableStartY + 90;
@@ -237,6 +244,10 @@ void MainMenuInterface::show() {
     }
 }
 
+/**
+ * Displays the search interface where students can search for courses by ID or name.
+ * Allows students to enroll directly from the search results.
+ */
 void MainMenuInterface::showSearchPage() {
     sf::RenderWindow searchWindow(sf::VideoMode(1280, 720), "Student Center - Search Courses");
     sf::Text title("Search Courses", font, 40);

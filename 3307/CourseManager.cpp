@@ -5,6 +5,12 @@
 #include <algorithm>
 #include <cctype>
 
+/**
+ * Converts a string to lowercase.
+ *
+ * @param s The string to be converted.
+ * @return The lowercase version of the input string.
+ */
 static std::string toLowerCase(const std::string& s) {
     std::string lower = s;
     std::transform(lower.begin(), lower.end(), lower.begin(),
@@ -12,18 +18,29 @@ static std::string toLowerCase(const std::string& s) {
     return lower;
 }
 
+/**
+ * Constructor for the CourseManager class.
+ * Loads additional courses from the database upon instantiation.
+ */
 CourseManager::CourseManager() {
     // Load additional courses from the database
     loadCoursesFromDatabase();
     std::cout << "CourseManager initialized with default and DB courses.\n";
 }
 
+/**
+ * Destructor for the CourseManager class.
+ * Cleans up memory by deleting all stored Course objects.
+ */
 CourseManager::~CourseManager() {
     for (auto& course : courseList) {
         delete course;
     }
 }
 
+/**
+ * Loads courses from the database and adds them to the course manager, avoiding duplicates.
+ */
 void CourseManager::loadCoursesFromDatabase() {
     std::vector<Course> dbCourses = DatabaseManager::getAllCourses();
     for (const auto& c : dbCourses) {
@@ -42,6 +59,11 @@ void CourseManager::loadCoursesFromDatabase() {
     }
 }
 
+/**
+ * Adds a new course to the course manager and updates the database.
+ *
+ * @param course A pointer to the course to be added.
+ */
 void CourseManager::addCourse(Course* course) {
     if (!course) {
         std::cerr << "Cannot add a null course.\n";
@@ -54,6 +76,12 @@ void CourseManager::addCourse(Course* course) {
     DatabaseManager::addCourse(*course);
 }
 
+/**
+ * Removes a course from the course manager based on its ID.
+ *
+ * @param courseID The ID of the course to be removed.
+ * @return True if the course was successfully removed, false otherwise.
+ */
 bool CourseManager::removeCourse(int courseID) {
     auto it = std::remove_if(courseList.begin(), courseList.end(),
                              [courseID](Course* course) {
@@ -69,6 +97,12 @@ bool CourseManager::removeCourse(int courseID) {
     return false;
 }
 
+/**
+ * Searches for courses matching a specific query, which can be a name or ID.
+ *
+ * @param query The search term, which could be part of a course name or an exact ID.
+ * @return A vector of pointers to the matching Course objects.
+ */
 std::vector<Course*> CourseManager::searchCourses(const std::string& query) const {
     std::vector<Course*> results;
     std::string lowerQuery = toLowerCase(query);
@@ -105,6 +139,11 @@ void CourseManager::browseCourses() const {
     }
 }
 
+/**
+ * Displays detailed information about a specific course by its ID.
+ *
+ * @param courseID The ID of the course whose details are to be displayed.
+ */
 void CourseManager::displayCourseDetails(int courseID) const {
     for (auto& course : courseList) {
         if (course->getCourseID() == courseID) {
@@ -122,16 +161,6 @@ void CourseManager::displayCourseDetails(int courseID) const {
         }
     }
     std::cout << "No details available for Course ID: " << courseID << "\n";
-}
-
-std::vector<Course*> CourseManager::filterCoursesByDepartment(const std::string& department) const {
-    std::vector<Course*> filteredCourses;
-    for (const auto& course : courseList) {
-        if (course->getCourseName().find(department) != std::string::npos) {
-            filteredCourses.push_back(course);
-        }
-    }
-    return filteredCourses;
 }
 
 const std::vector<Course*>& CourseManager::getCourseList() const {

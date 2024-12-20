@@ -1,6 +1,6 @@
 CMakeFiles/Project3307.dir/Course.cpp.obj: \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\Course.cpp \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\Course.h \
+ C:\Users\Alexf\Desktop\3307Projcet\3307\Course.cpp \
+ C:\Users\Alexf\Desktop\3307Projcet\3307\Course.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -103,7 +103,7 @@ CMakeFiles/Project3307.dir/Course.cpp.obj: \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
- C:\Users\Alexf\Desktop\CourseCoordinator\3307\Student.h \
+ C:\Users\Alexf\Desktop\3307Projcet\3307\Student.h \
  D:/CLion\ 2024.1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime \
  D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/time.h \
  D:/CLion\ 2024.1.4/bin/mingw/x86_64-w64-mingw32/include/sys/timeb.h \

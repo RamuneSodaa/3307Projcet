@@ -6,10 +6,24 @@
 #include <sstream>
 #include <algorithm>
 
-// Constructor
+/**
+ * Constructs a Student object with detailed parameters.
+ *
+ * @param id The student's ID.
+ * @param uname The username of the student.
+ * @param email The email address of the student.
+ * @param status The current status of the student.
+ */
 Student::Student(int id, const std::string& uname, const std::string& email, const std::string& status)
     : studentID(id), username(uname), email(email), status(status) {}
 
+/**
+ * Constructs a Student object from a string ID and email.
+ * If the ID is not a valid integer, it defaults to 0.
+ *
+ * @param id The student's ID as a string.
+ * @param email The email address of the student.
+ */
 Student::Student(const std::string& id, const std::string& email) {
     try {
         studentID = std::stoi(id);
@@ -57,6 +71,11 @@ void Student::setStatus(const std::string& newStatus) {
     status = newStatus;
 }
 
+/**
+ * Finalizes the enrollment for a given course, moving it from the draft to the registered courses.
+ *
+ * @param course Pointer to the course to finalize enrollment in.
+ */
 void Student::finalizeEnrollment(Course* course) {
     if (!course) {
         std::cerr << "Cannot finalize enrollment for a null course.\n";
@@ -81,7 +100,11 @@ void Student::clearDraftSchedule() {
     std::cout << "Draft schedule cleared for student " << username << ".\n";
 }
 
-// Add a course to the student's schedule
+/**
+ * Adds a course to the student's registered courses.
+ *
+ * @param course Pointer to the course to add.
+ */
 void Student::addCourse(Course* course) {
     if (!course) {
         std::cerr << "Cannot add a null course to the schedule.\n";
@@ -92,7 +115,11 @@ void Student::addCourse(Course* course) {
     std::cout << "Course " << course->getCourseName() << " added for student " << username << ".\n";
 }
 
-// Add a course to the draft schedule
+/**
+ * Adds a course to the student's draft schedule.
+ *
+ * @param course Pointer to the course to add.
+ */
 void Student::addToDraftSchedule(Course* course) {
     if (!course) {
         std::cerr << "Cannot add a null course to the draft schedule.\n";
@@ -103,7 +130,11 @@ void Student::addToDraftSchedule(Course* course) {
     std::cout << "Course " << course->getCourseName() << " added to draft schedule for student " << username << ".\n";
 }
 
-// Drop a course from the student's schedule by course ID
+/**
+ * Drops a course from the student's schedule by course ID.
+ *
+ * @param courseID The ID of the course to drop.
+ */
 void Student::dropCourse(int courseID) {
     auto it = std::remove_if(registeredCourses.begin(), registeredCourses.end(),
                              [courseID](Course* course) { return course->getCourseID() == courseID; });
@@ -116,7 +147,11 @@ void Student::dropCourse(int courseID) {
     }
 }
 
-// Drop a course from the draft schedule by course ID
+/**
+ * Drops a course from the student's draft schedule by course ID.
+ *
+ * @param courseID The ID of the course to drop.
+ */
 void Student::dropFromDraftSchedule(int courseID) {
     auto it = std::remove_if(draftSchedule.begin(), draftSchedule.end(),
                              [courseID](Course* course) { return course->getCourseID() == courseID; });

@@ -6,6 +6,12 @@
 
 static sqlite3* db = nullptr;
 
+/**
+ * Initializes the database with the given path for the database and SQL script.
+ *
+ * @param dbPath Path to the database file.
+ * @param sqlPath Path to the SQL script file that initializes the database tables.
+ */
 void DatabaseManager::initializeDatabase(const std::string& dbPath, const std::string& sqlPath) {
     char* errMsg = nullptr;
 
@@ -36,6 +42,12 @@ void DatabaseManager::initializeDatabase(const std::string& dbPath, const std::s
     printTables();
 }
 
+/**
+ * Checks if a course exists in the database by its ID.
+ *
+ * @param courseID The ID of the course to check.
+ * @return True if the course exists, false otherwise.
+ */
 bool DatabaseManager::courseExists(int courseID) {
     std::ostringstream sql;
     sql << "SELECT COUNT(*) FROM courses WHERE course_id=" << courseID << ";";
@@ -58,6 +70,12 @@ bool DatabaseManager::courseExists(int courseID) {
     return (count > 0);
 }
 
+/**
+ * Checks if a student exists in the database by their ID.
+ *
+ * @param studentID The ID of the student to check.
+ * @return True if the student exists, false otherwise.
+ */
 bool DatabaseManager::studentExists(int studentID) {
     std::ostringstream sql;
     sql << "SELECT COUNT(*) FROM students WHERE student_id=" << studentID << ";";
@@ -80,6 +98,11 @@ bool DatabaseManager::studentExists(int studentID) {
     return (count > 0);
 }
 
+/**
+ * Adds a new course to the database.
+ *
+ * @param course The course object to add to the database.
+ */
 void DatabaseManager::addCourse(const Course& course) {
     // Check if course already exists
     if (courseExists(course.getCourseID())) {
@@ -97,6 +120,11 @@ void DatabaseManager::addCourse(const Course& course) {
     executeQuery(sql.str());
 }
 
+/**
+ * Adds a new student to the database.
+ *
+ * @param student The student object to add to the database.
+ */
 void DatabaseManager::addStudent(const Student& student) {
     // Check if student already exists
     if (studentExists(student.getStudentID())) {
@@ -113,6 +141,14 @@ void DatabaseManager::addStudent(const Student& student) {
     executeQuery(sql.str());
 }
 
+/**
+ * Adds an enrollment record to the database.
+ *
+ * @param studentID The ID of the student.
+ * @param courseID The ID of the course.
+ * @param courseName The name of the course.
+ * @param enrollmentDate The date of enrollment.
+ */
 void DatabaseManager::addEnrollment(int studentID, int courseID, const std::string& courseName, const std::string& enrollmentDate) {
     std::ostringstream sql;
     sql << "INSERT INTO enrollments (student_id, course_id, course_name, enrollment_date) VALUES ("
@@ -123,6 +159,13 @@ void DatabaseManager::addEnrollment(int studentID, int courseID, const std::stri
     executeQuery(sql.str());
 }
 
+/**
+ * Removes an enrollment record from the database.
+ *
+ * @param studentID The ID of the student.
+ * @param courseID The ID of the course.
+ * @return True if the record was successfully removed, false otherwise.
+ */
 bool DatabaseManager::removeEnrollment(int studentID, int courseID) {
     std::ostringstream sql;
     sql << "DELETE FROM enrollments WHERE student_id=" << studentID
@@ -138,6 +181,11 @@ bool DatabaseManager::removeEnrollment(int studentID, int courseID) {
     return true;
 }
 
+/**
+ * Retrieves all courses from the database.
+ *
+ * @return A vector of Course objects.
+ */
 std::vector<Course> DatabaseManager::getAllCourses() {
     std::vector<Course> courses;
     const char* sql = "SELECT course_id, name, schedule, capacity, prerequisites FROM courses;";
@@ -164,6 +212,12 @@ std::vector<Course> DatabaseManager::getAllCourses() {
     return courses;
 }
 
+/**
+ * Retrieves all enrollments for a specific student from the database.
+ *
+ * @param studentID The ID of the student.
+ * @return A vector of EnrollmentRecord objects.
+ */
 std::vector<EnrollmentRecord> DatabaseManager::getEnrollmentsForStudent(int studentID) {
     std::vector<EnrollmentRecord> records;
     std::ostringstream sql;
@@ -190,6 +244,11 @@ std::vector<EnrollmentRecord> DatabaseManager::getEnrollmentsForStudent(int stud
     return records;
 }
 
+/**
+ * Executes a generic SQL query on the database.
+ *
+ * @param query The SQL query string.
+ */
 void DatabaseManager::executeQuery(const std::string& query) {
     char* errMsg = nullptr;
     if (sqlite3_exec(db, query.c_str(), nullptr, nullptr, &errMsg) != SQLITE_OK) {

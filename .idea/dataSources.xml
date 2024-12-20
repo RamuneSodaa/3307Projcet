@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="database" uuid="de64951d-b6be-4b4b-bf8d-e4b702659bd6">
+    <data-source source="LOCAL" name="database" uuid="45e35065-4adb-4ac5-9db2-a855a5c889b8">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\Alexf\Desktop\CourseCoordinator\3307\cmake-build-debug\database.sqlite</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\Alexf\Desktop\3307Projcet\3307\cmake-build-debug\database.sqlite</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>

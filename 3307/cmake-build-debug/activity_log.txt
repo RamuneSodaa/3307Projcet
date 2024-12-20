@@ -177,3 +177,12 @@ Student ID: 1 | 2024-12-19 16:51:35 - Added course: Math II
 Student ID: 1 | 2024-12-19 16:51:39 - Removed course: Math II
 Student ID: 1 | 2024-12-19 16:51:40 - Removed course: Biology I
 Student ID: 1 | 2024-12-19 16:51:40 - Removed course: Math I
+Student ID: 1 | 2024-12-19 20:31:28 - Added course: Math I
+Student ID: 10000001 | 2024-12-19 20:34:02 - Added course: Math I
+Student ID: 10000001 | 2024-12-19 20:34:03 - Removed course: Math I
+Student ID: 10000001 | 2024-12-19 20:34:08 - Added course: Biology I
+Student ID: 10000002 | 2024-12-19 20:34:38 - Added course: Math I
+Student ID: 12345678 | 2024-12-19 20:36:07 - Added course: Math I
+Student ID: 12345678 | 2024-12-19 20:36:09 - Removed course: Math I
+Student ID: 12345678 | 2024-12-19 20:40:03 - Added course: Math I
+Student ID: 12345678 | 2024-12-19 20:57:31 - Added course: Math I

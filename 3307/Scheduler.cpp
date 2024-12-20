@@ -4,7 +4,11 @@
 #include <iostream>
 #include <algorithm>
 
-// Constructor
+/**
+ * Constructs a Scheduler object with a specific semester.
+ *
+ * @param semester The name of the semester for scheduling.
+ */
 Scheduler::Scheduler(const std::string& semester) : semester(semester) {}
 
 // Destructor
@@ -14,6 +18,11 @@ Scheduler::~Scheduler() {
     }
 }
 
+/**
+ * Adds a course to the scheduler if the course is not null.
+ *
+ * @param course Pointer to the course to be added.
+ */
 void Scheduler::addCourse(Course* course) {
     if (!course) {
         std::cerr << "Cannot add a null course.\n";
@@ -23,6 +32,11 @@ void Scheduler::addCourse(Course* course) {
     std::cout << "Course added: " << course->getCourseName() << "\n";
 }
 
+/**
+ * Removes a course from the scheduler based on its ID.
+ *
+ * @param courseID The ID of the course to remove.
+ */
 void Scheduler::removeCourse(int courseID) {
     auto it = std::remove_if(courseOfferings.begin(), courseOfferings.end(),
                              [courseID](Course* course) { return course->getCourseID() == courseID; });
@@ -35,6 +49,12 @@ void Scheduler::removeCourse(int courseID) {
     }
 }
 
+/**
+ * Updates the schedule of a course identified by its ID.
+ *
+ * @param courseID The ID of the course to update.
+ * @param schedule The new schedule string.
+ */
 void Scheduler::updateCourseDetails(int courseID, const std::string& schedule) {
     for (auto course : courseOfferings) {
         if (course->getCourseID() == courseID) {
@@ -46,6 +66,13 @@ void Scheduler::updateCourseDetails(int courseID, const std::string& schedule) {
     std::cerr << "Course not found with ID: " << courseID << "\n";
 }
 
+/**
+ * Attempts to enroll a student in a course by its ID.
+ *
+ * @param student Pointer to the student to be enrolled.
+ * @param courseID The ID of the course to enroll the student in.
+ * @return True if enrollment is successful, false otherwise.
+ */
 bool Scheduler::scheduleCourse(Student* student, int courseID) {
     if (!student) {
         std::cerr << "Student object cannot be null.\n";
@@ -76,18 +103,12 @@ bool Scheduler::scheduleCourse(Student* student, int courseID) {
     return false;
 }
 
-void Scheduler::generateSchedule(Student* student) const {
-    if (!student) {
-        std::cerr << "Student object cannot be null.\n";
-        return;
-    }
-
-    std::cout << "Schedule for Student ID: " << student->getStudentID() << "\n";
-    for (const auto& course : student->getRegisteredCourses()) {
-        std::cout << course->getCourseName() << " - " << course->getSchedule() << "\n";
-    }
-}
-
+/**
+ * Enrolls a student from their draft schedule.
+ *
+ * @param student Pointer to the student to be enrolled.
+ * @return True if all enrollments are successful, false otherwise.
+ */
 bool Scheduler::enrollFromDraft(Student* student) {
     for (auto course : student->getDraftSchedule()) {
         if (!scheduleCourse(student, course->getCourseID())) {
@@ -99,27 +120,24 @@ bool Scheduler::enrollFromDraft(Student* student) {
     return true;
 }
 
-void Scheduler::dropFromDraft(Student* student, int courseID) {
-    auto& draftSchedule = student->getDraftSchedule();
-    draftSchedule.erase(
-        std::remove_if(
-            draftSchedule.begin(),
-            draftSchedule.end(),
-            [courseID](Course* course) {
-                return course->getCourseID() == courseID;
-            }
-        ),
-        draftSchedule.end()
-    );
-    std::cout << "Course with ID " << courseID << " removed from draft schedule.\n";
-}
-
+/**
+ * Handles the failure of enrollment for a student in a course.
+ *
+ * @param student Pointer to the student whose enrollment failed.
+ * @param course Pointer to the course in which enrollment was attempted.
+ */
 void Scheduler::handleEnrollmentFailure(Student* student, Course* course) {
     // No waitlist or isFull references now. Just print a generic error.
     std::cout << "Enrollment failed for " << course->getCourseName()
               << ": prerequisites not met or capacity reached.\n";
 }
 
+/**
+ * Optimizes a schedule for a student based on desired course IDs.
+ *
+ * @param desiredCourses Vector of desired course IDs.
+ * @return Vector of pointers to the courses that were successfully optimized.
+ */
 std::vector<Course*> Scheduler::optimizeSchedule(const std::vector<int>& desiredCourses) {
     std::vector<Course*> optimizedCourses;
     for (int courseID : desiredCourses) {
@@ -148,6 +166,12 @@ void Scheduler::displayCourseOfferings() const {
     }
 }
 
+/**
+ * Validates a student's draft schedule to check for any prerequisites not met.
+ *
+ * @param student Pointer to the student whose draft schedule is being validated.
+ * @return Vector of strings containing errors found during validation.
+ */
 std::vector<std::string> Scheduler::validateDraftSchedule(Student* student) {
     std::vector<std::string> errors;
 
@@ -162,6 +186,12 @@ std::vector<std::string> Scheduler::validateDraftSchedule(Student* student) {
     return errors;
 }
 
+/**
+ * Finalizes a student's draft schedule, enrolling them in all courses if no errors are found.
+ *
+ * @param student Pointer to the student whose draft schedule is being finalized.
+ * @return True if the draft schedule is successfully finalized, false if there are errors.
+ */
 bool Scheduler::finalizeDraftSchedule(Student* student) {
     auto errors = validateDraftSchedule(student);
 
