@@ -1,7 +1,7 @@
-# **College Course Enrollment System**
+# **Course Enrollment System**
 
 ## **Overview**
-The College Course Enrollment System is a comprehensive C++ application with a GUI, designed to streamline course scheduling and management. The system provides functionality for students to enroll in courses and administrators to manage course information efficiently. It utilizes the **SFML (Simple and Fast Multimedia Library)** for GUI components and SQLite for database integration.
+The Course Enrollment System is a comprehensive C++ application with a GUI, designed to streamline course scheduling and management. The system provides functionality for students to enroll in courses and administrators to manage course information efficiently. It utilizes the **SFML (Simple and Fast Multimedia Library)** for GUI components and SQLite for database integration.
 
 ---
 
